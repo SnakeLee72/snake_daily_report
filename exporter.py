@@ -37,13 +37,16 @@ def export_html_to_pdf(html_path: Path, pdf_path: Path = None) -> Path:
             print(f"[PDF 匯出警告] 未找到 Microsoft Edge 執行檔：{edge_exe}，略過 PDF 產生")
             return None
 
+    file_url = f"file:///{html_path.resolve().as_posix()}"
     cmd = [
         edge_exe,
-        "--headless",
-        "--no-sandbox",
+        "--headless=new",
         "--disable-gpu",
+        "--no-sandbox",
+        "--no-pdf-header-footer",
+        "--run-all-compositor-stages-before-draw",
         f"--print-to-pdf={str(pdf_path)}",
-        str(html_path)
+        file_url
     ]
 
     try:
