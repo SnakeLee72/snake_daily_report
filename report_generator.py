@@ -1,7 +1,17 @@
 # -*- coding: utf-8 -*-
 """
-Snake Daily Report - 現代科技風與專業財經終端 HTML Dashboard 產生引擎
-具備華爾街/彭博情報終端風格排版、即時快篩、卡片展開閱讀、原文直連與自適應 RWD / 列印樣式。
+Snake Daily Report - 現代金融與科技情報終端 HTML Dashboard 產生引擎
+融合 Bloomberg Intelligence / Financial Times 現代專業排版：
+1. 頂部終端導航、深淺主題切換、即時檢索
+2. 今日一句話 (Executive Takeaway)
+3. 市場溫度與多空風向儀表板 (Market Sentiment)
+4. 今日必看 3 件事 (The Big 3 雜誌頭條排版)
+5. 產業影響鏈矩陣 (Supply Chain Impact Matrix)
+6. 五大板塊「一句話結論」與深度卡片庫 (含平滑展開/原文直連)
+7. 今日市場雜訊與速讀 (Market Noise)
+8. 明日關鍵觀察清單 (Tomorrow's Catalyst Watchlist)
+9. 資料來源與金融合規免責聲明 (Compliance & Disclaimer)
+10. 手機專屬底部浮動導航列 (Mobile Bottom Nav Bar)
 """
 
 import os
@@ -12,7 +22,7 @@ from config import REPORTS_DIR, TOPIC_CATEGORIES
 
 def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str = None) -> Path:
     """
-    將新聞與 AI 摘要渲染為高質感財經科技情報 Dashboard
+    將新聞與決策級 AI 摘要渲染為高質感金融情報終端 Dashboard
     """
     if not target_date:
         target_date = datetime.now().strftime("%Y%m%d")
@@ -28,49 +38,140 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
         
     total_count = len(news_items)
     
-    # 選出 TOP 10 重點新聞（優先取各類首選與重要權值）
-    top10_items = []
-    seen_ids = set()
-    for cat_name in TOPIC_CATEGORIES.keys():
-        cat_items = [x for x in news_items if x.get("category") == cat_name]
-        for it in cat_items[:2]:
-            if it.get("id") not in seen_ids:
-                top10_items.append(it)
-                seen_ids.add(it.get("id"))
-    for it in news_items:
-        if len(top10_items) >= 10:
-            break
-        if it.get("id") not in seen_ids:
-            top10_items.append(it)
-            seen_ids.add(it.get("id"))
-            
-    # 組裝 AI 摘要內容
-    top_three_items = ai_summary.get("top_three", [])
-    top_three_html = "".join([
-        f'''<li class="key-point-item">
-            <span class="key-point-num">{i+1:02d}</span>
-            <div class="key-point-text">{point}</div>
-        </li>''' 
-        for i, point in enumerate(top_three_items)
-    ])
-    inv_obs = ai_summary.get("investment_observation", "")
-    ind_obs = ai_summary.get("industry_observation", "")
-    ai_obs = ai_summary.get("ai_observation", "")
-    punchline = ai_summary.get("punchline", "科技浪潮全面步入 AI 代理人與硬體落地元年，掌握算力槓桿與資本效率者將定義新秩序。")
+    # 今日一句話
+    punchline = ai_summary.get(
+        "punchline", 
+        "全球科技浪潮全面步入 AI 代理人商業落地與硬體供應鏈深水區，掌握算力槓桿與資本效率者將定義新秩序。"
+    )
+    
+    # 1. 市場溫度儀表板 (Market Sentiment)
+    sentiment_data = ai_summary.get("market_sentiment", {})
+    sentiment_html = ""
+    default_indicators = [
+        ("tech_momentum", "🚀 全球科技動能", "強勁擴張", "AI 代理人與基礎設施投資持續加速", "var(--accent-cyan)", "up"),
+        ("capital_flow", "⚖️ 宏觀資本流向", "震盪輪動", "資金高度聚焦科技權值股與避險資產", "var(--accent-amber)", "neutral"),
+        ("supply_chain", "🏭 硬體供應鏈景氣", "高檔滿載", "AI 伺服器拉貨強勁帶動規格全面升級", "var(--accent-green)", "up"),
+        ("risk_level", "🛡️ 總體市場風險", "中等觀望", "美債殖利率維持高位，靜待通膨數據指引", "var(--accent-purple)", "warning")
+    ]
+    for key, def_title, def_status, def_desc, def_color, def_trend in default_indicators:
+        val = sentiment_data.get(key, {})
+        title = val.get("title", def_title)
+        status = val.get("status", def_status)
+        desc = val.get("desc", def_desc)
+        badge_color = val.get("badge_color", def_color)
+        trend = val.get("trend", def_trend)
+        trend_icon = "▲" if trend == "up" else ("▼" if trend == "down" else "◆")
+        
+        sentiment_html += f'''
+        <div class="sentiment-card" style="--indicator-color: {badge_color};">
+            <div class="sentiment-card-top">
+                <span class="sentiment-title">{title}</span>
+                <span class="sentiment-badge" style="background: {badge_color}18; color: {badge_color}; border-color: {badge_color}44;">
+                    {trend_icon} {status}
+                </span>
+            </div>
+            <div class="sentiment-desc">{desc}</div>
+        </div>
+        '''
 
-    # 組裝五大分類的卡片 HTML
+    # 2. 今日必看 3 件事 (The Big 3 雜誌頭條排版)
+    big_three_items = ai_summary.get("the_big_three", [])
+    if not big_three_items and len(news_items) >= 3:
+        for i, it in enumerate(news_items[:3], 1):
+            big_three_items.append({
+                "rank": i,
+                "category": it.get("category", "焦點"),
+                "topic": it.get("topic", ""),
+                "headline": it.get("title", ""),
+                "why_it_matters": it.get("summary", ""),
+                "key_metric": "產業重大進展",
+                "url": it.get("url", "#")
+            })
+
+    big_three_html = ""
+    for item in big_three_items:
+        r = item.get("rank", 1)
+        cat = item.get("category", "核心焦點")
+        top = item.get("topic", "")
+        hl = item.get("headline", "")
+        why = item.get("why_it_matters", "")
+        metric = item.get("key_metric", "")
+        url = item.get("url", "#")
+        cat_color = TOPIC_CATEGORIES.get(cat, {}).get("color", "var(--accent-cyan)")
+        
+        is_hero = (r == 1)
+        card_class = "big-three-card hero-lead" if is_hero else "big-three-card"
+        
+        big_three_html += f'''
+        <div class="{card_class}">
+            <div class="big-three-header">
+                <div class="big-three-rank" style="color: {cat_color};">#{r:02d}</div>
+                <div class="big-three-tags">
+                    <span class="badge-cat" style="background: {cat_color}18; color: {cat_color}; border-color: {cat_color}40;">{cat}</span>
+                    {f'<span class="badge-topic">{top}</span>' if top else ''}
+                </div>
+                {f'<span class="hero-label">★ TOP STORY OF THE DAY</span>' if is_hero else ''}
+            </div>
+            <h3 class="big-three-headline">{hl}</h3>
+            
+            <div class="why-it-matters-box">
+                <div class="box-label">💡 為什麼重要 (WHY IT MATTERS)</div>
+                <p class="box-content">{why}</p>
+            </div>
+            
+            <div class="big-three-footer">
+                <div class="metric-pill">
+                    <span class="metric-icon">📊</span>
+                    <span class="metric-text">{metric}</span>
+                </div>
+                <a href="{url}" target="_blank" rel="noopener noreferrer" class="link-btn-hero">
+                    開啟原文直連 <span class="arrow-icon">↗</span>
+                </a>
+            </div>
+        </div>
+        '''
+
+    # 3. 產業影響鏈 (Supply Chain Impact Matrix)
+    impact_items = ai_summary.get("impact_chain", [])
+    impact_html = ""
+    for imp in impact_items:
+        impact_html += f'''
+        <div class="impact-chain-card">
+            <div class="impact-node trigger-node">
+                <div class="node-badge">⚡ 驅動事件 (TRIGGER)</div>
+                <div class="node-title">{imp.get('trigger')}</div>
+            </div>
+            <div class="impact-arrow">➔</div>
+            <div class="impact-node process-node">
+                <div class="node-badge">⚙️ 規格/零組件影響 (IMPACT)</div>
+                <div class="node-title">{imp.get('impacted_area')}</div>
+            </div>
+            <div class="impact-arrow">➔</div>
+            <div class="impact-node target-node">
+                <div class="node-badge">🎯 台美關鍵受惠標的 (BENEFICIARIES)</div>
+                <div class="node-title highlighted-stocks">{imp.get('key_beneficiaries')}</div>
+            </div>
+        </div>
+        '''
+
+    # 4. 各大板塊組裝 (含板塊一句話結論 Sector Bottom Lines)
+    sector_bottom_lines = ai_summary.get("sector_bottom_lines", {})
     sections_html = ""
     for cat_name, cat_meta in TOPIC_CATEGORIES.items():
         cat_items = [x for x in news_items if x.get("category") == cat_name]
         cat_icon = cat_meta.get("icon", "📌")
         cat_color = cat_meta.get("color", "#38bdf8")
+        cat_line = sector_bottom_lines.get(
+            cat_name, 
+            f"今日 {cat_name} 板塊整體聚焦產業前線動能，指標企業持續推進關鍵戰略布局。"
+        )
         
         cards_html = ""
         for it in cat_items:
             cards_html += f'''
             <div class="news-card" data-category="{cat_name}" data-title="{it.get('title', '')}" data-topic="{it.get('topic', '')}" data-source="{it.get('source', '')}">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: {cat_color}18; color: {cat_color}; border-color: {cat_color}40;">
+                    <span class="topic-tag" style="background: {cat_color}16; color: {cat_color}; border-color: {cat_color}40;">
                         {it.get('topic')}
                     </span>
                     <span class="pub-time">{it.get('publish_time')}</span>
@@ -93,20 +194,24 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
         <section class="category-section" id="section-{cat_meta['code']}" data-category="{cat_name}">
             <div class="section-header" onclick="toggleSection('{cat_meta['code']}')">
                 <div class="section-header-left">
-                    <div class="section-icon-box" style="background: {cat_color}20; color: {cat_color}; border-color: {cat_color}40;">
+                    <div class="section-icon-box" style="background: {cat_color}18; color: {cat_color}; border-color: {cat_color}40;">
                         {cat_icon}
                     </div>
                     <div>
                         <h3 class="section-title">{cat_name}動態</h3>
-                        <span class="section-subtitle">SECTOR INTELLIGENCE · 即時深度追蹤</span>
+                        <span class="section-subtitle">SECTOR INTELLIGENCE · 深度即時追蹤</span>
                     </div>
-                    <span class="section-count-badge" style="background: {cat_color}18; color: {cat_color}; border-color: {cat_color}40;">
+                    <span class="section-count-badge" style="background: {cat_color}16; color: {cat_color}; border-color: {cat_color}40;">
                         {len(cat_items)} 則焦點
                     </span>
                 </div>
                 <div class="section-header-right">
                     <span class="toggle-arrow" id="arrow-{cat_meta['code']}">▼</span>
                 </div>
+            </div>
+            <div class="section-bottom-line-bar">
+                <span class="bottom-line-tag" style="color: {cat_color};">📌 一句話結論</span>
+                <span class="bottom-line-text">{cat_line}</span>
             </div>
             <div class="section-body" id="body-{cat_meta['code']}">
                 <div class="news-grid">
@@ -116,43 +221,36 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
         </section>
         '''
 
-    # TOP 10 重點新聞卡片 HTML
-    top10_html = ""
-    for idx, it in enumerate(top10_items, 1):
-        cat = it.get("category", "其他")
-        cat_color = TOPIC_CATEGORIES.get(cat, {}).get("color", "#38bdf8")
-        top10_html += f'''
-        <div class="top10-card" data-category="{cat}" data-title="{it.get('title', '')}">
-            <div class="top10-rank-col">
-                <div class="top10-rank" style="color: {cat_color};">#{idx:02d}</div>
-                <span class="top10-badge" style="background: {cat_color}18; color: {cat_color}; border-color: {cat_color}40;">{cat}</span>
+    # 5. 今日雜訊與速報清單 (Market Noise & Quick Hits)
+    market_noise_items = ai_summary.get("market_noise", [])
+    noise_html = ""
+    if market_noise_items:
+        for n in market_noise_items:
+            noise_html += f'''
+            <div class="noise-item">
+                <span class="noise-cat">[{n.get('category', '速讀')}]</span>
+                <a href="{n.get('url', '#')}" target="_blank" class="noise-title">{n.get('title')}</a>
+                <span class="noise-source">({n.get('source', '')})</span>
             </div>
-            <div class="top10-content">
-                <div class="top10-meta">
-                    <span class="top10-topic">{it.get('topic')}</span>
-                    <span class="time">📅 {it.get('publish_time')}</span>
-                </div>
-                <h4 class="top10-title">{it.get('title')}</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">{it.get('summary')}</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="top10-footer">
-                    <span class="source" title="{it.get('source')}">🏷️ 來源：{it.get('source')}</span>
-                    <a href="{it.get('url')}" target="_blank" rel="noopener noreferrer" class="top10-link">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+            '''
+
+    # 6. 明日觀察清單 (Tomorrow's Catalyst Watchlist)
+    watchlist_items = ai_summary.get("tomorrow_watchlist", [])
+    watchlist_html = ""
+    for idx, w in enumerate(watchlist_items, 1):
+        watchlist_html += f'''
+        <li class="watchlist-item">
+            <span class="watchlist-bullet">0{idx}</span>
+            <span class="watchlist-text">{w}</span>
+        </li>
         '''
 
-    # 動態產生篩選標籤按鈕
+    # 7. 篩選標籤按鈕
     filter_tabs_html = f'<button class="tab-btn active" data-category="all" onclick="filterCategory(\'all\', this)">全部 ({total_count})</button>'
     for cat_name, cat_meta in TOPIC_CATEGORIES.items():
         filter_tabs_html += f'\n                <button class="tab-btn" data-category="{cat_name}" onclick="filterCategory(\'{cat_name}\', this)">{cat_name} ({category_counts.get(cat_name, 0)})</button>'
 
-    # 動態產生統計看盤看板
+    # 8. 統計看盤儀表板 (Stats Bar)
     stats_bar_html = ""
     for cat_name, cat_meta in TOPIC_CATEGORIES.items():
         code = cat_meta["code"]
@@ -170,25 +268,28 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             </div>'''
 
     html_content = f"""<!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Daily Report · 全球科技與財經焦點 - {display_date}</title>
+    <title>Snake Daily Report · 全球科技與財經決策日報 - {display_date}</title>
+    <meta name="description" content="每日全球科技、AI、半導體、Notebook/ODM、台股美股與宏觀市場決策情報">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {{
-            --bg-body: #080d1a;
-            --bg-surface: #0e1628;
+            /* 預設深色主題（彭博深曜藍黑調） */
+            --bg-body: #070b14;
+            --bg-surface: #0e1526;
+            --bg-surface-elevated: #131c33;
             --bg-card: rgba(16, 24, 44, 0.85);
             --bg-card-hover: rgba(24, 36, 66, 0.95);
-            --bg-glass: rgba(13, 21, 38, 0.7);
+            --bg-lead-hero: linear-gradient(135deg, rgba(16, 32, 60, 0.9), rgba(12, 20, 38, 0.95));
             
             --border-subtle: rgba(148, 163, 184, 0.12);
             --border-focus: rgba(56, 189, 248, 0.45);
-            --border-card: rgba(56, 189, 248, 0.15);
+            --border-card: rgba(56, 189, 248, 0.16);
             
             --text-primary: #f8fafc;
             --text-secondary: #cbd5e1;
@@ -211,6 +312,36 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             --radius-sm: 6px;
         }}
 
+        /* 淺色主題支援（金融時報風格清爽紙質感） */
+        [data-theme="light"] {{
+            --bg-body: #f8fafc;
+            --bg-surface: #ffffff;
+            --bg-surface-elevated: #f1f5f9;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f8fafc;
+            --bg-lead-hero: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            
+            --border-subtle: rgba(148, 163, 184, 0.3);
+            --border-focus: rgba(2, 132, 199, 0.6);
+            --border-card: rgba(2, 132, 199, 0.2);
+            
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --text-dim: #94a3b8;
+            
+            --accent-cyan: #0284c7;
+            --accent-blue: #2563eb;
+            --accent-indigo: #4f46e5;
+            --accent-purple: #9333ea;
+            --accent-green: #059669;
+            --accent-amber: #d97706;
+            --accent-rose: #e11d48;
+            
+            --shadow-subtle: 0 4px 16px -2px rgba(0, 0, 0, 0.08);
+            --shadow-glow: 0 0 20px -5px rgba(2, 132, 199, 0.2);
+        }}
+
         * {{
             box-sizing: border-box;
             margin: 0;
@@ -222,34 +353,34 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             background-color: var(--bg-body);
             color: var(--text-primary);
             line-height: 1.6;
-            padding-bottom: 80px;
+            padding-bottom: 90px;
             background-image: 
-                radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.10) 0%, transparent 40%),
-                radial-gradient(circle at 90% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 45%),
-                linear-gradient(to bottom, #080d1a, #0b1122 60%, #080d1a);
+                radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 20%, rgba(99, 102, 241, 0.06) 0%, transparent 45%);
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }}
 
         .container {{
             max-width: 1320px;
             margin: 0 auto;
-            padding: 30px 24px;
+            padding: 24px 20px;
         }}
 
         /* --- 頂部金融終端 Header --- */
         .terminal-header {{
-            background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(15, 23, 42, 0.9));
+            background: var(--bg-surface);
             backdrop-filter: blur(16px);
             border: 1px solid var(--border-card);
             border-radius: var(--radius-lg);
-            padding: 26px 32px;
-            margin-bottom: 24px;
+            padding: 24px 30px;
+            margin-bottom: 22px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 18px;
             box-shadow: var(--shadow-subtle);
             position: relative;
             overflow: hidden;
@@ -268,11 +399,11 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(56, 189, 248, 0.1);
+            background: rgba(56, 189, 248, 0.12);
             color: var(--accent-cyan);
             border: 1px solid rgba(56, 189, 248, 0.3);
             font-size: 11px;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 1px;
             text-transform: uppercase;
             padding: 4px 12px;
@@ -289,29 +420,26 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
         }}
         @keyframes pulse-glow {{
             0%, 100% {{ opacity: 1; transform: scale(1); }}
-            50% {{ opacity: 0.4; transform: scale(0.85); }}
+            50% {{ opacity: 0.3; transform: scale(0.85); }}
         }}
 
         .header-title {{
-            font-size: 30px;
+            font-size: 28px;
             font-weight: 900;
             letter-spacing: -0.5px;
-            background: linear-gradient(to right, #ffffff, #e2e8f0 60%, var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }}
         .header-subtitle {{
             color: var(--text-muted);
             font-size: 13px;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
         }}
         .header-meta-bar {{
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 16px;
             flex-wrap: wrap;
-            font-size: 13px;
+            font-size: 12.5px;
             color: var(--text-secondary);
             margin-top: 10px;
             font-family: 'JetBrains Mono', monospace;
@@ -325,149 +453,427 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
         .header-actions {{
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }}
         .btn {{
-            padding: 9px 18px;
+            padding: 8px 16px;
             border-radius: var(--radius-sm);
             border: 1px solid var(--border-card);
-            background: rgba(22, 32, 54, 0.7);
+            background: var(--bg-surface-elevated);
             color: var(--text-primary);
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             user-select: none;
         }}
         .btn:hover {{
-            background: rgba(56, 189, 248, 0.18);
             border-color: var(--accent-cyan);
-            color: #ffffff;
-            box-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+            color: var(--accent-cyan);
             transform: translateY(-1px);
         }}
         .btn-primary {{
             background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(99, 102, 241, 0.25));
             border-color: var(--accent-cyan);
-            color: #ffffff;
+            color: var(--text-primary);
         }}
 
-        /* --- 盤面看盤數據儀表板 (Stats Bar) --- */
+        /* --- 模組 2: 今日一句話 (Executive Takeaway) --- */
+        .takeaway-banner {{
+            background: linear-gradient(90deg, rgba(56, 189, 248, 0.12), rgba(99, 102, 241, 0.08));
+            border-left: 5px solid var(--accent-cyan);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: 18px 24px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            box-shadow: var(--shadow-subtle);
+        }}
+        .takeaway-icon {{
+            font-size: 24px;
+            color: var(--accent-amber);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }}
+        .takeaway-label {{
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--accent-cyan);
+            font-weight: 800;
+            margin-bottom: 3px;
+        }}
+        .takeaway-text {{
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.55;
+        }}
+
+        /* --- 模組 3: 市場溫度與多空風向儀表板 (Market Sentiment) --- */
+        .sentiment-section {{
+            margin-bottom: 24px;
+        }}
+        .section-tag-header {{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }}
+        .section-tag-title {{
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }}
+        .sentiment-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 14px;
+        }}
+        .sentiment-card {{
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-top: 3px solid var(--indicator-color);
+            border-radius: var(--radius-md);
+            padding: 16px 18px;
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.25s ease;
+        }}
+        .sentiment-card:hover {{
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.3);
+        }}
+        .sentiment-card-top {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }}
+        .sentiment-title {{
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }}
+        .sentiment-badge {{
+            font-size: 11.5px;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 6px;
+            border: 1px solid;
+            font-family: 'JetBrains Mono', monospace;
+        }}
+        .sentiment-desc {{
+            font-size: 12.5px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }}
+
+        /* --- 模組 4: 今日必看 3 件事 (The Big 3 特刊頭條) --- */
+        .big-three-section {{
+            margin-bottom: 30px;
+        }}
+        .big-three-grid {{
+            display: grid;
+            grid-template-columns: 1.35fr 1fr 1fr;
+            gap: 18px;
+        }}
+        .big-three-card {{
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.25s ease;
+            position: relative;
+        }}
+        .big-three-card:hover {{
+            transform: translateY(-2px);
+            border-color: var(--border-focus);
+            box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.45);
+        }}
+        .big-three-card.hero-lead {{
+            background: var(--bg-lead-hero);
+            border-color: rgba(56, 189, 248, 0.35);
+        }}
+        .hero-label {{
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: var(--accent-amber);
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: auto;
+        }}
+        .big-three-header {{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }}
+        .big-three-rank {{
+            font-size: 26px;
+            font-weight: 900;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1;
+        }}
+        .big-three-tags {{
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }}
+        .badge-cat {{
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 12px;
+            border: 1px solid;
+        }}
+        .badge-topic {{
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }}
+        .big-three-headline {{
+            font-size: 17px;
+            font-weight: 800;
+            line-height: 1.45;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+            letter-spacing: -0.2px;
+        }}
+        .big-three-card.hero-lead .big-three-headline {{
+            font-size: 19px;
+        }}
+        .why-it-matters-box {{
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }}
+        .box-label {{
+            font-size: 10.5px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: var(--accent-cyan);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }}
+        .box-content {{
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }}
+        .big-three-footer {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 14px;
+            margin-top: auto;
+            flex-wrap: wrap;
+            gap: 10px;
+        }}
+        .metric-pill {{
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }}
+        .link-btn-hero {{
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }}
+        .link-btn-hero:hover {{
+            color: #ffffff;
+            text-decoration: underline;
+        }}
+
+        /* --- 模組 5: 產業影響鏈 (Supply Chain Impact Matrix) --- */
+        .impact-section {{
+            margin-bottom: 30px;
+        }}
+        .impact-grid {{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }}
+        .impact-chain-card {{
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            display: grid;
+            grid-template-columns: 1fr auto 1.2fr auto 1.4fr;
+            align-items: center;
+            gap: 16px;
+            box-shadow: var(--shadow-subtle);
+        }}
+        .impact-node {{
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }}
+        .node-badge {{
+            font-size: 10.5px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }}
+        .trigger-node .node-badge {{ color: var(--accent-amber); }}
+        .process-node .node-badge {{ color: var(--accent-cyan); }}
+        .target-node .node-badge {{ color: var(--accent-green); }}
+        .node-title {{
+            font-size: 13px;
+            color: var(--text-primary);
+            line-height: 1.5;
+            font-weight: 600;
+        }}
+        .highlighted-stocks {{
+            color: var(--accent-green);
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }}
+        .impact-arrow {{
+            color: var(--text-dim);
+            font-size: 16px;
+            font-weight: 900;
+        }}
+
+        /* --- 快捷看盤看板 (Stats Bar) --- */
         .stats-bar {{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 14px;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
         }}
         .stat-card {{
             background: var(--bg-card);
-            backdrop-filter: blur(12px);
             border: 1px solid var(--border-subtle);
-            border-left: 3px solid var(--card-accent, var(--accent-cyan));
+            border-left: 4px solid var(--card-accent, var(--accent-cyan));
             border-radius: var(--radius-md);
-            padding: 16px 20px;
+            padding: 14px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.25s ease;
         }}
         .stat-card:hover {{
             transform: translateY(-2px);
             border-color: var(--card-accent, var(--accent-cyan));
-            background: var(--bg-card-hover);
-            box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.35);
         }}
         .stat-info .stat-name {{
             font-size: 13px;
             font-weight: 600;
             color: var(--text-muted);
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }}
         .stat-info .stat-num {{
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
             font-family: 'JetBrains Mono', monospace;
-            color: #ffffff;
+            color: var(--text-primary);
             line-height: 1.1;
         }}
         .stat-unit {{
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 500;
             color: var(--text-dim);
             margin-left: 2px;
         }}
         .stat-icon-wrapper {{
-            font-size: 22px;
-            width: 44px;
-            height: 44px;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
             border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
         }}
 
-        /* --- 快捷工具列 (搜尋與篩選) --- */
+        /* --- 工具列 (搜尋與篩選) --- */
         .toolbar {{
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 16px;
-            margin-bottom: 28px;
-            padding: 14px 20px;
+            gap: 14px;
+            margin-bottom: 26px;
+            padding: 12px 18px;
             background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
             border-radius: var(--radius-md);
             box-shadow: var(--shadow-subtle);
+            position: sticky;
+            top: 10px;
+            z-index: 99;
         }}
         .search-box {{
             flex: 1;
-            min-width: 280px;
+            min-width: 260px;
             position: relative;
         }}
         .search-input {{
             width: 100%;
-            padding: 10px 16px 10px 42px;
-            background: rgba(10, 15, 28, 0.85);
+            padding: 9px 14px 9px 38px;
+            background: var(--bg-surface-elevated);
             border: 1px solid var(--border-subtle);
             border-radius: var(--radius-sm);
             color: var(--text-primary);
-            font-size: 14px;
+            font-size: 13.5px;
             outline: none;
             transition: all 0.2s ease;
         }}
         .search-input:focus {{
             border-color: var(--accent-cyan);
-            background: rgba(13, 21, 38, 0.95);
-            box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
+            box-shadow: 0 0 14px rgba(56, 189, 248, 0.2);
         }}
         .search-icon {{
             position: absolute;
-            left: 14px;
+            left: 12px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-dim);
-            font-size: 15px;
+            font-size: 14px;
         }}
         .filter-tabs {{
             display: flex;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
             align-items: center;
         }}
         .tab-btn {{
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12.5px;
+            padding: 5px 14px;
+            border-radius: 18px;
+            font-size: 12px;
             font-weight: 600;
             border: 1px solid var(--border-subtle);
-            background: rgba(18, 27, 48, 0.5);
+            background: var(--bg-surface-elevated);
             color: var(--text-muted);
             cursor: pointer;
             transition: all 0.2s ease;
@@ -477,413 +883,123 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             background: rgba(56, 189, 248, 0.16);
             color: var(--accent-cyan);
             border-color: var(--accent-cyan);
-            box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
         }}
 
-        /* --- 彭博/高盛風格 AI 總經與戰略洞察晨會區塊 --- */
-        .executive-summary-container {{
-            background: linear-gradient(135deg, rgba(16, 25, 46, 0.92), rgba(11, 18, 34, 0.98));
-            border: 1px solid rgba(99, 102, 241, 0.25);
-            border-radius: var(--radius-lg);
-            padding: 28px;
-            margin-bottom: 34px;
-            box-shadow: var(--shadow-subtle);
-            position: relative;
-        }}
-        .summary-header-row {{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding-bottom: 16px;
-            margin-bottom: 22px;
-            flex-wrap: wrap;
-            gap: 12px;
-        }}
-        .summary-header-title-group {{
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }}
-        .brief-badge {{
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-            color: #050811;
-            font-size: 11.5px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            padding: 4px 12px;
-            border-radius: 12px;
-            text-transform: uppercase;
-        }}
-        .summary-main-title {{
-            font-size: 21px;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: -0.3px;
-        }}
-        .summary-date-tag {{
-            font-size: 12px;
-            color: var(--text-muted);
-            font-family: 'JetBrains Mono', monospace;
-        }}
-
-        /* 今日一句核心 Takeaway 卡片 */
-        .punchline-banner {{
-            background: linear-gradient(90deg, rgba(56, 189, 248, 0.12), rgba(99, 102, 241, 0.06));
-            border-left: 4px solid var(--accent-cyan);
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            padding: 16px 22px;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            box-shadow: inset 0 0 15px rgba(56, 189, 248, 0.05);
-        }}
-        .punchline-icon {{
-            font-size: 20px;
-            color: var(--accent-amber);
-            flex-shrink: 0;
-            margin-top: 1px;
-        }}
-        .punchline-content {{
-            font-size: 15px;
-            font-weight: 600;
-            color: #f1f5f9;
-            line-height: 1.6;
-        }}
-        .punchline-label {{
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-cyan);
-            font-weight: 800;
-            margin-bottom: 2px;
-        }}
-
-        /* 三欄式分析卡片 Grid */
-        .strategic-grid {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
-        }}
-        .strategic-card {{
-            background: rgba(10, 16, 30, 0.65);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-md);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            position: relative;
-        }}
-        .strategic-card-header {{
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 14px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }}
-        .strategic-card p {{
-            font-size: 13.5px;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            text-align: justify;
-        }}
-
-        /* 三大亮點清單 */
-        .key-points-list {{
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }}
-        .key-point-item {{
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-        }}
-        .key-point-num {{
-            background: rgba(56, 189, 248, 0.15);
-            color: var(--accent-cyan);
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 800;
-            font-size: 11px;
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            border-radius: 6px;
-            padding: 2px 6px;
-            margin-top: 3px;
-            flex-shrink: 0;
-        }}
-        .key-point-text {{
-            font-size: 13.5px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }}
-
-        /* --- 今日必讀 TOP 焦點新聞 (Top 10 Section) --- */
-        .top10-section {{
-            margin-bottom: 38px;
-        }}
-        .section-headline {{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 18px;
-            border-left: 4px solid var(--accent-cyan);
-            padding-left: 14px;
-        }}
-        .section-headline-title {{
-            font-size: 20px;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: -0.2px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }}
-        .section-headline-meta {{
-            font-size: 12px;
-            color: var(--text-muted);
-            font-family: 'JetBrains Mono', monospace;
-        }}
-
-        .top10-grid {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 18px;
-        }}
-        .top10-card {{
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-md);
-            padding: 18px;
-            display: flex;
-            gap: 16px;
-            transition: all 0.25s ease;
-            position: relative;
-        }}
-        .top10-card:hover {{
-            background: var(--bg-card-hover);
-            border-color: var(--border-focus);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.5);
-        }}
-        .top10-rank-col {{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            flex-shrink: 0;
-        }}
-        .top10-rank {{
-            font-size: 24px;
-            font-weight: 900;
-            font-family: 'JetBrains Mono', monospace;
-            line-height: 1;
-        }}
-        .top10-badge {{
-            font-size: 10px;
-            font-weight: 700;
-            padding: 2px 7px;
-            border-radius: 10px;
-            border: 1px solid;
-            white-space: nowrap;
-        }}
-        .top10-content {{
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }}
-        .top10-meta {{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-        }}
-        .top10-topic {{
-            color: var(--accent-cyan);
-            font-weight: 600;
-        }}
-        .top10-title {{
-            font-size: 15px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 8px;
-            line-height: 1.45;
-            letter-spacing: -0.2px;
-        }}
-        .top10-footer {{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-            padding-top: 12px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 12px;
-            color: var(--text-muted);
-        }}
-        .top10-link {{
-            color: var(--accent-cyan);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            transition: all 0.2s;
-        }}
-        .top10-link:hover {{
-            color: #ffffff;
-            text-decoration: underline;
-        }}
-
-        /* --- 摘要展開/收合核心樣式 --- */
-        .summary-wrapper {{
-            margin-bottom: 12px;
-            flex-grow: 1;
-        }}
-        .card-summary {{
-            font-size: 13.5px;
-            color: var(--text-secondary);
-            line-height: 1.65;
-            transition: all 0.3s ease;
-            word-break: break-word;
-        }}
-        /* 預設折疊狀態：3 行省略截斷 */
-        .card-summary.clamped {{
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }}
-        /* 展開按鈕樣式 */
-        .expand-btn {{
-            background: transparent;
-            border: none;
-            color: var(--accent-cyan);
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            padding: 4px 0 0 0;
-            margin-top: 4px;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            transition: color 0.2s;
-            outline: none;
-        }}
-        .expand-btn:hover {{
-            color: #ffffff;
-            text-decoration: underline;
-        }}
-
-        /* --- 各大產業分類折疊區塊 (Category Section) --- */
+        /* --- 模組 6 & 7: 各大板塊與新聞卡片庫 --- */
         .category-section {{
-            margin-bottom: 26px;
+            margin-bottom: 28px;
             background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
             border-radius: var(--radius-lg);
             overflow: hidden;
-            transition: border-color 0.25s ease;
             box-shadow: var(--shadow-subtle);
         }}
-        .category-section:hover {{
-            border-color: rgba(56, 189, 248, 0.25);
-        }}
         .section-header {{
-            padding: 18px 24px;
-            background: rgba(13, 20, 36, 0.7);
+            padding: 16px 22px;
+            background: var(--bg-surface-elevated);
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
             user-select: none;
-            transition: background 0.2s ease;
         }}
         .section-header:hover {{
-            background: rgba(22, 33, 58, 0.85);
+            filter: brightness(1.05);
         }}
         .section-header-left {{
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
         }}
         .section-icon-box {{
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
             border: 1px solid;
             flex-shrink: 0;
         }}
         .section-title {{
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 800;
-            color: #ffffff;
             letter-spacing: -0.2px;
         }}
         .section-subtitle {{
             display: block;
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: 600;
             color: var(--text-dim);
             letter-spacing: 0.8px;
-            margin-top: 1px;
         }}
         .section-count-badge {{
-            padding: 3px 12px;
-            border-radius: 20px;
-            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 14px;
+            font-size: 11.5px;
             font-weight: 700;
             border: 1px solid;
             font-family: 'JetBrains Mono', monospace;
         }}
         .toggle-arrow {{
             color: var(--text-muted);
-            font-size: 13px;
+            font-size: 12px;
             transition: transform 0.3s ease;
         }}
         .toggle-arrow.collapsed {{
             transform: rotate(-90deg);
         }}
+
+        /* 板塊一句話結論 (Sector Bottom Line) */
+        .section-bottom-line-bar {{
+            background: rgba(0, 0, 0, 0.15);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 10px 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12.5px;
+        }}
+        .bottom-line-tag {{
+            font-weight: 800;
+            font-size: 11px;
+            flex-shrink: 0;
+            letter-spacing: 0.5px;
+        }}
+        .bottom-line-text {{
+            color: var(--text-secondary);
+            font-weight: 500;
+        }}
+
         .section-body {{
-            padding: 22px;
+            padding: 20px;
             display: block;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }}
         .section-body.collapsed {{
             display: none;
         }}
 
-        /* --- 新聞卡片 Grid --- */
+        /* 新聞卡片 Grid */
         .news-grid {{
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-            gap: 18px;
+            gap: 16px;
         }}
         .news-card {{
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
             border-radius: var(--radius-md);
-            padding: 18px;
+            padding: 16px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.25s ease;
         }}
         .news-card:hover {{
-            background: var(--bg-card-hover);
             border-color: var(--border-focus);
             transform: translateY(-2px);
-            box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.45);
+            box-shadow: 0 10px 24px -5px rgba(0, 0, 0, 0.35);
         }}
         .card-header {{
             display: flex;
@@ -892,33 +1008,71 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             margin-bottom: 10px;
         }}
         .topic-tag {{
-            font-size: 11.5px;
+            font-size: 11px;
             font-weight: 700;
-            padding: 2px 9px;
+            padding: 2px 8px;
             border-radius: var(--radius-sm);
             border: 1px solid;
         }}
         .pub-time {{
-            font-size: 11.5px;
+            font-size: 11px;
             color: var(--text-dim);
             font-family: 'JetBrains Mono', monospace;
         }}
         .card-title {{
-            font-size: 15.5px;
+            font-size: 15px;
             font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             line-height: 1.45;
             letter-spacing: -0.2px;
         }}
+
+        /* 摘要展開/收合核心樣式 */
+        .summary-wrapper {{
+            margin-bottom: 12px;
+            flex-grow: 1;
+        }}
+        .card-summary {{
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            transition: all 0.3s ease;
+            word-break: break-word;
+        }}
+        .card-summary.clamped {{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }}
+        .expand-btn {{
+            background: transparent;
+            border: none;
+            color: var(--accent-cyan);
+            font-size: 11.5px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 4px 0 0 0;
+            margin-top: 2px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.2s;
+            outline: none;
+        }}
+        .expand-btn:hover {{
+            text-decoration: underline;
+        }}
+
         .card-footer {{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 12px;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 10px;
             margin-top: 4px;
-            font-size: 12px;
+            font-size: 11.5px;
         }}
         .source-tag {{
             color: var(--text-muted);
@@ -936,22 +1090,149 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             gap: 3px;
             transition: all 0.2s ease;
             background: rgba(56, 189, 248, 0.08);
-            padding: 4px 10px;
+            padding: 3px 9px;
             border-radius: var(--radius-sm);
             border: 1px solid rgba(56, 189, 248, 0.2);
         }}
         .link-btn:hover {{
-            color: #ffffff;
             background: var(--accent-cyan);
-            color: #080d1a;
-            box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+            color: #070b14;
         }}
-        .arrow-icon {{
-            font-weight: 700;
-            transition: transform 0.2s;
+
+        /* --- 模組 8 & 9: 雜訊速報 & 明日觀察清單 --- */
+        .bottom-intel-grid {{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
         }}
-        .link-btn:hover .arrow-icon {{
-            transform: translate(2px, -2px);
+        .bottom-intel-card {{
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-subtle);
+        }}
+        .bottom-intel-header {{
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }}
+        .watchlist-list {{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }}
+        .watchlist-item {{
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }}
+        .watchlist-bullet {{
+            font-size: 10.5px;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-cyan);
+            padding: 1px 6px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }}
+        .noise-list {{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }}
+        .noise-item {{
+            font-size: 12.5px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }}
+        .noise-cat {{
+            color: var(--accent-purple);
+            font-weight: 600;
+        }}
+        .noise-title {{
+            color: var(--text-secondary);
+            text-decoration: none;
+        }}
+        .noise-title:hover {{
+            color: var(--accent-cyan);
+            text-decoration: underline;
+        }}
+        .noise-source {{
+            color: var(--text-dim);
+            font-size: 11.5px;
+        }}
+
+        /* --- 模組 10: 資料來源與金融合規免責聲明 --- */
+        .footer-compliance {{
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }}
+        .footer-sources {{
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }}
+        .footer-disclaimer {{
+            font-size: 11px;
+            color: var(--text-dim);
+        }}
+
+        /* --- 手機專屬底部浮動導航列 (Mobile Bottom Nav Bar) --- */
+        .mobile-bottom-bar {{
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(14, 21, 38, 0.95);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid var(--border-subtle);
+            padding: 8px 16px;
+            z-index: 999;
+            justify-content: space-around;
+            align-items: center;
+        }}
+        .bottom-nav-item {{
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            cursor: pointer;
+            padding: 4px 8px;
+        }}
+        .bottom-nav-item:hover, .bottom-nav-item.active {{
+            color: var(--accent-cyan);
+        }}
+        .bottom-nav-icon {{
+            font-size: 16px;
         }}
 
         /* --- 列印與 PDF 匯出最佳化樣式 --- */
@@ -961,18 +1242,17 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
                 color: #0f172a !important;
                 background-image: none !important;
             }}
-            .terminal-header, .executive-summary-container, .top10-card, .category-section, .news-card {{
+            .terminal-header, .sentiment-card, .big-three-card, .impact-chain-card, .category-section, .news-card, .bottom-intel-card, .footer-compliance {{
                 background: #ffffff !important;
                 border: 1px solid #cbd5e1 !important;
                 box-shadow: none !important;
                 color: #0f172a !important;
                 break-inside: avoid;
             }}
-            .header-title, .summary-main-title, .card-title, .top10-title {{
-                -webkit-text-fill-color: #0f172a !important;
+            .header-title, .big-three-headline, .card-title, .node-title, .takeaway-text {{
                 color: #0f172a !important;
             }}
-            .toolbar, .header-actions, .toggle-arrow, .expand-btn {{
+            .toolbar, .header-actions, .toggle-arrow, .expand-btn, .mobile-bottom-bar {{
                 display: none !important;
             }}
             .card-summary.clamped {{
@@ -986,12 +1266,29 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             }}
         }}
 
-        /* --- RWD 行動裝置優化 --- */
+        /* --- RWD 斷點優化 --- */
+        @media (max-width: 1024px) {{
+            .big-three-grid {{
+                grid-template-columns: 1fr;
+            }}
+            .impact-chain-card {{
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }}
+            .impact-arrow {{
+                text-align: center;
+                transform: rotate(90deg);
+            }}
+            .bottom-intel-grid {{
+                grid-template-columns: 1fr;
+            }}
+        }}
+
         @media (max-width: 768px) {{
             .terminal-header {{
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 20px;
+                padding: 18px;
             }}
             .header-actions {{
                 width: 100%;
@@ -1003,115 +1300,180 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             }}
             .filter-tabs {{
                 overflow-x: auto;
-                padding-bottom: 6px;
+                padding-bottom: 4px;
             }}
-            .strategic-grid {{
-                grid-template-columns: 1fr;
+            .mobile-bottom-bar {{
+                display: flex;
             }}
-            .top10-grid {{
-                grid-template-columns: 1fr;
+            .container {{
+                padding-bottom: 60px;
             }}
         }}
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 頂部金融終端 Header -->
-        <header class="terminal-header">
+        <!-- 模組 1: 頂部金融終端 Header -->
+        <header class="terminal-header" id="topHeader">
             <div class="header-title-area">
                 <div class="brand-pill">
                     <span class="live-dot"></span>
-                    SNAKE INTELLIGENCE · 財經與科技情報監測
+                    SNAKE INTELLIGENCE · 決策級情報監測
                 </div>
                 <h1 class="header-title">Snake Daily Report</h1>
                 <p class="header-subtitle">GLOBAL TECH & CAPITAL MARKETS TERMINAL · 全球科技與資本市場日報</p>
                 <div class="header-meta-bar">
                     <span class="header-meta-item">📅 {display_date}</span>
                     <span class="header-meta-item">🕒 監測產出時間：{now_time_str}</span>
-                    <span class="header-meta-item">📊 深度收錄：共 {total_count} 則重點情報</span>
+                    <span class="header-meta-item">📊 深度收錄：共 {total_count} 則關鍵情資</span>
                 </div>
             </div>
             <div class="header-actions">
-                <button class="btn btn-primary" onclick="toggleAllSummaries()">📖 展開 / 收合全部摘要</button>
-                <button class="btn" onclick="toggleAllSections()">📂 展開 / 折疊全部分類</button>
-                <button class="btn" onclick="window.print()">🖨️ 匯出 PDF / 列印</button>
+                <button class="btn" onclick="toggleTheme()" id="themeBtn" title="切換深色/淺色模式">🌓 切換外觀</button>
+                <button class="btn btn-primary" onclick="toggleAllSummaries()">📖 展開/收合全部摘要</button>
+                <button class="btn" onclick="toggleAllSections()">📂 展開/折疊板塊</button>
+                <button class="btn" onclick="window.print()">🖨️ 列印/PDF</button>
             </div>
         </header>
 
-        <!-- 數據統計看盤看板 -->
+        <!-- 模組 2: 今日一句話 (Executive Takeaway) -->
+        <div class="takeaway-banner">
+            <span class="takeaway-icon">💡</span>
+            <div>
+                <div class="takeaway-label">EXECUTIVE TAKEAWAY · 今日一句話核心定調</div>
+                <div class="takeaway-text">{punchline}</div>
+            </div>
+        </div>
+
+        <!-- 模組 3: 市場溫度與多空風向儀表板 (Market Sentiment) -->
+        <section class="sentiment-section" id="sentimentSection">
+            <div class="section-tag-header">
+                <span class="section-tag-title">🌡️ 市場溫度與多空風向儀表板 (MARKET SENTIMENT & RISK PULSE)</span>
+                <span style="font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">REAL-TIME MULTI-DIMENSIONAL RADAR</span>
+            </div>
+            <div class="sentiment-grid">
+                {sentiment_html}
+            </div>
+        </section>
+
+        <!-- 模組 4: 今日必看 3 件事 (The Big 3 特刊頭條) -->
+        <section class="big-three-section" id="bigThreeSection">
+            <div class="section-tag-header">
+                <span class="section-tag-title" style="color: var(--accent-cyan);">🔥 今日必看 3 件事 (THE BIG 3 · HEAVYWEIGHT CATALYSTS)</span>
+                <span style="font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">30-SECOND EXECUTIVE BRIEF</span>
+            </div>
+            <div class="big-three-grid">
+                {big_three_html}
+            </div>
+        </section>
+
+        <!-- 模組 5: 產業影響鏈矩陣 (Supply Chain Impact Matrix) -->
+        <section class="impact-section" id="impactSection">
+            <div class="section-tag-header">
+                <span class="section-tag-title" style="color: var(--accent-green);">🔗 產業影響鏈矩陣 (SUPPLY CHAIN IMPACT MATRIX)</span>
+                <span style="font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">TRIGGER ➔ COMPONENT ➔ STOCKS</span>
+            </div>
+            <div class="impact-grid">
+                {impact_html}
+            </div>
+        </section>
+
+        <!-- 看盤統計看盤卡片 -->
         <div class="stats-bar">
             {stats_bar_html}
         </div>
 
-        <!-- 工具列：關鍵字搜尋與分類快篩 -->
-        <div class="toolbar">
+        <!-- 工具列：即時關鍵字搜尋與分類快篩 -->
+        <div class="toolbar" id="filterToolbar">
             <div class="search-box">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" class="search-input" placeholder="即時檢索關鍵字、公司、主題或股票代號（例如：台積電、NVIDIA、聯準會、AI Agent）..." oninput="filterNews()">
+                <input type="text" id="searchInput" class="search-input" placeholder="輸入關鍵字、主題、公司或股票代號（如：台積電、NVIDIA、聯準會、AI Agent）即時檢索..." oninput="filterNews()">
             </div>
             <div class="filter-tabs">
                 {filter_tabs_html}
             </div>
         </div>
 
-        <!-- 彭博/高盛風格 AI 總經與產業深度綜整 -->
-        <div class="executive-summary-container">
-            <div class="summary-header-row">
-                <div class="summary-header-title-group">
-                    <span class="brief-badge">EXECUTIVE BRIEF</span>
-                    <h2 class="summary-main-title">今日全方位情報與資本市場脈動</h2>
-                </div>
-                <span class="summary-date-tag">INTELLIGENCE DATE: {display_date}</span>
-            </div>
-            
-            <div class="punchline-banner">
-                <span class="punchline-icon">💡</span>
-                <div>
-                    <div class="punchline-label">EXECUTIVE TAKEAWAY · 今日一句核心綜述</div>
-                    <div class="punchline-content">{punchline}</div>
-                </div>
-            </div>
-
-            <div class="strategic-grid">
-                <div class="strategic-card">
-                    <div class="strategic-card-title" style="color: var(--accent-cyan);">🔥 今日三大重磅焦點</div>
-                    <ul class="key-points-list">
-                        {top_three_html}
-                    </ul>
-                </div>
-                <div class="strategic-card">
-                    <div class="strategic-card-title" style="color: var(--accent-green);">📈 資本市場與資金脈動</div>
-                    <p>{inv_obs}</p>
-                </div>
-                <div class="strategic-card">
-                    <div class="strategic-card-title" style="color: var(--accent-purple);">💻 產業戰略與科技前沿</div>
-                    <p>{ind_obs} {ai_obs}</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 今日必讀 TOP 10 焦點 -->
-        <div class="top10-section" id="top10Section">
-            <div class="section-headline">
-                <h3 class="section-headline-title">
-                    🏆 今日必讀 TOP 重點
-                </h3>
-                <span class="section-headline-meta">HEAVYWEIGHT HEADLINES</span>
-            </div>
-            <div class="top10-grid">
-                {top10_html}
-            </div>
-        </div>
-
-        <!-- 各板塊深度情報清單 -->
+        <!-- 模組 6 & 7: 各大板塊新聞深度卡片庫 -->
         <div id="allSections">
             {sections_html}
         </div>
 
+        <!-- 模組 8 & 9: 雜訊速讀 & 明日關鍵觀察指標 -->
+        <div class="bottom-intel-grid">
+            <div class="bottom-intel-card">
+                <div class="bottom-intel-header" style="color: var(--accent-purple);">
+                    <span>📡 今日市場雜訊與速報 (MARKET NOISE & QUICK HITS)</span>
+                </div>
+                <div class="noise-list">
+                    {noise_html if noise_html else '<p style="font-size:12.5px; color:var(--text-dim);">今日無顯著次要雜訊，各篇情資均具備高度產業價值。</p>'}
+                </div>
+            </div>
+            
+            <div class="bottom-intel-card">
+                <div class="bottom-intel-header" style="color: var(--accent-cyan);">
+                    <span>🎯 明日關鍵觀察指標 (TOMORROW'S CATALYST WATCHLIST)</span>
+                </div>
+                <ul class="watchlist-list">
+                    {watchlist_html}
+                </ul>
+            </div>
+        </div>
+
+        <!-- 模組 10: 資料來源與金融合規免責聲明 -->
+        <footer class="footer-compliance">
+            <div class="footer-sources">
+                🌐 情報來源：彭博 (Bloomberg)、路透 (Reuters)、CNBC、工商時報、經濟日報、中央社、各大科技官方新聞稿與全球監管機構公告
+            </div>
+            <div class="footer-disclaimer">
+                免責聲明 (Disclaimer)：本網站與日報所提供之所有資訊僅供科技產業動態研究與個人學術參考，不構成任何形式之投資邀約、推薦、買賣建議或金融顧問意見。投資涉及風險，證券價格可升可跌，請獨立評估或諮詢專業財務顧問。
+            </div>
+        </footer>
     </div>
+
+    <!-- 手機端專屬底部浮動導航列 -->
+    <nav class="mobile-bottom-bar">
+        <button class="bottom-nav-item" onclick="scrollToElement('bigThreeSection')">
+            <span class="bottom-nav-icon">🔥</span>
+            <span>必看Top3</span>
+        </button>
+        <button class="bottom-nav-item" onclick="scrollToElement('impactSection')">
+            <span class="bottom-nav-icon">🔗</span>
+            <span>影響鏈</span>
+        </button>
+        <button class="bottom-nav-item" onclick="scrollToElement('filterToolbar')">
+            <span class="bottom-nav-icon">📂</span>
+            <span>分類篩選</span>
+        </button>
+        <button class="bottom-nav-item" onclick="scrollToElement('topHeader')">
+            <span class="bottom-nav-icon">⬆️</span>
+            <span>回頂端</span>
+        </button>
+    </nav>
 
     <!-- 前端互動與展開功能腳本 -->
     <script>
+        // 深色 / 淺色主題切換與偏好記憶
+        function initTheme() {{
+            const savedTheme = localStorage.getItem('snake_report_theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButtonText(savedTheme);
+        }}
+        function toggleTheme() {{
+            const current = document.documentElement.getAttribute('data-theme') || 'dark';
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('snake_report_theme', next);
+            updateThemeButtonText(next);
+        }}
+        function updateThemeButtonText(theme) {{
+            const btn = document.getElementById('themeBtn');
+            if (btn) {{
+                btn.innerText = theme === 'dark' ? '☀️ 淺色模式' : '🌙 深色模式';
+            }}
+        }}
+        initTheme();
+
         // 單卡片摘要展開 / 收合
         function toggleCardExpand(btn) {{
             const wrapper = btn.closest('.summary-wrapper');
@@ -1189,26 +1551,26 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             btnElem.classList.add('active');
             
             const sections = document.querySelectorAll('.category-section');
-            const top10 = document.getElementById('top10Section');
             
-            if (catName === 'all') {{
-                sections.forEach(sec => sec.style.display = 'block');
-                if (top10) top10.style.display = 'block';
-            }} else {{
-                sections.forEach(sec => {{
-                    if (sec.getAttribute('data-category') === catName) {{
-                        sec.style.display = 'block';
-                    }} else {{
-                        sec.style.display = 'none';
-                    }}
-                }});
-                if (top10) top10.style.display = 'none';
-            }}
+            sections.forEach(sec => {{
+                if (catName === 'all' || sec.getAttribute('data-category') === catName) {{
+                    sec.style.display = 'block';
+                }} else {{
+                    sec.style.display = 'none';
+                }}
+            }});
             
             filterNews();
         }}
         
-        // 點擊看盤卡片平滑滾動至對應分類
+        // 平滑滾動至指定錨點
+        function scrollToElement(elemId) {{
+            const el = document.getElementById(elemId);
+            if (el) {{
+                el.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+            }}
+        }}
+
         function scrollToSection(code) {{
             const section = document.getElementById('section-' + code);
             if (section) {{
@@ -1222,7 +1584,7 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             }}
         }}
 
-        // 即時關鍵字搜尋過濾
+        // 即時關鍵字檢索
         function filterNews() {{
             const input = document.getElementById('searchInput').value.toLowerCase().trim();
             const cards = document.querySelectorAll('.news-card');

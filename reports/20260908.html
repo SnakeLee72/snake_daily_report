@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Daily Report · 全球科技與財經焦點 - 2026年09月08日</title>
+    <title>Snake Daily Report · 全球科技與財經決策日報 - 2026年09月08日</title>
+    <meta name="description" content="每日全球科技、AI、半導體、Notebook/ODM、台股美股與宏觀市場決策情報">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-body: #080d1a;
-            --bg-surface: #0e1628;
+            /* 預設深色主題（彭博深曜藍黑調） */
+            --bg-body: #070b14;
+            --bg-surface: #0e1526;
+            --bg-surface-elevated: #131c33;
             --bg-card: rgba(16, 24, 44, 0.85);
             --bg-card-hover: rgba(24, 36, 66, 0.95);
-            --bg-glass: rgba(13, 21, 38, 0.7);
+            --bg-lead-hero: linear-gradient(135deg, rgba(16, 32, 60, 0.9), rgba(12, 20, 38, 0.95));
             
             --border-subtle: rgba(148, 163, 184, 0.12);
             --border-focus: rgba(56, 189, 248, 0.45);
-            --border-card: rgba(56, 189, 248, 0.15);
+            --border-card: rgba(56, 189, 248, 0.16);
             
             --text-primary: #f8fafc;
             --text-secondary: #cbd5e1;
@@ -40,6 +43,36 @@
             --radius-sm: 6px;
         }
 
+        /* 淺色主題支援（金融時報風格清爽紙質感） */
+        [data-theme="light"] {
+            --bg-body: #f8fafc;
+            --bg-surface: #ffffff;
+            --bg-surface-elevated: #f1f5f9;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f8fafc;
+            --bg-lead-hero: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            
+            --border-subtle: rgba(148, 163, 184, 0.3);
+            --border-focus: rgba(2, 132, 199, 0.6);
+            --border-card: rgba(2, 132, 199, 0.2);
+            
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --text-dim: #94a3b8;
+            
+            --accent-cyan: #0284c7;
+            --accent-blue: #2563eb;
+            --accent-indigo: #4f46e5;
+            --accent-purple: #9333ea;
+            --accent-green: #059669;
+            --accent-amber: #d97706;
+            --accent-rose: #e11d48;
+            
+            --shadow-subtle: 0 4px 16px -2px rgba(0, 0, 0, 0.08);
+            --shadow-glow: 0 0 20px -5px rgba(2, 132, 199, 0.2);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -51,34 +84,34 @@
             background-color: var(--bg-body);
             color: var(--text-primary);
             line-height: 1.6;
-            padding-bottom: 80px;
+            padding-bottom: 90px;
             background-image: 
-                radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.10) 0%, transparent 40%),
-                radial-gradient(circle at 90% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 45%),
-                linear-gradient(to bottom, #080d1a, #0b1122 60%, #080d1a);
+                radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 20%, rgba(99, 102, 241, 0.06) 0%, transparent 45%);
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container {
             max-width: 1320px;
             margin: 0 auto;
-            padding: 30px 24px;
+            padding: 24px 20px;
         }
 
         /* --- 頂部金融終端 Header --- */
         .terminal-header {
-            background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(15, 23, 42, 0.9));
+            background: var(--bg-surface);
             backdrop-filter: blur(16px);
             border: 1px solid var(--border-card);
             border-radius: var(--radius-lg);
-            padding: 26px 32px;
-            margin-bottom: 24px;
+            padding: 24px 30px;
+            margin-bottom: 22px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 18px;
             box-shadow: var(--shadow-subtle);
             position: relative;
             overflow: hidden;
@@ -97,11 +130,11 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(56, 189, 248, 0.1);
+            background: rgba(56, 189, 248, 0.12);
             color: var(--accent-cyan);
             border: 1px solid rgba(56, 189, 248, 0.3);
             font-size: 11px;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 1px;
             text-transform: uppercase;
             padding: 4px 12px;
@@ -118,29 +151,26 @@
         }
         @keyframes pulse-glow {
             0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(0.85); }
+            50% { opacity: 0.3; transform: scale(0.85); }
         }
 
         .header-title {
-            font-size: 30px;
+            font-size: 28px;
             font-weight: 900;
             letter-spacing: -0.5px;
-            background: linear-gradient(to right, #ffffff, #e2e8f0 60%, var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
         .header-subtitle {
             color: var(--text-muted);
             font-size: 13px;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
         }
         .header-meta-bar {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 16px;
             flex-wrap: wrap;
-            font-size: 13px;
+            font-size: 12.5px;
             color: var(--text-secondary);
             margin-top: 10px;
             font-family: 'JetBrains Mono', monospace;
@@ -154,149 +184,427 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }
         .btn {
-            padding: 9px 18px;
+            padding: 8px 16px;
             border-radius: var(--radius-sm);
             border: 1px solid var(--border-card);
-            background: rgba(22, 32, 54, 0.7);
+            background: var(--bg-surface-elevated);
             color: var(--text-primary);
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             user-select: none;
         }
         .btn:hover {
-            background: rgba(56, 189, 248, 0.18);
             border-color: var(--accent-cyan);
-            color: #ffffff;
-            box-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+            color: var(--accent-cyan);
             transform: translateY(-1px);
         }
         .btn-primary {
             background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(99, 102, 241, 0.25));
             border-color: var(--accent-cyan);
-            color: #ffffff;
+            color: var(--text-primary);
         }
 
-        /* --- 盤面看盤數據儀表板 (Stats Bar) --- */
+        /* --- 模組 2: 今日一句話 (Executive Takeaway) --- */
+        .takeaway-banner {
+            background: linear-gradient(90deg, rgba(56, 189, 248, 0.12), rgba(99, 102, 241, 0.08));
+            border-left: 5px solid var(--accent-cyan);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: 18px 24px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            box-shadow: var(--shadow-subtle);
+        }
+        .takeaway-icon {
+            font-size: 24px;
+            color: var(--accent-amber);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .takeaway-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--accent-cyan);
+            font-weight: 800;
+            margin-bottom: 3px;
+        }
+        .takeaway-text {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.55;
+        }
+
+        /* --- 模組 3: 市場溫度與多空風向儀表板 (Market Sentiment) --- */
+        .sentiment-section {
+            margin-bottom: 24px;
+        }
+        .section-tag-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .section-tag-title {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .sentiment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 14px;
+        }
+        .sentiment-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-top: 3px solid var(--indicator-color);
+            border-radius: var(--radius-md);
+            padding: 16px 18px;
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.25s ease;
+        }
+        .sentiment-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.3);
+        }
+        .sentiment-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .sentiment-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .sentiment-badge {
+            font-size: 11.5px;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 6px;
+            border: 1px solid;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .sentiment-desc {
+            font-size: 12.5px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* --- 模組 4: 今日必看 3 件事 (The Big 3 特刊頭條) --- */
+        .big-three-section {
+            margin-bottom: 30px;
+        }
+        .big-three-grid {
+            display: grid;
+            grid-template-columns: 1.35fr 1fr 1fr;
+            gap: 18px;
+        }
+        .big-three-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.25s ease;
+            position: relative;
+        }
+        .big-three-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--border-focus);
+            box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.45);
+        }
+        .big-three-card.hero-lead {
+            background: var(--bg-lead-hero);
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+        .hero-label {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: var(--accent-amber);
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: auto;
+        }
+        .big-three-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .big-three-rank {
+            font-size: 26px;
+            font-weight: 900;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1;
+        }
+        .big-three-tags {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .badge-cat {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 12px;
+            border: 1px solid;
+        }
+        .badge-topic {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+        .big-three-headline {
+            font-size: 17px;
+            font-weight: 800;
+            line-height: 1.45;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+            letter-spacing: -0.2px;
+        }
+        .big-three-card.hero-lead .big-three-headline {
+            font-size: 19px;
+        }
+        .why-it-matters-box {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+        .box-label {
+            font-size: 10.5px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: var(--accent-cyan);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+        .box-content {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .big-three-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 14px;
+            margin-top: auto;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .metric-pill {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .link-btn-hero {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+        .link-btn-hero:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* --- 模組 5: 產業影響鏈 (Supply Chain Impact Matrix) --- */
+        .impact-section {
+            margin-bottom: 30px;
+        }
+        .impact-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .impact-chain-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            display: grid;
+            grid-template-columns: 1fr auto 1.2fr auto 1.4fr;
+            align-items: center;
+            gap: 16px;
+            box-shadow: var(--shadow-subtle);
+        }
+        .impact-node {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .node-badge {
+            font-size: 10.5px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+        .trigger-node .node-badge { color: var(--accent-amber); }
+        .process-node .node-badge { color: var(--accent-cyan); }
+        .target-node .node-badge { color: var(--accent-green); }
+        .node-title {
+            font-size: 13px;
+            color: var(--text-primary);
+            line-height: 1.5;
+            font-weight: 600;
+        }
+        .highlighted-stocks {
+            color: var(--accent-green);
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .impact-arrow {
+            color: var(--text-dim);
+            font-size: 16px;
+            font-weight: 900;
+        }
+
+        /* --- 快捷看盤看板 (Stats Bar) --- */
         .stats-bar {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 14px;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
         }
         .stat-card {
             background: var(--bg-card);
-            backdrop-filter: blur(12px);
             border: 1px solid var(--border-subtle);
-            border-left: 3px solid var(--card-accent, var(--accent-cyan));
+            border-left: 4px solid var(--card-accent, var(--accent-cyan));
             border-radius: var(--radius-md);
-            padding: 16px 20px;
+            padding: 14px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.25s ease;
         }
         .stat-card:hover {
             transform: translateY(-2px);
             border-color: var(--card-accent, var(--accent-cyan));
-            background: var(--bg-card-hover);
-            box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.35);
         }
         .stat-info .stat-name {
             font-size: 13px;
             font-weight: 600;
             color: var(--text-muted);
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
         .stat-info .stat-num {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
             font-family: 'JetBrains Mono', monospace;
-            color: #ffffff;
+            color: var(--text-primary);
             line-height: 1.1;
         }
         .stat-unit {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 500;
             color: var(--text-dim);
             margin-left: 2px;
         }
         .stat-icon-wrapper {
-            font-size: 22px;
-            width: 44px;
-            height: 44px;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
             border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* --- 快捷工具列 (搜尋與篩選) --- */
+        /* --- 工具列 (搜尋與篩選) --- */
         .toolbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 16px;
-            margin-bottom: 28px;
-            padding: 14px 20px;
+            gap: 14px;
+            margin-bottom: 26px;
+            padding: 12px 18px;
             background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
             border-radius: var(--radius-md);
             box-shadow: var(--shadow-subtle);
+            position: sticky;
+            top: 10px;
+            z-index: 99;
         }
         .search-box {
             flex: 1;
-            min-width: 280px;
+            min-width: 260px;
             position: relative;
         }
         .search-input {
             width: 100%;
-            padding: 10px 16px 10px 42px;
-            background: rgba(10, 15, 28, 0.85);
+            padding: 9px 14px 9px 38px;
+            background: var(--bg-surface-elevated);
             border: 1px solid var(--border-subtle);
             border-radius: var(--radius-sm);
             color: var(--text-primary);
-            font-size: 14px;
+            font-size: 13.5px;
             outline: none;
             transition: all 0.2s ease;
         }
         .search-input:focus {
             border-color: var(--accent-cyan);
-            background: rgba(13, 21, 38, 0.95);
-            box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
+            box-shadow: 0 0 14px rgba(56, 189, 248, 0.2);
         }
         .search-icon {
             position: absolute;
-            left: 14px;
+            left: 12px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-dim);
-            font-size: 15px;
+            font-size: 14px;
         }
         .filter-tabs {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
             align-items: center;
         }
         .tab-btn {
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12.5px;
+            padding: 5px 14px;
+            border-radius: 18px;
+            font-size: 12px;
             font-weight: 600;
             border: 1px solid var(--border-subtle);
-            background: rgba(18, 27, 48, 0.5);
+            background: var(--bg-surface-elevated);
             color: var(--text-muted);
             cursor: pointer;
             transition: all 0.2s ease;
@@ -306,413 +614,123 @@
             background: rgba(56, 189, 248, 0.16);
             color: var(--accent-cyan);
             border-color: var(--accent-cyan);
-            box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
         }
 
-        /* --- 彭博/高盛風格 AI 總經與戰略洞察晨會區塊 --- */
-        .executive-summary-container {
-            background: linear-gradient(135deg, rgba(16, 25, 46, 0.92), rgba(11, 18, 34, 0.98));
-            border: 1px solid rgba(99, 102, 241, 0.25);
-            border-radius: var(--radius-lg);
-            padding: 28px;
-            margin-bottom: 34px;
-            box-shadow: var(--shadow-subtle);
-            position: relative;
-        }
-        .summary-header-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding-bottom: 16px;
-            margin-bottom: 22px;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        .summary-header-title-group {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .brief-badge {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-            color: #050811;
-            font-size: 11.5px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            padding: 4px 12px;
-            border-radius: 12px;
-            text-transform: uppercase;
-        }
-        .summary-main-title {
-            font-size: 21px;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: -0.3px;
-        }
-        .summary-date-tag {
-            font-size: 12px;
-            color: var(--text-muted);
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        /* 今日一句核心 Takeaway 卡片 */
-        .punchline-banner {
-            background: linear-gradient(90deg, rgba(56, 189, 248, 0.12), rgba(99, 102, 241, 0.06));
-            border-left: 4px solid var(--accent-cyan);
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            padding: 16px 22px;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            box-shadow: inset 0 0 15px rgba(56, 189, 248, 0.05);
-        }
-        .punchline-icon {
-            font-size: 20px;
-            color: var(--accent-amber);
-            flex-shrink: 0;
-            margin-top: 1px;
-        }
-        .punchline-content {
-            font-size: 15px;
-            font-weight: 600;
-            color: #f1f5f9;
-            line-height: 1.6;
-        }
-        .punchline-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-cyan);
-            font-weight: 800;
-            margin-bottom: 2px;
-        }
-
-        /* 三欄式分析卡片 Grid */
-        .strategic-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
-        }
-        .strategic-card {
-            background: rgba(10, 16, 30, 0.65);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-md);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            position: relative;
-        }
-        .strategic-card-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 14px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
-        .strategic-card p {
-            font-size: 13.5px;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            text-align: justify;
-        }
-
-        /* 三大亮點清單 */
-        .key-points-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .key-point-item {
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-        }
-        .key-point-num {
-            background: rgba(56, 189, 248, 0.15);
-            color: var(--accent-cyan);
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 800;
-            font-size: 11px;
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            border-radius: 6px;
-            padding: 2px 6px;
-            margin-top: 3px;
-            flex-shrink: 0;
-        }
-        .key-point-text {
-            font-size: 13.5px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* --- 今日必讀 TOP 焦點新聞 (Top 10 Section) --- */
-        .top10-section {
-            margin-bottom: 38px;
-        }
-        .section-headline {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 18px;
-            border-left: 4px solid var(--accent-cyan);
-            padding-left: 14px;
-        }
-        .section-headline-title {
-            font-size: 20px;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: -0.2px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-headline-meta {
-            font-size: 12px;
-            color: var(--text-muted);
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .top10-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 18px;
-        }
-        .top10-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-md);
-            padding: 18px;
-            display: flex;
-            gap: 16px;
-            transition: all 0.25s ease;
-            position: relative;
-        }
-        .top10-card:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--border-focus);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.5);
-        }
-        .top10-rank-col {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            flex-shrink: 0;
-        }
-        .top10-rank {
-            font-size: 24px;
-            font-weight: 900;
-            font-family: 'JetBrains Mono', monospace;
-            line-height: 1;
-        }
-        .top10-badge {
-            font-size: 10px;
-            font-weight: 700;
-            padding: 2px 7px;
-            border-radius: 10px;
-            border: 1px solid;
-            white-space: nowrap;
-        }
-        .top10-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .top10-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-        }
-        .top10-topic {
-            color: var(--accent-cyan);
-            font-weight: 600;
-        }
-        .top10-title {
-            font-size: 15px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 8px;
-            line-height: 1.45;
-            letter-spacing: -0.2px;
-        }
-        .top10-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-            padding-top: 12px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-        .top10-link {
-            color: var(--accent-cyan);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            transition: all 0.2s;
-        }
-        .top10-link:hover {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-
-        /* --- 摘要展開/收合核心樣式 --- */
-        .summary-wrapper {
-            margin-bottom: 12px;
-            flex-grow: 1;
-        }
-        .card-summary {
-            font-size: 13.5px;
-            color: var(--text-secondary);
-            line-height: 1.65;
-            transition: all 0.3s ease;
-            word-break: break-word;
-        }
-        /* 預設折疊狀態：3 行省略截斷 */
-        .card-summary.clamped {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        /* 展開按鈕樣式 */
-        .expand-btn {
-            background: transparent;
-            border: none;
-            color: var(--accent-cyan);
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            padding: 4px 0 0 0;
-            margin-top: 4px;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            transition: color 0.2s;
-            outline: none;
-        }
-        .expand-btn:hover {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-
-        /* --- 各大產業分類折疊區塊 (Category Section) --- */
+        /* --- 模組 6 & 7: 各大板塊與新聞卡片庫 --- */
         .category-section {
-            margin-bottom: 26px;
+            margin-bottom: 28px;
             background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
             border-radius: var(--radius-lg);
             overflow: hidden;
-            transition: border-color 0.25s ease;
             box-shadow: var(--shadow-subtle);
         }
-        .category-section:hover {
-            border-color: rgba(56, 189, 248, 0.25);
-        }
         .section-header {
-            padding: 18px 24px;
-            background: rgba(13, 20, 36, 0.7);
+            padding: 16px 22px;
+            background: var(--bg-surface-elevated);
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
             user-select: none;
-            transition: background 0.2s ease;
         }
         .section-header:hover {
-            background: rgba(22, 33, 58, 0.85);
+            filter: brightness(1.05);
         }
         .section-header-left {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
         }
         .section-icon-box {
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
             border: 1px solid;
             flex-shrink: 0;
         }
         .section-title {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 800;
-            color: #ffffff;
             letter-spacing: -0.2px;
         }
         .section-subtitle {
             display: block;
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: 600;
             color: var(--text-dim);
             letter-spacing: 0.8px;
-            margin-top: 1px;
         }
         .section-count-badge {
-            padding: 3px 12px;
-            border-radius: 20px;
-            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 14px;
+            font-size: 11.5px;
             font-weight: 700;
             border: 1px solid;
             font-family: 'JetBrains Mono', monospace;
         }
         .toggle-arrow {
             color: var(--text-muted);
-            font-size: 13px;
+            font-size: 12px;
             transition: transform 0.3s ease;
         }
         .toggle-arrow.collapsed {
             transform: rotate(-90deg);
         }
+
+        /* 板塊一句話結論 (Sector Bottom Line) */
+        .section-bottom-line-bar {
+            background: rgba(0, 0, 0, 0.15);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 10px 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12.5px;
+        }
+        .bottom-line-tag {
+            font-weight: 800;
+            font-size: 11px;
+            flex-shrink: 0;
+            letter-spacing: 0.5px;
+        }
+        .bottom-line-text {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
         .section-body {
-            padding: 22px;
+            padding: 20px;
             display: block;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
         .section-body.collapsed {
             display: none;
         }
 
-        /* --- 新聞卡片 Grid --- */
+        /* 新聞卡片 Grid */
         .news-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-            gap: 18px;
+            gap: 16px;
         }
         .news-card {
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
             border-radius: var(--radius-md);
-            padding: 18px;
+            padding: 16px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.25s ease;
         }
         .news-card:hover {
-            background: var(--bg-card-hover);
             border-color: var(--border-focus);
             transform: translateY(-2px);
-            box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.45);
+            box-shadow: 0 10px 24px -5px rgba(0, 0, 0, 0.35);
         }
         .card-header {
             display: flex;
@@ -721,33 +739,71 @@
             margin-bottom: 10px;
         }
         .topic-tag {
-            font-size: 11.5px;
+            font-size: 11px;
             font-weight: 700;
-            padding: 2px 9px;
+            padding: 2px 8px;
             border-radius: var(--radius-sm);
             border: 1px solid;
         }
         .pub-time {
-            font-size: 11.5px;
+            font-size: 11px;
             color: var(--text-dim);
             font-family: 'JetBrains Mono', monospace;
         }
         .card-title {
-            font-size: 15.5px;
+            font-size: 15px;
             font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             line-height: 1.45;
             letter-spacing: -0.2px;
         }
+
+        /* 摘要展開/收合核心樣式 */
+        .summary-wrapper {
+            margin-bottom: 12px;
+            flex-grow: 1;
+        }
+        .card-summary {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            transition: all 0.3s ease;
+            word-break: break-word;
+        }
+        .card-summary.clamped {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .expand-btn {
+            background: transparent;
+            border: none;
+            color: var(--accent-cyan);
+            font-size: 11.5px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 4px 0 0 0;
+            margin-top: 2px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.2s;
+            outline: none;
+        }
+        .expand-btn:hover {
+            text-decoration: underline;
+        }
+
         .card-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 12px;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 10px;
             margin-top: 4px;
-            font-size: 12px;
+            font-size: 11.5px;
         }
         .source-tag {
             color: var(--text-muted);
@@ -765,22 +821,149 @@
             gap: 3px;
             transition: all 0.2s ease;
             background: rgba(56, 189, 248, 0.08);
-            padding: 4px 10px;
+            padding: 3px 9px;
             border-radius: var(--radius-sm);
             border: 1px solid rgba(56, 189, 248, 0.2);
         }
         .link-btn:hover {
-            color: #ffffff;
             background: var(--accent-cyan);
-            color: #080d1a;
-            box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+            color: #070b14;
         }
-        .arrow-icon {
-            font-weight: 700;
-            transition: transform 0.2s;
+
+        /* --- 模組 8 & 9: 雜訊速報 & 明日觀察清單 --- */
+        .bottom-intel-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
         }
-        .link-btn:hover .arrow-icon {
-            transform: translate(2px, -2px);
+        .bottom-intel-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-subtle);
+        }
+        .bottom-intel-header {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .watchlist-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .watchlist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+        .watchlist-bullet {
+            font-size: 10.5px;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-cyan);
+            padding: 1px 6px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .noise-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .noise-item {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .noise-cat {
+            color: var(--accent-purple);
+            font-weight: 600;
+        }
+        .noise-title {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        .noise-title:hover {
+            color: var(--accent-cyan);
+            text-decoration: underline;
+        }
+        .noise-source {
+            color: var(--text-dim);
+            font-size: 11.5px;
+        }
+
+        /* --- 模組 10: 資料來源與金融合規免責聲明 --- */
+        .footer-compliance {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        .footer-sources {
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+        .footer-disclaimer {
+            font-size: 11px;
+            color: var(--text-dim);
+        }
+
+        /* --- 手機專屬底部浮動導航列 (Mobile Bottom Nav Bar) --- */
+        .mobile-bottom-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(14, 21, 38, 0.95);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid var(--border-subtle);
+            padding: 8px 16px;
+            z-index: 999;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .bottom-nav-item {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            cursor: pointer;
+            padding: 4px 8px;
+        }
+        .bottom-nav-item:hover, .bottom-nav-item.active {
+            color: var(--accent-cyan);
+        }
+        .bottom-nav-icon {
+            font-size: 16px;
         }
 
         /* --- 列印與 PDF 匯出最佳化樣式 --- */
@@ -790,18 +973,17 @@
                 color: #0f172a !important;
                 background-image: none !important;
             }
-            .terminal-header, .executive-summary-container, .top10-card, .category-section, .news-card {
+            .terminal-header, .sentiment-card, .big-three-card, .impact-chain-card, .category-section, .news-card, .bottom-intel-card, .footer-compliance {
                 background: #ffffff !important;
                 border: 1px solid #cbd5e1 !important;
                 box-shadow: none !important;
                 color: #0f172a !important;
                 break-inside: avoid;
             }
-            .header-title, .summary-main-title, .card-title, .top10-title {
-                -webkit-text-fill-color: #0f172a !important;
+            .header-title, .big-three-headline, .card-title, .node-title, .takeaway-text {
                 color: #0f172a !important;
             }
-            .toolbar, .header-actions, .toggle-arrow, .expand-btn {
+            .toolbar, .header-actions, .toggle-arrow, .expand-btn, .mobile-bottom-bar {
                 display: none !important;
             }
             .card-summary.clamped {
@@ -815,12 +997,29 @@
             }
         }
 
-        /* --- RWD 行動裝置優化 --- */
+        /* --- RWD 斷點優化 --- */
+        @media (max-width: 1024px) {
+            .big-three-grid {
+                grid-template-columns: 1fr;
+            }
+            .impact-chain-card {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .impact-arrow {
+                text-align: center;
+                transform: rotate(90deg);
+            }
+            .bottom-intel-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .terminal-header {
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 20px;
+                padding: 18px;
             }
             .header-actions {
                 width: 100%;
@@ -832,42 +1031,257 @@
             }
             .filter-tabs {
                 overflow-x: auto;
-                padding-bottom: 6px;
+                padding-bottom: 4px;
             }
-            .strategic-grid {
-                grid-template-columns: 1fr;
+            .mobile-bottom-bar {
+                display: flex;
             }
-            .top10-grid {
-                grid-template-columns: 1fr;
+            .container {
+                padding-bottom: 60px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 頂部金融終端 Header -->
-        <header class="terminal-header">
+        <!-- 模組 1: 頂部金融終端 Header -->
+        <header class="terminal-header" id="topHeader">
             <div class="header-title-area">
                 <div class="brand-pill">
                     <span class="live-dot"></span>
-                    SNAKE INTELLIGENCE · 財經與科技情報監測
+                    SNAKE INTELLIGENCE · 決策級情報監測
                 </div>
                 <h1 class="header-title">Snake Daily Report</h1>
                 <p class="header-subtitle">GLOBAL TECH & CAPITAL MARKETS TERMINAL · 全球科技與資本市場日報</p>
                 <div class="header-meta-bar">
                     <span class="header-meta-item">📅 2026年09月08日</span>
-                    <span class="header-meta-item">🕒 監測產出時間：2026-09-08 11:37:32</span>
-                    <span class="header-meta-item">📊 深度收錄：共 47 則重點情報</span>
+                    <span class="header-meta-item">🕒 監測產出時間：2026-09-08 12:01:30</span>
+                    <span class="header-meta-item">📊 深度收錄：共 47 則關鍵情資</span>
                 </div>
             </div>
             <div class="header-actions">
-                <button class="btn btn-primary" onclick="toggleAllSummaries()">📖 展開 / 收合全部摘要</button>
-                <button class="btn" onclick="toggleAllSections()">📂 展開 / 折疊全部分類</button>
-                <button class="btn" onclick="window.print()">🖨️ 匯出 PDF / 列印</button>
+                <button class="btn" onclick="toggleTheme()" id="themeBtn" title="切換深色/淺色模式">🌓 切換外觀</button>
+                <button class="btn btn-primary" onclick="toggleAllSummaries()">📖 展開/收合全部摘要</button>
+                <button class="btn" onclick="toggleAllSections()">📂 展開/折疊板塊</button>
+                <button class="btn" onclick="window.print()">🖨️ 列印/PDF</button>
             </div>
         </header>
 
-        <!-- 數據統計看盤看板 -->
+        <!-- 模組 2: 今日一句話 (Executive Takeaway) -->
+        <div class="takeaway-banner">
+            <span class="takeaway-icon">💡</span>
+            <div>
+                <div class="takeaway-label">EXECUTIVE TAKEAWAY · 今日一句話核心定調</div>
+                <div class="takeaway-text">全球科技浪潮全面步入 AI 代理人商業落地與硬體供應鏈深水區，掌握算力槓桿與資本效率者將定義新秩序。</div>
+            </div>
+        </div>
+
+        <!-- 模組 3: 市場溫度與多空風向儀表板 (Market Sentiment) -->
+        <section class="sentiment-section" id="sentimentSection">
+            <div class="section-tag-header">
+                <span class="section-tag-title">🌡️ 市場溫度與多空風向儀表板 (MARKET SENTIMENT & RISK PULSE)</span>
+                <span style="font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">REAL-TIME MULTI-DIMENSIONAL RADAR</span>
+            </div>
+            <div class="sentiment-grid">
+                
+        <div class="sentiment-card" style="--indicator-color: var(--accent-cyan);">
+            <div class="sentiment-card-top">
+                <span class="sentiment-title">全球科技動能</span>
+                <span class="sentiment-badge" style="background: var(--accent-cyan)18; color: var(--accent-cyan); border-color: var(--accent-cyan)44;">
+                    ▲ 強勁擴張
+                </span>
+            </div>
+            <div class="sentiment-desc">AI 代理人與基礎設施投資持續加速</div>
+        </div>
+        
+        <div class="sentiment-card" style="--indicator-color: var(--accent-amber);">
+            <div class="sentiment-card-top">
+                <span class="sentiment-title">宏觀資本流向</span>
+                <span class="sentiment-badge" style="background: var(--accent-amber)18; color: var(--accent-amber); border-color: var(--accent-amber)44;">
+                    ◆ 震盪輪動
+                </span>
+            </div>
+            <div class="sentiment-desc">資金高度聚焦科技權值股與避險資產</div>
+        </div>
+        
+        <div class="sentiment-card" style="--indicator-color: var(--accent-green);">
+            <div class="sentiment-card-top">
+                <span class="sentiment-title">硬體供應鏈景氣</span>
+                <span class="sentiment-badge" style="background: var(--accent-green)18; color: var(--accent-green); border-color: var(--accent-green)44;">
+                    ▲ 高檔滿載
+                </span>
+            </div>
+            <div class="sentiment-desc">AI 伺服器拉貨強勁帶動關鍵零組件規格升級</div>
+        </div>
+        
+        <div class="sentiment-card" style="--indicator-color: var(--accent-purple);">
+            <div class="sentiment-card-top">
+                <span class="sentiment-title">總體市場風險</span>
+                <span class="sentiment-badge" style="background: var(--accent-purple)18; color: var(--accent-purple); border-color: var(--accent-purple)44;">
+                    ◆ 中等觀望
+                </span>
+            </div>
+            <div class="sentiment-desc">美債殖利率維持高位，靜待通膨與利率決策指引</div>
+        </div>
+        
+            </div>
+        </section>
+
+        <!-- 模組 4: 今日必看 3 件事 (The Big 3 特刊頭條) -->
+        <section class="big-three-section" id="bigThreeSection">
+            <div class="section-tag-header">
+                <span class="section-tag-title" style="color: var(--accent-cyan);">🔥 今日必看 3 件事 (THE BIG 3 · HEAVYWEIGHT CATALYSTS)</span>
+                <span style="font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">30-SECOND EXECUTIVE BRIEF</span>
+            </div>
+            <div class="big-three-grid">
+                
+        <div class="big-three-card hero-lead">
+            <div class="big-three-header">
+                <div class="big-three-rank" style="color: #38bdf8;">#01</div>
+                <div class="big-three-tags">
+                    <span class="badge-cat" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">AI</span>
+                    <span class="badge-topic">生成式AI模型</span>
+                </div>
+                <span class="hero-label">★ TOP STORY OF THE DAY</span>
+            </div>
+            <h3 class="big-three-headline">NVIDIA砸129億美元收購Hugging Face，開源生成式AI模型生態邁入新階段</h3>
+            
+            <div class="why-it-matters-box">
+                <div class="box-label">💡 為什麼重要 (WHY IT MATTERS)</div>
+                <p class="box-content">NVIDIA宣布以129.3億美元收購全球最大開源AI模型平台Hugging Face。該平台擁有逾300萬個生成式AI模型、50萬筆資料集及1,800萬名開發者。市場認為此舉將加速開源生成式AI模型發展，並強化NVIDIA在AI生態系的影響力。</p>
+            </div>
+            
+            <div class="big-three-footer">
+                <div class="metric-pill">
+                    <span class="metric-icon">📊</span>
+                    <span class="metric-text">129億美元 · 129.3億美元</span>
+                </div>
+                <a href="https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html" target="_blank" rel="noopener noreferrer" class="link-btn-hero">
+                    開啟原文直連 <span class="arrow-icon">↗</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="big-three-card">
+            <div class="big-three-header">
+                <div class="big-three-rank" style="color: #38bdf8;">#02</div>
+                <div class="big-three-tags">
+                    <span class="badge-cat" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">AI</span>
+                    <span class="badge-topic">AI推論技術</span>
+                </div>
+                
+            </div>
+            <h3 class="big-three-headline">NVIDIA收購Hugging Face，強化AI推論平台與開放模型部署生態系</h3>
+            
+            <div class="why-it-matters-box">
+                <div class="box-label">💡 為什麼重要 (WHY IT MATTERS)</div>
+                <p class="box-content">NVIDIA宣布以129.3億美元收購Hugging Face，除擴張開源AI模型版圖外，也將加大投資模型評測、推論（Inference）服務與部署平台。分析指出，此舉有助降低企業導入AI推論門檻，並加速開放模型在多雲與多硬體環境的大規模應用。</p>
+            </div>
+            
+            <div class="big-three-footer">
+                <div class="metric-pill">
+                    <span class="metric-icon">📊</span>
+                    <span class="metric-text">129.3億美元</span>
+                </div>
+                <a href="https://siliconangle.com/2026/09/03/nvidias-hugging-face-deal-is-a-bet-on-open-models-and-proof-its-no-longer-just-a-chip-company/" target="_blank" rel="noopener noreferrer" class="link-btn-hero">
+                    開啟原文直連 <span class="arrow-icon">↗</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="big-three-card">
+            <div class="big-three-header">
+                <div class="big-three-rank" style="color: #38bdf8;">#03</div>
+                <div class="big-three-tags">
+                    <span class="badge-cat" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">AI</span>
+                    <span class="badge-topic">開源AI生態</span>
+                </div>
+                
+            </div>
+            <h3 class="big-three-headline">NVIDIA斥資129億美元收購Hugging Face，承諾維持全球最大開源AI平台開放性</h3>
+            
+            <div class="why-it-matters-box">
+                <div class="box-label">💡 為什麼重要 (WHY IT MATTERS)</div>
+                <p class="box-content">NVIDIA宣布以129.3億美元收購Hugging Face，這是近年開源AI生態最具指標性的交易之一。Hugging Face擁有超過1,800萬開發者、300萬個AI模型及20萬家企業用戶。NVIDIA強調平台將維持開放模式，持續支援多模型、多雲端及多硬體生態。</p>
+            </div>
+            
+            <div class="big-three-footer">
+                <div class="metric-pill">
+                    <span class="metric-icon">📊</span>
+                    <span class="metric-text">129億美元 · 129.3億美元</span>
+                </div>
+                <a href="https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/" target="_blank" rel="noopener noreferrer" class="link-btn-hero">
+                    開啟原文直連 <span class="arrow-icon">↗</span>
+                </a>
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <!-- 模組 5: 產業影響鏈矩陣 (Supply Chain Impact Matrix) -->
+        <section class="impact-section" id="impactSection">
+            <div class="section-tag-header">
+                <span class="section-tag-title" style="color: var(--accent-green);">🔗 產業影響鏈矩陣 (SUPPLY CHAIN IMPACT MATRIX)</span>
+                <span style="font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">TRIGGER ➔ COMPONENT ➔ STOCKS</span>
+            </div>
+            <div class="impact-grid">
+                
+        <div class="impact-chain-card">
+            <div class="impact-node trigger-node">
+                <div class="node-badge">⚡ 驅動事件 (TRIGGER)</div>
+                <div class="node-title">全球大模型生態加速整合（如 NVIDIA 擴大開源模型與軟體併購）</div>
+            </div>
+            <div class="impact-arrow">➔</div>
+            <div class="impact-node process-node">
+                <div class="node-badge">⚙️ 規格/零組件影響 (IMPACT)</div>
+                <div class="node-title">高階 GPU 伺服器、液冷散熱、高速傳輸介面與先進封裝</div>
+            </div>
+            <div class="impact-arrow">➔</div>
+            <div class="impact-node target-node">
+                <div class="node-badge">🎯 台美關鍵受惠標的 (BENEFICIARIES)</div>
+                <div class="node-title highlighted-stocks">台積電 (2330)、廣達 (2382)、緯創 (3231)、奇鋐 (3017)、雙鴻 (3324)</div>
+            </div>
+        </div>
+        
+        <div class="impact-chain-card">
+            <div class="impact-node trigger-node">
+                <div class="node-badge">⚡ 驅動事件 (TRIGGER)</div>
+                <div class="node-title">美債殖利率逼近 5% 高檔震盪 & 全球央行通膨利率決策</div>
+            </div>
+            <div class="impact-arrow">➔</div>
+            <div class="impact-node process-node">
+                <div class="node-badge">⚙️ 規格/零組件影響 (IMPACT)</div>
+                <div class="node-title">科技成長股估值承壓、外匯匯率波動、黃金避險需求走揚</div>
+            </div>
+            <div class="impact-arrow">➔</div>
+            <div class="impact-node target-node">
+                <div class="node-badge">🎯 台美關鍵受惠標的 (BENEFICIARIES)</div>
+                <div class="node-title highlighted-stocks">高現金流科技巨頭（蘋果、微軟）、避險資產（黃金）、公股金控</div>
+            </div>
+        </div>
+        
+        <div class="impact-chain-card">
+            <div class="impact-node trigger-node">
+                <div class="node-badge">⚡ 驅動事件 (TRIGGER)</div>
+                <div class="node-title">人形機器人與端側 AI 部署加速（如 Figure 與雲端基礎設施結盟）</div>
+            </div>
+            <div class="impact-arrow">➔</div>
+            <div class="impact-node process-node">
+                <div class="node-badge">⚙️ 規格/零組件影響 (IMPACT)</div>
+                <div class="node-title">精密減速機、微型感測元件、車載/工業級相機模組</div>
+            </div>
+            <div class="impact-arrow">➔</div>
+            <div class="impact-node target-node">
+                <div class="node-badge">🎯 台美關鍵受惠標的 (BENEFICIARIES)</div>
+                <div class="node-title highlighted-stocks">大立光 (3008)、亞光 (3019)、上銀 (2049)、鴻海 (2317)</div>
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <!-- 看盤統計看盤卡片 -->
         <div class="stats-bar">
             
             <div class="stat-card" onclick="scrollToSection('A')" style="--card-accent: #38bdf8;">
@@ -917,11 +1331,11 @@
             </div>
         </div>
 
-        <!-- 工具列：關鍵字搜尋與分類快篩 -->
-        <div class="toolbar">
+        <!-- 工具列：即時關鍵字搜尋與分類快篩 -->
+        <div class="toolbar" id="filterToolbar">
             <div class="search-box">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" class="search-input" placeholder="即時檢索關鍵字、公司、主題或股票代號（例如：台積電、NVIDIA、聯準會、AI Agent）..." oninput="filterNews()">
+                <input type="text" id="searchInput" class="search-input" placeholder="輸入關鍵字、主題、公司或股票代號（如：台積電、NVIDIA、聯準會、AI Agent）即時檢索..." oninput="filterNews()">
             </div>
             <div class="filter-tabs">
                 <button class="tab-btn active" data-category="all" onclick="filterCategory('all', this)">全部 (47)</button>
@@ -933,318 +1347,20 @@
             </div>
         </div>
 
-        <!-- 彭博/高盛風格 AI 總經與產業深度綜整 -->
-        <div class="executive-summary-container">
-            <div class="summary-header-row">
-                <div class="summary-header-title-group">
-                    <span class="brief-badge">EXECUTIVE BRIEF</span>
-                    <h2 class="summary-main-title">今日全方位情報與資本市場脈動</h2>
-                </div>
-                <span class="summary-date-tag">INTELLIGENCE DATE: 2026年09月08日</span>
-            </div>
-            
-            <div class="punchline-banner">
-                <span class="punchline-icon">💡</span>
-                <div>
-                    <div class="punchline-label">EXECUTIVE TAKEAWAY · 今日一句核心綜述</div>
-                    <div class="punchline-content">科技浪潮全面步入 AI 代理人與硬體落地元年，掌握算力槓桿與資本效率者將定義新秩序。</div>
-                </div>
-            </div>
-
-            <div class="strategic-grid">
-                <div class="strategic-card">
-                    <div class="strategic-card-title" style="color: var(--accent-cyan);">🔥 今日三大重磅焦點</div>
-                    <ul class="key-points-list">
-                        <li class="key-point-item">
-            <span class="key-point-num">01</span>
-            <div class="key-point-text">【AI霸權角逐加速】Atos與Flender打造工程研發AI Agent獲IDC大獎，設計週期縮短83%，顯示算力競逐與終端應用代理人已成為產業核心驅動力。</div>
-        </li><li class="key-point-item">
-            <span class="key-point-num">02</span>
-            <div class="key-point-text">【資本市場重新定價】美就業數據優於預期、升息預期升溫，全球股市與主要指數震盪整理，外資動向與利率預期持續左右科技巨頭估值與資金流向。</div>
-        </li><li class="key-point-item">
-            <span class="key-point-num">03</span>
-            <div class="key-point-text">【供應鏈與硬體重構】MIT公布新型量子位元架構，量子運算朝實用化再跨一步，AI PC換機潮與關鍵零組件（鏡頭模組、散熱、電源）邁入關鍵成長期。</div>
-        </li>
-                    </ul>
-                </div>
-                <div class="strategic-card">
-                    <div class="strategic-card-title" style="color: var(--accent-green);">📈 資本市場與資金脈動</div>
-                    <p>今日全球投資市場高度連動科技權值動向。台美股市在半導體領軍下呈現震盪盤整格局，三大法人與外資買賣超操作趨於精準鎖定 AI 供應鏈核心。匯率與美元指數維持高檔震盪，市場密切關注聯準會最新利率決策與通膨指標，黃金避險需求穩健，資金輪動節奏加速。</p>
-                </div>
-                <div class="strategic-card">
-                    <div class="strategic-card-title" style="color: var(--accent-purple);">💻 產業戰略與科技前沿</div>
-                    <p>全球 Notebook 與 ODM 產業正處於從傳統筆電轉向 AI PC 的結構性轉換期。廣達、緯創、仁寶、英業達等代工大廠持續調高 AI 伺服器與邊緣運算營收比重；與此同時，鏡頭模組與感知元件產業受惠於智慧辨識與車載視訊需求，規格升級帶動 ASP 全面走揚。 AI 領域已由「基礎大語言模型參數量競逐」推進至「高自主性 AI Agent（代理人）落地實務」。OpenAI、Anthropic (Claude)、Google (Gemini) 與微軟 Copilot 爭相搶佔開發者工作流與企業端桌面入口；底層晶片端 NVIDIA 與 AMD/Intel 的次世代運算架構博弈，進一步奠定了未來數年的算力基本盤。</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 今日必讀 TOP 10 焦點 -->
-        <div class="top10-section" id="top10Section">
-            <div class="section-headline">
-                <h3 class="section-headline-title">
-                    🏆 今日必讀 TOP 重點
-                </h3>
-                <span class="section-headline-meta">HEAVYWEIGHT HEADLINES</span>
-            </div>
-            <div class="top10-grid">
-                
-        <div class="top10-card" data-category="AI" data-title="Atos與Flender打造工程研發AI Agent獲IDC大獎，設計週期縮短83%">
-            <div class="top10-rank-col">
-                <div class="top10-rank" style="color: #38bdf8;">#01</div>
-                <span class="top10-badge" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">AI</span>
-            </div>
-            <div class="top10-content">
-                <div class="top10-meta">
-                    <span class="top10-topic">AI Agent</span>
-                    <span class="time">📅 2026-09-04</span>
-                </div>
-                <h4 class="top10-title">Atos與Flender打造工程研發AI Agent獲IDC大獎，設計週期縮短83%</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">Atos與Flender China共同開發的「Sovereign AI Agent」榮獲IDC China AI Innovation Awards最佳Agentic AI實踐獎。該系統將AI Agent導入工程研發流程，使設計週期縮短83%，每年節省約2,000小時工程工時，展現企業級AI Agent落地效益。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="top10-footer">
-                    <span class="source" title="IDC China AI Innovation Awards、Atos官方新聞稿（GlobeNewswire）">🏷️ 來源：IDC China AI Innovation Awards、Atos官方新聞稿（GlobeNewswire）</span>
-                    <a href="https://www.manilatimes.net/2026/09/04/tmt-newswire/globenewswire/atos-powered-agentic-ai-solution-wins-idc-ai-innovation-award/2418559" target="_blank" rel="noopener noreferrer" class="top10-link">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="top10-card" data-category="AI" data-title="NVIDIA砸129億美元收購Hugging Face，開源生成式AI模型生態邁入新階段">
-            <div class="top10-rank-col">
-                <div class="top10-rank" style="color: #38bdf8;">#02</div>
-                <span class="top10-badge" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">AI</span>
-            </div>
-            <div class="top10-content">
-                <div class="top10-meta">
-                    <span class="top10-topic">生成式AI模型</span>
-                    <span class="time">📅 2026-09-03</span>
-                </div>
-                <h4 class="top10-title">NVIDIA砸129億美元收購Hugging Face，開源生成式AI模型生態邁入新階段</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">NVIDIA宣布以129.3億美元收購全球最大開源AI模型平台Hugging Face。該平台擁有逾300萬個生成式AI模型、50萬筆資料集及1,800萬名開發者。市場認為此舉將加速開源生成式AI模型發展，並強化NVIDIA在AI生態系的影響力。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="top10-footer">
-                    <span class="source" title="CNBC、NVIDIA官方公告">🏷️ 來源：CNBC、NVIDIA官方公告</span>
-                    <a href="https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html" target="_blank" rel="noopener noreferrer" class="top10-link">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="top10-card" data-category="New technology" data-title="MIT公布新型量子位元架構，量子運算朝實用化再跨一步">
-            <div class="top10-rank-col">
-                <div class="top10-rank" style="color: #818cf8;">#03</div>
-                <span class="top10-badge" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">New technology</span>
-            </div>
-            <div class="top10-content">
-                <div class="top10-meta">
-                    <span class="top10-topic">量子運算</span>
-                    <span class="time">📅 2026-09-03</span>
-                </div>
-                <h4 class="top10-title">MIT公布新型量子位元架構，量子運算朝實用化再跨一步</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">MIT研究團隊發表新一代量子位元（Qubit）架構，透過雙模式設計提升量子閘運算速度與準確度，並改善量子糾纏與讀取效率。研究人員表示，此技術有望加速發展可擴展、實用化的量子電腦，成為量子運算領域最新重要進展。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="top10-footer">
-                    <span class="source" title="MIT News（麻省理工學院）">🏷️ 來源：MIT News（麻省理工學院）</span>
-                    <a href="https://news.mit.edu/topic/quantum-computing" target="_blank" rel="noopener noreferrer" class="top10-link">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="top10-card" data-category="New technology" data-title="Figure與Nscale簽署35億美元合作案，加速人形機器人大規模部署">
-            <div class="top10-rank-col">
-                <div class="top10-rank" style="color: #818cf8;">#04</div>
-                <span class="top10-badge" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">New technology</span>
-            </div>
-            <div class="top10-content">
-                <div class="top10-meta">
-                    <span class="top10-topic">人形機器人</span>
-                    <span class="time">📅 2026-09-03</span>
-                </div>
-                <h4 class="top10-title">Figure與Nscale簽署35億美元合作案，加速人形機器人大規模部署</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">人形機器人新創Figure於2026年9月宣布與AI基礎設施公司Nscale達成35億美元合作，將部署NVIDIA Vera Rubin GPU平台以擴大機器人AI訓練與推論能力。市場認為此合作象徵人形機器人產業正從試點驗證邁向大規模商業化應用。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="top10-footer">
-                    <span class="source" title="Compare the Cloud、Figure AI、Nscale">🏷️ 來源：Compare the Cloud、Figure AI、Nscale</span>
-                    <a href="https://www.comparethecloud.net/news/nscale-signs-35bn-compute-partnership-with-humanoid-robotics-firm-figure" target="_blank" rel="noopener noreferrer" class="top10-link">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="top10-card" data-category="投資市場" data-title="美就業數據優於預期、升息預期升溫，全球股市與主要指數震盪整理">
-            <div class="top10-rank-col">
-                <div class="top10-rank" style="color: #34d399;">#05</div>
-                <span class="top10-badge" style="background: #34d39918; color: #34d399; border-color: #34d39940;">投資市場</span>
-            </div>
-            <div class="top10-content">
-                <div class="top10-meta">
-                    <span class="top10-topic">全球主要股市指數</span>
-                    <span class="time">📅 2026-09-04（相關市場報導）</span>
-                </div>
-                <h4 class="top10-title">美就業數據優於預期、升息預期升溫，全球股市與主要指數震盪整理</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">美國8月非農就業新增16.2萬人，遠高於市場預期，引發市場對聯準會9月升息可能性的重新評估。美債殖利率走高，帶動全球主要股市指數波動加劇，投資人聚焦即將公布的通膨數據與央行決策方向。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="top10-footer">
-                    <span class="source" title="TheStreet、FXCM Markets">🏷️ 來源：TheStreet、FXCM Markets</span>
-                    <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-04-2026" target="_blank" rel="noopener noreferrer" class="top10-link">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="top10-card" data-category="投資市場" data-title="全球央行利率政策 最新產業趨勢與市場進展">
-            <div class="top10-rank-col">
-                <div class="top10-rank" style="color: #34d399;">#06</div>
-                <span class="top10-badge" style="background: #34d39918; color: #34d399; border-color: #34d39940;">投資市場</span>
-            </div>
-            <div class="top10-content">
-                <div class="top10-meta">
-                    <span class="top10-topic">全球央行利率政策</span>
-                    <span class="time">📅 2026-09-08</span>
-                </div>
-                <h4 class="top10-title">全球央行利率政策 最新產業趨勢與市場進展</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">市場持續聚焦 全球央行利率政策 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="top10-footer">
-                    <span class="source" title="科技產業觀察">🏷️ 來源：科技產業觀察</span>
-                    <a href="https://www.bing.com/news/search?q=全球央行利率政策" target="_blank" rel="noopener noreferrer" class="top10-link">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="top10-card" data-category="台灣股市" data-title="台股加權指數大漲775點收47,326點，三大法人同步買超逾千億元">
-            <div class="top10-rank-col">
-                <div class="top10-rank" style="color: #f472b6;">#07</div>
-                <span class="top10-badge" style="background: #f472b618; color: #f472b6; border-color: #f472b640;">台灣股市</span>
-            </div>
-            <div class="top10-content">
-                <div class="top10-meta">
-                    <span class="top10-topic">台股加權指數</span>
-                    <span class="time">📅 2026-09-07（台股收盤）</span>
-                </div>
-                <h4 class="top10-title">台股加權指數大漲775點收47,326點，三大法人同步買超逾千億元</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">台股加權指數9月7日大漲775.14點，收在47,326.27點，漲幅1.67%，創近期波段高點。外資、投信與自營商同步站在買方，三大法人合計買超約1,127億元，顯示市場資金持續回流大型權值股與電子族群。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="top10-footer">
-                    <span class="source" title="Yahoo奇摩股市、Goodinfo!台灣股市資訊網、FinLab">🏷️ 來源：Yahoo奇摩股市、Goodinfo!台灣股市資訊網、FinLab</span>
-                    <a href="https://tw.stock.yahoo.com/quote/%5ETWII" target="_blank" rel="noopener noreferrer" class="top10-link">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="top10-card" data-category="台灣股市" data-title="三大法人同步買超1,138億元創歷史次高，外資狂買883億元點火台股">
-            <div class="top10-rank-col">
-                <div class="top10-rank" style="color: #f472b6;">#08</div>
-                <span class="top10-badge" style="background: #f472b618; color: #f472b6; border-color: #f472b640;">台灣股市</span>
-            </div>
-            <div class="top10-content">
-                <div class="top10-meta">
-                    <span class="top10-topic">三大法人買賣超</span>
-                    <span class="time">📅 2026-09-07</span>
-                </div>
-                <h4 class="top10-title">三大法人同步買超1,138億元創歷史次高，外資狂買883億元點火台股</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">9月7日三大法人全面偏多，合計買超約1,138億元，創台股史上第二大買超紀錄。其中外資買超883億元，躍居史上第四大買超金額，帶動加權指數大漲775點收47,326點，電子權值股成資金主要聚焦標的。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="top10-footer">
-                    <span class="source" title="中央社、中時新聞網、Yahoo奇摩股市">🏷️ 來源：中央社、中時新聞網、Yahoo奇摩股市</span>
-                    <a href="https://www.chinatimes.com/realtimenews/20260907002862-260410" target="_blank" rel="noopener noreferrer" class="top10-link">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="top10-card" data-category="美國股市" data-title="美債殖利率逼近5%引發市場警戒，美股四大指數震盪整理">
-            <div class="top10-rank-col">
-                <div class="top10-rank" style="color: #fbbf24;">#09</div>
-                <span class="top10-badge" style="background: #fbbf2418; color: #fbbf24; border-color: #fbbf2440;">美國股市</span>
-            </div>
-            <div class="top10-content">
-                <div class="top10-meta">
-                    <span class="top10-topic">美股四大指數</span>
-                    <span class="time">📅 2026-09-08</span>
-                </div>
-                <h4 class="top10-title">美債殖利率逼近5%引發市場警戒，美股四大指數震盪整理</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">市場聚焦美國10年期公債殖利率逼近5%，分析師警告恐提高企業融資成本並衝擊AI及科技股評價。最新交易日道瓊、標普500及那斯達克指數走勢分歧，費城半導體指數則受AI題材支撐維持相對強勢。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="top10-footer">
-                    <span class="source" title="Yahoo股市、財訊快報、金融時報相關報導彙整">🏷️ 來源：Yahoo股市、財訊快報、金融時報相關報導彙整</span>
-                    <a href="https://tw.stock.yahoo.com/markets" target="_blank" rel="noopener noreferrer" class="top10-link">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="top10-card" data-category="美國股市" data-title="「科技七巨頭」重獲華爾街關注，AI投資回報成市場新焦點">
-            <div class="top10-rank-col">
-                <div class="top10-rank" style="color: #fbbf24;">#10</div>
-                <span class="top10-badge" style="background: #fbbf2418; color: #fbbf24; border-color: #fbbf2440;">美國股市</span>
-            </div>
-            <div class="top10-content">
-                <div class="top10-meta">
-                    <span class="top10-topic">美國科技七巨頭</span>
-                    <span class="time">📅 2026-09-03</span>
-                </div>
-                <h4 class="top10-title">「科技七巨頭」重獲華爾街關注，AI投資回報成市場新焦點</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">CNBC報導指出，在經歷一段時間落後大盤後，美國科技七巨頭（Apple、Microsoft、Alphabet、Amazon、Meta、NVIDIA、Tesla）因AI投資逐漸轉化為商業收益，再度受到市場青睞。市場預期AI基礎建設與雲端需求將持續推升相關企業成長。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="top10-footer">
-                    <span class="source" title="CNBC、Yahoo Finance">🏷️ 來源：CNBC、Yahoo Finance</span>
-                    <a href="https://www.cnbc.com/2026/09/03/magnificent-seven-jim-cramer-says-time-to-buy.html" target="_blank" rel="noopener noreferrer" class="top10-link">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-            </div>
-        </div>
-
-        <!-- 各板塊深度情報清單 -->
+        <!-- 模組 6 & 7: 各大板塊新聞深度卡片庫 -->
         <div id="allSections">
             
         <section class="category-section" id="section-A" data-category="AI">
             <div class="section-header" onclick="toggleSection('A')">
                 <div class="section-header-left">
-                    <div class="section-icon-box" style="background: #38bdf820; color: #38bdf8; border-color: #38bdf840;">
+                    <div class="section-icon-box" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">
                         🤖
                     </div>
                     <div>
                         <h3 class="section-title">AI動態</h3>
-                        <span class="section-subtitle">SECTOR INTELLIGENCE · 即時深度追蹤</span>
+                        <span class="section-subtitle">SECTOR INTELLIGENCE · 深度即時追蹤</span>
                     </div>
-                    <span class="section-count-badge" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">
+                    <span class="section-count-badge" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         9 則焦點
                     </span>
                 </div>
@@ -1252,12 +1368,16 @@
                     <span class="toggle-arrow" id="arrow-A">▼</span>
                 </div>
             </div>
+            <div class="section-bottom-line-bar">
+                <span class="bottom-line-tag" style="color: #38bdf8;">📌 一句話結論</span>
+                <span class="bottom-line-text">AI 領域軍備競賽加劇，模型算力正全面下沉轉化為高自主性代理人應用；首要動態：Atos與Flender打造工程研發AI Agent獲IDC大獎，設計週期縮短83%。</span>
+            </div>
             <div class="section-body" id="body-A">
                 <div class="news-grid">
                     
             <div class="news-card" data-category="AI" data-title="Atos與Flender打造工程研發AI Agent獲IDC大獎，設計週期縮短83%" data-topic="AI Agent" data-source="IDC China AI Innovation Awards、Atos官方新聞稿（GlobeNewswire）">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">
+                    <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         AI Agent
                     </span>
                     <span class="pub-time">2026-09-04</span>
@@ -1277,7 +1397,7 @@
             
             <div class="news-card" data-category="AI" data-title="NVIDIA砸129億美元收購Hugging Face，開源生成式AI模型生態邁入新階段" data-topic="生成式AI模型" data-source="CNBC、NVIDIA官方公告">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">
+                    <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         生成式AI模型
                     </span>
                     <span class="pub-time">2026-09-03</span>
@@ -1297,7 +1417,7 @@
             
             <div class="news-card" data-category="AI" data-title="OpenAI推出GPT-6 Astra，多模態AI模型正式邁入新世代" data-topic="多模態AI" data-source="Emergent、OpenAI發布資訊">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">
+                    <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         多模態AI
                     </span>
                     <span class="pub-time">2026-09-03～2026-09-04</span>
@@ -1317,7 +1437,7 @@
             
             <div class="news-card" data-category="AI" data-title="NVIDIA收購Hugging Face，強化AI推論平台與開放模型部署生態系" data-topic="AI推論技術" data-source="SiliconANGLE、Yahoo Finance、NVIDIA相關公告">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">
+                    <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         AI推論技術
                     </span>
                     <span class="pub-time">2026-09-03</span>
@@ -1337,7 +1457,7 @@
             
             <div class="news-card" data-category="AI" data-title="Oracle擴大AI資料中心投資，50億美元級基礎建設計畫持續推進" data-topic="AI資料中心" data-source="Oracle官方部落格、Oracle AI & Data Science、產業媒體報導">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">
+                    <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         AI資料中心
                     </span>
                     <span class="pub-time">2026-09-04</span>
@@ -1357,7 +1477,7 @@
             
             <div class="news-card" data-category="AI" data-title="PwC與Palantir擴大合作，推動企業AI從試點走向大規模落地應用" data-topic="企業AI應用" data-source="PwC US、Palantir Technologies、PR Newswire">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">
+                    <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         企業AI應用
                     </span>
                     <span class="pub-time">2026-09-03</span>
@@ -1377,7 +1497,7 @@
             
             <div class="news-card" data-category="AI" data-title="NVIDIA發布Jetson Orin Nano 2，邊緣AI推論效能提升2倍、功耗降低40%" data-topic="邊緣AI" data-source="NVIDIA Newsroom、NVIDIA官方公告">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">
+                    <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         邊緣AI
                     </span>
                     <span class="pub-time">2026-08-25</span>
@@ -1397,7 +1517,7 @@
             
             <div class="news-card" data-category="AI" data-title="OpenAI確認Astra達最高網路安全風險等級，啟動分級存取與強化治理機制" data-topic="AI資安與治理" data-source="OpenAI相關公告、TechCrunch報導整理、ExplainX AI">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">
+                    <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         AI資安與治理
                     </span>
                     <span class="pub-time">2026-09-01 ～ 2026-09-02</span>
@@ -1417,7 +1537,7 @@
             
             <div class="news-card" data-category="AI" data-title="NVIDIA斥資129億美元收購Hugging Face，承諾維持全球最大開源AI平台開放性" data-topic="開源AI生態" data-source="NVIDIA官方公告、Reuters、Gizmodo">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">
+                    <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         開源AI生態
                     </span>
                     <span class="pub-time">2026-09-03</span>
@@ -1442,14 +1562,14 @@
         <section class="category-section" id="section-B" data-category="New technology">
             <div class="section-header" onclick="toggleSection('B')">
                 <div class="section-header-left">
-                    <div class="section-icon-box" style="background: #818cf820; color: #818cf8; border-color: #818cf840;">
+                    <div class="section-icon-box" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">
                         💻
                     </div>
                     <div>
                         <h3 class="section-title">New technology動態</h3>
-                        <span class="section-subtitle">SECTOR INTELLIGENCE · 即時深度追蹤</span>
+                        <span class="section-subtitle">SECTOR INTELLIGENCE · 深度即時追蹤</span>
                     </div>
-                    <span class="section-count-badge" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">
+                    <span class="section-count-badge" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         10 則焦點
                     </span>
                 </div>
@@ -1457,12 +1577,16 @@
                     <span class="toggle-arrow" id="arrow-B">▼</span>
                 </div>
             </div>
+            <div class="section-bottom-line-bar">
+                <span class="bottom-line-tag" style="color: #818cf8;">📌 一句話結論</span>
+                <span class="bottom-line-text">前沿科技（量子計算、人形機器人）加速獲得重磅注資；首要動態：MIT公布新型量子位元架構，量子運算朝實用化再跨一步。</span>
+            </div>
             <div class="section-body" id="body-B">
                 <div class="news-grid">
                     
             <div class="news-card" data-category="New technology" data-title="MIT公布新型量子位元架構，量子運算朝實用化再跨一步" data-topic="量子運算" data-source="MIT News（麻省理工學院）">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">
+                    <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         量子運算
                     </span>
                     <span class="pub-time">2026-09-03</span>
@@ -1482,7 +1606,7 @@
             
             <div class="news-card" data-category="New technology" data-title="Figure與Nscale簽署35億美元合作案，加速人形機器人大規模部署" data-topic="人形機器人" data-source="Compare the Cloud、Figure AI、Nscale">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">
+                    <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         人形機器人
                     </span>
                     <span class="pub-time">2026-09-03</span>
@@ -1502,7 +1626,7 @@
             
             <div class="news-card" data-category="New technology" data-title="Waymo擴展自動駕駛計程車服務至14座城市，自駕商業化再創里程碑" data-topic="自動駕駛技術" data-source="Waymo、Self Drive News、ExplainX AI">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">
+                    <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         自動駕駛技術
                     </span>
                     <span class="pub-time">2026-09-01</span>
@@ -1522,7 +1646,7 @@
             
             <div class="news-card" data-category="New technology" data-title="Apple加速布局智慧眼鏡與XR，首款AI智慧眼鏡預計成為Vision Pro後下一代穿戴重點" data-topic="智慧眼鏡與XR" data-source="Bloomberg相關報導彙整、The Mac Observer、Technobezz">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">
+                    <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         智慧眼鏡與XR
                     </span>
                     <span class="pub-time">2026-01～2026-09期間最新進展彙整</span>
@@ -1542,7 +1666,7 @@
             
             <div class="news-card" data-category="New technology" data-title="台積電公布A14埃米級製程最新進展，2028年量產藍圖持續超前推進" data-topic="先進半導體製程" data-source="台積電（TSMC）、TechNews 科技新報">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">
+                    <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         先進半導體製程
                     </span>
                     <span class="pub-time">2026-05-14（台積電技術論壇最新藍圖）</span>
@@ -1562,7 +1686,7 @@
             
             <div class="news-card" data-category="New technology" data-title="SEMICON Taiwan 2026聚焦矽光子，台積電COUPE與CPO技術正式邁向量產元年" data-topic="矽光子與CPO" data-source="TechNews 科技新報、SEMI、台積電（TSMC）">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">
+                    <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         矽光子與CPO
                     </span>
                     <span class="pub-time">2026-09-08</span>
@@ -1582,7 +1706,7 @@
             
             <div class="news-card" data-category="New technology" data-title="ProLogium啟動381Wh/kg固態電池量產，次世代電池商業化邁入新階段" data-topic="次世代電池技術" data-source="CarNewsChina、ProLogium（輝能科技）">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">
+                    <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         次世代電池技術
                     </span>
                     <span class="pub-time">2026-09-07（最新報導）</span>
@@ -1602,7 +1726,7 @@
             
             <div class="news-card" data-category="New technology" data-title="低軌衛星直連手機進入商業競爭時代，Starlink已覆蓋逾650顆D2D衛星" data-topic="衛星通訊與低軌衛星" data-source="TelecomLead、Starlink／T-Mobile相關公開資訊">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">
+                    <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         衛星通訊與低軌衛星
                     </span>
                     <span class="pub-time">2026-09-03</span>
@@ -1622,7 +1746,7 @@
             
             <div class="news-card" data-category="New technology" data-title="NVIDIA攜手全球機器人四大廠導入Omniverse，數位孿生正式邁入工業基礎設施時代" data-topic="數位孿生技術" data-source="NVIDIA GTC 2026、Asotech、NVIDIA Developer Forums">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">
+                    <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         數位孿生技術
                     </span>
                     <span class="pub-time">2026-04-01（GTC 2026相關進展）</span>
@@ -1642,7 +1766,7 @@
             
             <div class="news-card" data-category="New technology" data-title="高通發表全球首款Wi-Fi 8晶片，並攜手逾30家企業推動6G商用化" data-topic="Wi-Fi 8與6G通訊" data-source="Qualcomm、MWC 2026、Thurrott、TechSpot">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">
+                    <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         Wi-Fi 8與6G通訊
                     </span>
                     <span class="pub-time">2026-03-02</span>
@@ -1667,14 +1791,14 @@
         <section class="category-section" id="section-C" data-category="投資市場">
             <div class="section-header" onclick="toggleSection('C')">
                 <div class="section-header-left">
-                    <div class="section-icon-box" style="background: #34d39920; color: #34d399; border-color: #34d39940;">
+                    <div class="section-icon-box" style="background: #34d39918; color: #34d399; border-color: #34d39940;">
                         📈
                     </div>
                     <div>
                         <h3 class="section-title">投資市場動態</h3>
-                        <span class="section-subtitle">SECTOR INTELLIGENCE · 即時深度追蹤</span>
+                        <span class="section-subtitle">SECTOR INTELLIGENCE · 深度即時追蹤</span>
                     </div>
-                    <span class="section-count-badge" style="background: #34d39918; color: #34d399; border-color: #34d39940;">
+                    <span class="section-count-badge" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         10 則焦點
                     </span>
                 </div>
@@ -1682,12 +1806,16 @@
                     <span class="toggle-arrow" id="arrow-C">▼</span>
                 </div>
             </div>
+            <div class="section-bottom-line-bar">
+                <span class="bottom-line-tag" style="color: #34d399;">📌 一句話結論</span>
+                <span class="bottom-line-text">宏觀資金與債市利率波動加劇，投資人高度關注聯準會決策與避險資產流向；首要動態：美就業數據優於預期、升息預期升溫，全球股市與主要指數震盪整理。</span>
+            </div>
             <div class="section-body" id="body-C">
                 <div class="news-grid">
                     
             <div class="news-card" data-category="投資市場" data-title="美就業數據優於預期、升息預期升溫，全球股市與主要指數震盪整理" data-topic="全球主要股市指數" data-source="TheStreet、FXCM Markets">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #34d39918; color: #34d399; border-color: #34d39940;">
+                    <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         全球主要股市指數
                     </span>
                     <span class="pub-time">2026-09-04（相關市場報導）</span>
@@ -1707,7 +1835,7 @@
             
             <div class="news-card" data-category="投資市場" data-title="全球央行利率政策 最新產業趨勢與市場進展" data-topic="全球央行利率政策" data-source="科技產業觀察">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #34d39918; color: #34d399; border-color: #34d39940;">
+                    <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         全球央行利率政策
                     </span>
                     <span class="pub-time">2026-09-08</span>
@@ -1727,7 +1855,7 @@
             
             <div class="news-card" data-category="投資市場" data-title="美元指數跌破100關卡，市場聚焦美國就業與聯準會9月利率決策" data-topic="美元指數" data-source="Qatar News Agency（QNA）、Trading Economics">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #34d39918; color: #34d399; border-color: #34d39940;">
+                    <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         美元指數
                     </span>
                     <span class="pub-time">2026-09-03</span>
@@ -1747,7 +1875,7 @@
             
             <div class="news-card" data-category="投資市場" data-title="美元承壓、日圓與歐元轉強，全球匯市聚焦9月央行決策週" data-topic="主要貨幣匯率" data-source="MUFG Research、Convera、MarketInsiders">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #34d39918; color: #34d399; border-color: #34d39940;">
+                    <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         主要貨幣匯率
                     </span>
                     <span class="pub-time">2026-09-07</span>
@@ -1767,7 +1895,7 @@
             
             <div class="news-card" data-category="投資市場" data-title="強勁美國就業數據推升升息預期，黃金與白銀價格同步回落" data-topic="黃金與貴金屬" data-source="Jagran Josh、PTI市場報導">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #34d39918; color: #34d399; border-color: #34d39940;">
+                    <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         黃金與貴金屬
                     </span>
                     <span class="pub-time">2026-09-07</span>
@@ -1787,7 +1915,7 @@
             
             <div class="news-card" data-category="投資市場" data-title="中東衝突升溫推升油價，布蘭特原油一度逼近每桶98美元" data-topic="原油與能源價格" data-source="Bloomberg、CNBC、World Oil">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #34d39918; color: #34d399; border-color: #34d39940;">
+                    <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         原油與能源價格
                     </span>
                     <span class="pub-time">2026-09-07</span>
@@ -1807,7 +1935,7 @@
             
             <div class="news-card" data-category="投資市場" data-title="美國8月就業數據大幅優於預期，公債殖利率飆升至近年高點" data-topic="美國公債殖利率" data-source="CNBC、Reuters、Morningstar／Dow Jones">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #34d39918; color: #34d399; border-color: #34d39940;">
+                    <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         美國公債殖利率
                     </span>
                     <span class="pub-time">2026-09-04</span>
@@ -1827,7 +1955,7 @@
             
             <div class="news-card" data-category="投資市場" data-title="IMF：2026年全球通膨再度升溫，能源價格與地緣政治成主要推手" data-topic="全球通膨數據" data-source="IMF（國際貨幣基金）、J.P. Morgan Global Research">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #34d39918; color: #34d399; border-color: #34d39940;">
+                    <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         全球通膨數據
                     </span>
                     <span class="pub-time">2026-08-25（IMF Data Brief）</span>
@@ -1847,7 +1975,7 @@
             
             <div class="news-card" data-category="投資市場" data-title="比特幣逼近8萬美元關卡，ETF資金持續流入帶動加密貨幣市場回溫" data-topic="加密貨幣市場" data-source="Yahoo Finance、Proactive Investors、Markets Insider">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #34d39918; color: #34d399; border-color: #34d39940;">
+                    <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         加密貨幣市場
                     </span>
                     <span class="pub-time">2026-09-03</span>
@@ -1867,7 +1995,7 @@
             
             <div class="news-card" data-category="投資市場" data-title="美伊衝突再度升級，全球市場憂心能源供應與通膨風險擴大" data-topic="地緣政治與市場風險" data-source="Reuters、Gulf News、Geopolitical Monitor">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #34d39918; color: #34d399; border-color: #34d39940;">
+                    <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         地緣政治與市場風險
                     </span>
                     <span class="pub-time">2026-09-07</span>
@@ -1892,14 +2020,14 @@
         <section class="category-section" id="section-D" data-category="台灣股市">
             <div class="section-header" onclick="toggleSection('D')">
                 <div class="section-header-left">
-                    <div class="section-icon-box" style="background: #f472b620; color: #f472b6; border-color: #f472b640;">
+                    <div class="section-icon-box" style="background: #f472b618; color: #f472b6; border-color: #f472b640;">
                         ⚡
                     </div>
                     <div>
                         <h3 class="section-title">台灣股市動態</h3>
-                        <span class="section-subtitle">SECTOR INTELLIGENCE · 即時深度追蹤</span>
+                        <span class="section-subtitle">SECTOR INTELLIGENCE · 深度即時追蹤</span>
                     </div>
-                    <span class="section-count-badge" style="background: #f472b618; color: #f472b6; border-color: #f472b640;">
+                    <span class="section-count-badge" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         9 則焦點
                     </span>
                 </div>
@@ -1907,12 +2035,16 @@
                     <span class="toggle-arrow" id="arrow-D">▼</span>
                 </div>
             </div>
+            <div class="section-bottom-line-bar">
+                <span class="bottom-line-tag" style="color: #f472b6;">📌 一句話結論</span>
+                <span class="bottom-line-text">焦點動態：台股加權指數大漲775點收47,326點，三大法人同步買超逾千億元，牽動後續市場預期。</span>
+            </div>
             <div class="section-body" id="body-D">
                 <div class="news-grid">
                     
             <div class="news-card" data-category="台灣股市" data-title="台股加權指數大漲775點收47,326點，三大法人同步買超逾千億元" data-topic="台股加權指數" data-source="Yahoo奇摩股市、Goodinfo!台灣股市資訊網、FinLab">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #f472b618; color: #f472b6; border-color: #f472b640;">
+                    <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         台股加權指數
                     </span>
                     <span class="pub-time">2026-09-07（台股收盤）</span>
@@ -1932,7 +2064,7 @@
             
             <div class="news-card" data-category="台灣股市" data-title="三大法人同步買超1,138億元創歷史次高，外資狂買883億元點火台股" data-topic="三大法人買賣超" data-source="中央社、中時新聞網、Yahoo奇摩股市">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #f472b618; color: #f472b6; border-color: #f472b640;">
+                    <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         三大法人買賣超
                     </span>
                     <span class="pub-time">2026-09-07</span>
@@ -1952,7 +2084,7 @@
             
             <div class="news-card" data-category="台灣股市" data-title="台積電漲50元收2460元，聯發科、聯電強攻帶動半導體權值股領軍創高" data-topic="台積電與半導體權值股" data-source="Yahoo奇摩股市、鉅亨網、Goodinfo!台灣股市資訊網">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #f472b618; color: #f472b6; border-color: #f472b640;">
+                    <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         台積電與半導體權值股
                     </span>
                     <span class="pub-time">2026-09-07</span>
@@ -1972,7 +2104,7 @@
             
             <div class="news-card" data-category="台灣股市" data-title="AI進入商業變現期，台灣AI伺服器供應鏈迎來獲利收穫潮" data-topic="AI伺服器供應鏈" data-source="鉅亨網（Anue）">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #f472b618; color: #f472b6; border-color: #f472b640;">
+                    <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         AI伺服器供應鏈
                     </span>
                     <span class="pub-time">2026-07-07</span>
@@ -1992,7 +2124,7 @@
             
             <div class="news-card" data-category="台灣股市" data-title="Omdia：AI伺服器排擠產能效應發酵，2026年全球筆電ODM出貨恐年減約10%" data-topic="Notebook與ODM產業" data-source="Omdia、電子工程專輯（EE Times China）">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #f472b618; color: #f472b6; border-color: #f472b640;">
+                    <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         Notebook與ODM產業
                     </span>
                     <span class="pub-time">2026-08-24</span>
@@ -2012,7 +2144,7 @@
             
             <div class="news-card" data-category="台灣股市" data-title="TrendForce：第二季DRAM產業營收季增59.5%，AI需求帶動供給持續吃緊" data-topic="記憶體產業" data-source="TrendForce 集邦科技、TechNews 科技新報">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #f472b618; color: #f472b6; border-color: #f472b640;">
+                    <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         記憶體產業
                     </span>
                     <span class="pub-time">2026-09-07</span>
@@ -2032,7 +2164,7 @@
             
             <div class="news-card" data-category="台灣股市" data-title="欣興法說釋利多，AI帶動ABF載板與高階PCB需求，下半年營運續成長" data-topic="PCB與載板產業" data-source="工商時報">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #f472b618; color: #f472b6; border-color: #f472b640;">
+                    <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         PCB與載板產業
                     </span>
                     <span class="pub-time">2026-07-30</span>
@@ -2052,7 +2184,7 @@
             
             <div class="news-card" data-category="台灣股市" data-title="台股ETF受益人持續成長，高股息與市值型ETF仍為市場資金布局主軸" data-topic="高股息與市值型ETF" data-source="台灣證券交易所公開資料整理、金融情報站（FinInfo Station）">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #f472b618; color: #f472b6; border-color: #f472b640;">
+                    <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         高股息與市值型ETF
                     </span>
                     <span class="pub-time">2026-08-24（資料更新日）</span>
@@ -2072,7 +2204,7 @@
             
             <div class="news-card" data-category="台灣股市" data-title="8月營收陸續出爐，記憶體與AI供應鏈表現強勁，南亞科年增560%居焦點" data-topic="上市櫃公司營收與財報" data-source="財報狗（StatementDog）、天地資訊（TENDY.NET）">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #f472b618; color: #f472b6; border-color: #f472b640;">
+                    <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         上市櫃公司營收與財報
                     </span>
                     <span class="pub-time">2026-09-06（資料更新）</span>
@@ -2097,14 +2229,14 @@
         <section class="category-section" id="section-E" data-category="美國股市">
             <div class="section-header" onclick="toggleSection('E')">
                 <div class="section-header-left">
-                    <div class="section-icon-box" style="background: #fbbf2420; color: #fbbf24; border-color: #fbbf2440;">
+                    <div class="section-icon-box" style="background: #fbbf2418; color: #fbbf24; border-color: #fbbf2440;">
                         🌱
                     </div>
                     <div>
                         <h3 class="section-title">美國股市動態</h3>
-                        <span class="section-subtitle">SECTOR INTELLIGENCE · 即時深度追蹤</span>
+                        <span class="section-subtitle">SECTOR INTELLIGENCE · 深度即時追蹤</span>
                     </div>
-                    <span class="section-count-badge" style="background: #fbbf2418; color: #fbbf24; border-color: #fbbf2440;">
+                    <span class="section-count-badge" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
                         9 則焦點
                     </span>
                 </div>
@@ -2112,12 +2244,16 @@
                     <span class="toggle-arrow" id="arrow-E">▼</span>
                 </div>
             </div>
+            <div class="section-bottom-line-bar">
+                <span class="bottom-line-tag" style="color: #fbbf24;">📌 一句話結論</span>
+                <span class="bottom-line-text">焦點動態：美債殖利率逼近5%引發市場警戒，美股四大指數震盪整理，牽動後續市場預期。</span>
+            </div>
             <div class="section-body" id="body-E">
                 <div class="news-grid">
                     
             <div class="news-card" data-category="美國股市" data-title="美債殖利率逼近5%引發市場警戒，美股四大指數震盪整理" data-topic="美股四大指數" data-source="Yahoo股市、財訊快報、金融時報相關報導彙整">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2418; color: #fbbf24; border-color: #fbbf2440;">
+                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
                         美股四大指數
                     </span>
                     <span class="pub-time">2026-09-08</span>
@@ -2137,7 +2273,7 @@
             
             <div class="news-card" data-category="美國股市" data-title="「科技七巨頭」重獲華爾街關注，AI投資回報成市場新焦點" data-topic="美國科技七巨頭" data-source="CNBC、Yahoo Finance">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2418; color: #fbbf24; border-color: #fbbf2440;">
+                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
                         美國科技七巨頭
                     </span>
                     <span class="pub-time">2026-09-03</span>
@@ -2157,7 +2293,7 @@
             
             <div class="news-card" data-category="美國股市" data-title="黃仁勳：GPT-6 Astra採用逾10萬套Grace Blackwell系統訓練，NVIDIA AI晶片需求持續升溫" data-topic="NVIDIA與AI晶片股" data-source="CNBC TV18、Yahoo Finance">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2418; color: #fbbf24; border-color: #fbbf2440;">
+                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
                         NVIDIA與AI晶片股
                     </span>
                     <span class="pub-time">2026-09-07</span>
@@ -2177,7 +2313,7 @@
             
             <div class="news-card" data-category="美國股市" data-title="費城半導體指數逆勢大漲逾3%，NVIDIA、美光領軍AI晶片股走強" data-topic="費城半導體指數" data-source="Investing.com、Google 財經、Yahoo 財經">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2418; color: #fbbf24; border-color: #fbbf2440;">
+                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
                         費城半導體指數
                     </span>
                     <span class="pub-time">2026-09-05（美股最新交易日收盤）</span>
@@ -2197,7 +2333,7 @@
             
             <div class="news-card" data-category="美國股市" data-title="AWS攜手NVIDIA擴大AI基礎建設，宣布部署逾100萬顆GPU支援雲端AI需求" data-topic="雲端運算公司" data-source="Amazon Web Services（AWS）官方部落格、NVIDIA GTC 2026相關報導">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2418; color: #fbbf24; border-color: #fbbf2440;">
+                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
                         雲端運算公司
                     </span>
                     <span class="pub-time">2026-03-16（AWS公告）</span>
@@ -2217,7 +2353,7 @@
             
             <div class="news-card" data-category="美國股市" data-title="Tesla Cybercab正式投入營運，自駕計程車商業化邁入新階段" data-topic="電動車與自駕車產業" data-source="Electric Cars Report、RTÉ News、CnEVPost">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2418; color: #fbbf24; border-color: #fbbf2440;">
+                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
                         電動車與自駕車產業
                     </span>
                     <span class="pub-time">2026-09-07</span>
@@ -2237,7 +2373,7 @@
             
             <div class="news-card" data-category="美國股市" data-title="Broadcom第三季財報創新高，AI晶片營收暴增221%" data-topic="美國企業財報" data-source="Broadcom官方財報、PR Newswire、TheStreet">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2418; color: #fbbf24; border-color: #fbbf2440;">
+                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
                         美國企業財報
                     </span>
                     <span class="pub-time">2026-09-02</span>
@@ -2257,7 +2393,7 @@
             
             <div class="news-card" data-category="美國股市" data-title="多家華爾街券商上調Broadcom目標價，AI成長動能獲分析師持續看好" data-topic="華爾街分析師評級" data-source="華爾街分析師報告彙整、TickFlow、VCP Scanner">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2418; color: #fbbf24; border-color: #fbbf2440;">
+                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
                         華爾街分析師評級
                     </span>
                     <span class="pub-time">2026-09-07（最新市場統計資料）</span>
@@ -2277,7 +2413,7 @@
             
             <div class="news-card" data-category="美國股市" data-title="OpenAI與Anthropic傳加速IPO布局，AI產業迎來新一波上市熱潮" data-topic="美股IPO與併購動態" data-source="Forbes">
                 <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2418; color: #fbbf24; border-color: #fbbf2440;">
+                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
                         美股IPO與併購動態
                     </span>
                     <span class="pub-time">2026-09-01（Forbes最新更新）</span>
@@ -2301,10 +2437,125 @@
         
         </div>
 
+        <!-- 模組 8 & 9: 雜訊速讀 & 明日關鍵觀察指標 -->
+        <div class="bottom-intel-grid">
+            <div class="bottom-intel-card">
+                <div class="bottom-intel-header" style="color: var(--accent-purple);">
+                    <span>📡 今日市場雜訊與速報 (MARKET NOISE & QUICK HITS)</span>
+                </div>
+                <div class="noise-list">
+                    
+            <div class="noise-item">
+                <span class="noise-cat">[美國股市]</span>
+                <a href="https://electriccarsreport.com/2026/09/tesla-cybercab-starts-austin-robotaxi-operations-ahead-of-china-debut/" target="_blank" class="noise-title">Tesla Cybercab正式投入營運，自駕計程車商業化邁入新階段</a>
+                <span class="noise-source">(Electric Cars Report、RTÉ News、CnEVPost)</span>
+            </div>
+            
+            <div class="noise-item">
+                <span class="noise-cat">[美國股市]</span>
+                <a href="https://investors.broadcom.com/node/64671/pdf" target="_blank" class="noise-title">Broadcom第三季財報創新高，AI晶片營收暴增221%</a>
+                <span class="noise-source">(Broadcom官方財報、PR Newswire、TheStreet)</span>
+            </div>
+            
+            <div class="noise-item">
+                <span class="noise-cat">[美國股市]</span>
+                <a href="https://tickflow.io/stock/AVGO/forecast" target="_blank" class="noise-title">多家華爾街券商上調Broadcom目標價，AI成長動能獲分析師持續看好</a>
+                <span class="noise-source">(華爾街分析師報告彙整、TickFlow、VCP Scanner)</span>
+            </div>
+            
+            <div class="noise-item">
+                <span class="noise-cat">[美國股市]</span>
+                <a href="https://www.forbes.com/sites/investor-hub/article/openai-vs-anthropic-ipo-comparison/" target="_blank" class="noise-title">OpenAI與Anthropic傳加速IPO布局，AI產業迎來新一波上市熱潮</a>
+                <span class="noise-source">(Forbes)</span>
+            </div>
+            
+                </div>
+            </div>
+            
+            <div class="bottom-intel-card">
+                <div class="bottom-intel-header" style="color: var(--accent-cyan);">
+                    <span>🎯 明日關鍵觀察指標 (TOMORROW'S CATALYST WATCHLIST)</span>
+                </div>
+                <ul class="watchlist-list">
+                    
+        <li class="watchlist-item">
+            <span class="watchlist-bullet">01</span>
+            <span class="watchlist-text">美股科技指標企業（如 Oracle、Broadcom）財報與資本支出展望</span>
+        </li>
+        
+        <li class="watchlist-item">
+            <span class="watchlist-bullet">02</span>
+            <span class="watchlist-text">美國勞工部公布最新通膨 CPI / PPI 數據與利率期貨定價變化</span>
+        </li>
+        
+        <li class="watchlist-item">
+            <span class="watchlist-bullet">03</span>
+            <span class="watchlist-text">三大法人於台股期現貨未平倉部位變動與台積電營收公布動態</span>
+        </li>
+        
+        <li class="watchlist-item">
+            <span class="watchlist-bullet">04</span>
+            <span class="watchlist-text">國際晶片巨頭（NVIDIA / AMD / Intel）最新產品發表會技術指引</span>
+        </li>
+        
+                </ul>
+            </div>
+        </div>
+
+        <!-- 模組 10: 資料來源與金融合規免責聲明 -->
+        <footer class="footer-compliance">
+            <div class="footer-sources">
+                🌐 情報來源：彭博 (Bloomberg)、路透 (Reuters)、CNBC、工商時報、經濟日報、中央社、各大科技官方新聞稿與全球監管機構公告
+            </div>
+            <div class="footer-disclaimer">
+                免責聲明 (Disclaimer)：本網站與日報所提供之所有資訊僅供科技產業動態研究與個人學術參考，不構成任何形式之投資邀約、推薦、買賣建議或金融顧問意見。投資涉及風險，證券價格可升可跌，請獨立評估或諮詢專業財務顧問。
+            </div>
+        </footer>
     </div>
+
+    <!-- 手機端專屬底部浮動導航列 -->
+    <nav class="mobile-bottom-bar">
+        <button class="bottom-nav-item" onclick="scrollToElement('bigThreeSection')">
+            <span class="bottom-nav-icon">🔥</span>
+            <span>必看Top3</span>
+        </button>
+        <button class="bottom-nav-item" onclick="scrollToElement('impactSection')">
+            <span class="bottom-nav-icon">🔗</span>
+            <span>影響鏈</span>
+        </button>
+        <button class="bottom-nav-item" onclick="scrollToElement('filterToolbar')">
+            <span class="bottom-nav-icon">📂</span>
+            <span>分類篩選</span>
+        </button>
+        <button class="bottom-nav-item" onclick="scrollToElement('topHeader')">
+            <span class="bottom-nav-icon">⬆️</span>
+            <span>回頂端</span>
+        </button>
+    </nav>
 
     <!-- 前端互動與展開功能腳本 -->
     <script>
+        // 深色 / 淺色主題切換與偏好記憶
+        function initTheme() {
+            const savedTheme = localStorage.getItem('snake_report_theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButtonText(savedTheme);
+        }
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme') || 'dark';
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('snake_report_theme', next);
+            updateThemeButtonText(next);
+        }
+        function updateThemeButtonText(theme) {
+            const btn = document.getElementById('themeBtn');
+            if (btn) {
+                btn.innerText = theme === 'dark' ? '☀️ 淺色模式' : '🌙 深色模式';
+            }
+        }
+        initTheme();
+
         // 單卡片摘要展開 / 收合
         function toggleCardExpand(btn) {
             const wrapper = btn.closest('.summary-wrapper');
@@ -2382,26 +2633,26 @@
             btnElem.classList.add('active');
             
             const sections = document.querySelectorAll('.category-section');
-            const top10 = document.getElementById('top10Section');
             
-            if (catName === 'all') {
-                sections.forEach(sec => sec.style.display = 'block');
-                if (top10) top10.style.display = 'block';
-            } else {
-                sections.forEach(sec => {
-                    if (sec.getAttribute('data-category') === catName) {
-                        sec.style.display = 'block';
-                    } else {
-                        sec.style.display = 'none';
-                    }
-                });
-                if (top10) top10.style.display = 'none';
-            }
+            sections.forEach(sec => {
+                if (catName === 'all' || sec.getAttribute('data-category') === catName) {
+                    sec.style.display = 'block';
+                } else {
+                    sec.style.display = 'none';
+                }
+            });
             
             filterNews();
         }
         
-        // 點擊看盤卡片平滑滾動至對應分類
+        // 平滑滾動至指定錨點
+        function scrollToElement(elemId) {
+            const el = document.getElementById(elemId);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
         function scrollToSection(code) {
             const section = document.getElementById('section-' + code);
             if (section) {
@@ -2415,7 +2666,7 @@
             }
         }
 
-        // 即時關鍵字搜尋過濾
+        // 即時關鍵字檢索
         function filterNews() {
             const input = document.getElementById('searchInput').value.toLowerCase().trim();
             const cards = document.querySelectorAll('.news-card');
