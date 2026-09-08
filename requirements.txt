@@ -1,0 +1,13 @@
+# Snake Daily Report 相依套件清單
+# 適用於 Windows 11 + Python 3.11/3.12
+
+# Windows UI 自動化套件 (Copilot 365 自動提問模式專用)
+pywinauto>=0.6.8
+pyautogui>=0.9.54
+pyperclip>=1.8.2
+pywin32>=306
+
+# 注意事項：
+# 1. 網路檢索、HTML 生成、JSON 處理、SMTP 郵件發送均使用 Python 標準庫，無額外依賴。
+# 2. PDF 匯出使用 Windows 11 內建之 Microsoft Edge Headless 模式，無須安裝第三方重型依賴。
+# 3. 若欲使用外部 LLM API 生成更高階摘要，可選擇安裝 google-genai 或 openai (可選)。
