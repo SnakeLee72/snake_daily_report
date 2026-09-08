@@ -51,7 +51,7 @@ def export_html_to_pdf(html_path: Path, pdf_path: Path = None) -> Path:
 
     try:
         print(f"[PDF 匯出] 正在使用 Edge 渲染 PDF：{pdf_path.name}...")
-        subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=60)
+        subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=90)
         if pdf_path.exists() and pdf_path.stat().st_size > 0:
             print(f"[PDF 匯出成功] 檔案已產生：{pdf_path} ({pdf_path.stat().st_size // 1024} KB)")
             return pdf_path
