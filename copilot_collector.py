@@ -193,9 +193,7 @@ def parse_copilot_response(raw_text: str, default_cat: str, topic_name: str) -> 
     if not title:
         title = f"{topic_name} 最新重大進展"
     if not summary:
-        summary = clean_text[:95] + "..." if len(clean_text) > 95 else clean_text
-    if len(summary) > 100:
-        summary = summary[:97] + "..."
+        summary = clean_text[:120] if len(clean_text) > 120 else clean_text
     if not source:
         source = "科技產業新聞 / 官方公告"
     if not pub_time:

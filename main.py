@@ -64,10 +64,9 @@ def deduplicate_news(items: list) -> list:
         if is_dup:
             continue
 
-        # 3. 確保摘要字數符合規範（<= 100 字）
+        # 3. 保留完整整理後摘要內容
         summary = item.get("summary", "").strip()
-        if len(summary) > 100:
-            item["summary"] = summary[:97] + "..."
+        item["summary"] = summary
             
         if url and not is_generic_url:
             seen_urls.add(url)
