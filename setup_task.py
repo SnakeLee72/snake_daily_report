@@ -44,8 +44,8 @@ def main():
         mode = "copilot" if mode_choice != "2" else "direct"
         
         print("\n請輸入要收集的分類代碼 (A, B, C, D, E)，多個請用逗號隔開：")
-        print("A: AI與科技, B: 新科技, C: 投資市場, D: 台灣股市, E: 美國股市")
-        categories = input("直接按 Enter 則代表【全選】: ").strip()
+        print("A: AI, B: New technology, C: 投資市場, D: 台灣股市, E: 美國股市")
+        categories = input("直接按 Enter 則代表【全選】: ").strip().upper()
         
         email_choice = input("\n執行完畢後是否透過 Outlook 自動寄信給自己？ [y/N]: ").strip().lower()
         use_email = "--email" if email_choice == 'y' else ""
@@ -76,7 +76,7 @@ def main():
         else:
             print("\n [建立失敗] 系統回傳訊息：")
             print(res.stderr or res.stdout)
-            print(">> 提示：請以「系統管理員身分」開啟終端機或命令提示字元再執行本腳本。")
+            print(">> 提示：若出現存取拒絕，請在批次檔上按右鍵選擇「以系統管理員身分執行」。")
             
     elif choice == "2":
         cmd = ["schtasks", "/query", "/tn", task_name, "/fo", "LIST", "/v"]
@@ -95,11 +95,35 @@ def main():
             print("[提示] 任務不存在或已刪除。")
             
     elif choice == "4":
-        print("\n正在啟動 Snake Daily Report...")
-        subprocess.run([python_exe, str(script_dir / "main.py")])
+        print("\n請選擇執行模式：")
+        print("[1] Copilot 365 視窗自動化模式 (連續提問)")
+        print("[2] Direct 即時快速連網模式 (免介面秒級產出，推薦)")
+        mode_choice = input("請輸入模式 [1 或 2，預設 2]: ").strip()
+        mode = "copilot" if mode_choice == "1" else "direct"
+
+        print("\n請輸入要收集的分類代碼 (A, B, C, D, E)，多個請用逗號隔開：")
+        print("A: AI, B: New technology, C: 投資市場, D: 台灣股市, E: 美國股市")
+        categories = input("直接按 Enter 則代表【全選】: ").strip().upper()
+
+        email_choice = input("\n執行完畢後是否透過 Outlook 自動寄信給自己？ [y/N]: ").strip().lower()
+
+        run_args = [python_exe, str(script_dir / "main.py"), "--mode", mode]
+        if categories:
+            run_args.extend(["--categories", categories])
+        if email_choice == 'y':
+            run_args.append("--email")
+
+        print(f"\n正在啟動 Snake Daily Report...")
+        print(f"指令：{' '.join(run_args)}\n")
+        subprocess.run(run_args)
+    elif choice == "5":
+        print("\n已退出程式。")
+        return
         
-    print("\n按 Enter 鍵結束程式...")
-    input()
+    try:
+        input("\n按 Enter 鍵結束程式...")
+    except (EOFError, KeyboardInterrupt):
+        pass
 
 if __name__ == "__main__":
     main()
