@@ -22,15 +22,16 @@ def main():
     print(f"- Python  : {python_exe}\n")
     
     print("請選擇操作功能：")
+    print("[0] ⚡ 一鍵快速生成日報 (Copilot 365 + 全部類別 + 不寄信)")
     print("[1] 註冊/更新每日定時排程任務")
     print("[2] 查詢現有排程任務狀態")
     print("[3] 刪除此排程任務")
-    print("[4] 立即執行一次日報主程式")
+    print("[4] 自訂立即執行日報 (可自由選模式、類別、寄信)")
     print("[5] 離開")
     
-    choice = input("\n請輸入選項 [1-5，預設 1]: ").strip()
+    choice = input("\n請輸入選項 [0-5，預設 0]: ").strip()
     if not choice:
-        choice = "1"
+        choice = "0"
         
     if choice == "1":
         exec_time = input("請輸入每日自動執行時間 (格式 HH:mm，如 08:30): ").strip()
@@ -94,12 +95,18 @@ def main():
         else:
             print("[提示] 任務不存在或已刪除。")
             
+    elif choice == "0":
+        print("\n⚡ 啟動極速生成：Copilot 365 模式 + 全部 5 大主題分類 + 不寄信...")
+        run_args = [python_exe, str(script_dir / "main.py"), "--mode", "copilot"]
+        print(f"執行指令：{' '.join(run_args)}\n")
+        subprocess.run(run_args)
+            
     elif choice == "4":
         print("\n請選擇執行模式：")
         print("[1] Copilot 365 視窗自動化模式 (連續提問)")
-        print("[2] Direct 即時快速連網模式 (免介面秒級產出，推薦)")
-        mode_choice = input("請輸入模式 [1 或 2，預設 2]: ").strip()
-        mode = "copilot" if mode_choice == "1" else "direct"
+        print("[2] Direct 即時快速連網模式 (免介面秒級產出)")
+        mode_choice = input("請輸入模式 [1 或 2，預設 1]: ").strip()
+        mode = "copilot" if mode_choice != "2" else "direct"
 
         print("\n請輸入要收集的分類代碼 (A, B, C, D, E)，多個請用逗號隔開：")
         print("A: AI, B: New technology, C: 投資市場, D: 台灣股市, E: 美國股市")
