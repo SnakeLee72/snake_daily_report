@@ -1,0 +1,222 @@
+[
+  {
+    "title": "OpenAI DevDay 2026 發表「Dots」全天候 AI Agent，可跨應用持續執行任務",
+    "summary": "OpenAI 在 DevDay 2026 推出 Dots AI Agent，具備獨立雲端電腦與瀏覽器，可連接超過 4,000 個應用程式，協助用戶持續執行跨平台工作、保留任務脈絡，並在敏感操作前取得授權，被視為 AI Agent 邁向自主執行的重要進展。",
+    "source": "OpenAI DevDay 2026（Analytics Insight、ToolJunction 報導）",
+    "publish_time": "2026-10-01",
+    "url": "https://www.bing.com/news/search?q=AI Agent",
+    "category": "AI",
+    "topic": "AI Agent",
+    "raw_content": "：AI\r\n\r\n：AI Agent\r\n\r\n：OpenAI DevDay 2026 發表「Dots」全天候 AI Agent，可跨應用持續執行任務\r\n\r\n：OpenAI 在 DevDay 2026 推出 Dots AI Agent，具備獨立雲端電腦與瀏覽器，可連接超過 4,000 個應用程式，協助用戶持續執行跨平台工作、保留任務脈絡，並在敏感操作前取得授權，被視為 AI Agent 邁向自主執行的重要進展。\r\n\r\n：OpenAI DevDay 2026（Analytics Insight、ToolJunction 報導）\r\n\r\n：2026-10-01\r\n\r\n：OpenAI DevDay 2026: The Biggest AI Announcements Explained；OpenAI DevDay 2026: Dots, GPT-6.1 Sol, and the Shift Toward AI Agents",
+    "id": 1
+  },
+  {
+    "title": "Meta 發表新一代生成式 AI 模型「Muse Wonder Full」，躋身頂級模型競爭行列",
+    "summary": "Meta 於 2026 年 10 月 12 日推出 Muse Wonder 與 Muse Wonder Full 生成式 AI 模型，強調 Agent 任務執行能力，並導入 Active Memory 與 Active Focus 機制。多家 AI 追蹤平台將其列為近期最受矚目的前沿模型之一。",
+    "source": "Meta AI（經 Startrise、LM Market Cap 等模型發布追蹤平台整理）",
+    "publish_time": "2026-10-12",
+    "url": "https://www.bing.com/news/search?q=生成式AI模型",
+    "category": "AI",
+    "topic": "生成式AI模型",
+    "raw_content": "：AI\r\n\r\n：生成式AI模型\r\n\r\n：Meta 發表新一代生成式 AI 模型「Muse Wonder Full」，躋身頂級模型競爭行列\r\n\r\n：Meta 於 2026 年 10 月 12 日推出 Muse Wonder 與 Muse Wonder Full 生成式 AI 模型，強調 Agent 任務執行能力，並導入 Active Memory 與 Active Focus 機制。多家 AI 追蹤平台將其列為近期最受矚目的前沿模型之一。\r\n\r\n：Meta AI（經 Startrise、LM Market Cap 等模型發布追蹤平台整理）\r\n\r\n：2026-10-12\r\n\r\n：AI Model Release Tracker - Startrise；LLM Updates (October 2026) - AI Model Releases & Provider Activity",
+    "id": 2
+  },
+  {
+    "title": "騰訊發布開源多模態互動模型 Gander，同步整合影像、語音與文字即時互動",
+    "summary": "騰訊於 2026 年 9 月發布 Gander 多模態 AI 模型，可同時處理串流影片、語音及文字輸入，支援全雙工即時對話與 Agent 任務執行。該模型採用開源權重與程式碼，被視為多模態 AI 邁向即時互動的重要進展。",
+    "source": "騰訊混元（Tencent Hunyuan Speech Team）／AI TLDR 整理報導",
+    "publish_time": "2026-09-09",
+    "url": "https://www.bing.com/news/search?q=多模態AI",
+    "category": "AI",
+    "topic": "多模態AI",
+    "raw_content": "：AI\r\n\r\n：多模態AI\r\n\r\n：騰訊發布開源多模態互動模型 Gander，同步整合影像、語音與文字即時互動\r\n\r\n：騰訊於 2026 年 9 月發布 Gander 多模態 AI 模型，可同時處理串流影片、語音及文字輸入，支援全雙工即時對話與 Agent 任務執行。該模型採用開源權重與程式碼，被視為多模態 AI 邁向即時互動的重要進展。\r\n\r\n：騰訊混元（Tencent Hunyuan Speech Team）／AI TLDR 整理報導\r\n\r\n：2026-09-09\r\n\r\n：Gander — Tencent Open Omni Interaction Agent",
+    "id": 3
+  },
+  {
+    "title": "微軟推出 Microsoft-Decision-1 決策推論模型，推論速度號稱較 GPT-6 Sol 快 35 倍",
+    "summary": "微軟於 2026 年 10 月 9 日發布 Microsoft-Decision-1，專為分類、路由、驗證與工作流控制等推論任務設計。該模型採用固定選項決策機制，不產生文字內容，而是直接輸出機率分數，以提升 AI 推論效率與降低成本。",
+    "source": "Microsoft-Decision-1: Our model for fast decision-making（Microsoft 官方）",
+    "publish_time": "2026-10-09",
+    "url": "https://www.bing.com/news/search?q=AI推論技術",
+    "category": "AI",
+    "topic": "AI推論技術",
+    "raw_content": "：AI\r\n\r\n：AI推論技術\r\n\r\n：微軟推出 Microsoft-Decision-1 決策推論模型，推論速度號稱較 GPT-6 Sol 快 35 倍\r\n\r\n：微軟於 2026 年 10 月 9 日發布 Microsoft-Decision-1，專為分類、路由、驗證與工作流控制等推論任務設計。該模型採用固定選項決策機制，不產生文字內容，而是直接輸出機率分數，以提升 AI 推論效率與降低成本。\r\n\r\n：Microsoft-Decision-1: Our model for fast decision-making（Microsoft 官方）\r\n\r\n：2026-10-09\r\n\r\n：Microsoft-Decision-1 官方公告",
+    "id": 4
+  },
+  {
+    "title": "Marvell 將於 OCP 2026 展示新一代 AI 資料中心解決方案",
+    "summary": "Marvell 宣布將在 OCP Global Summit 2026 發表新一代 AI 資料中心技術，涵蓋 AI 基礎設施、高速連網、記憶體擴充與整合式安全方案，目標解決 AI 運算對頻寬、記憶體容量及資料中心安全性的需求。",
+    "source": "Marvell Technology (MRVL) To Showcase AI Data Center Solutions At OCP 2026（Yahoo Finance UK）",
+    "publish_time": "2026-10-11",
+    "url": "https://www.bing.com/news/search?q=AI資料中心",
+    "category": "AI",
+    "topic": "AI資料中心",
+    "raw_content": "：AI\r\n\r\n：AI資料中心\r\n\r\n：Marvell 將於 OCP 2026 展示新一代 AI 資料中心解決方案\r\n\r\n：Marvell 宣布將在 OCP Global Summit 2026 發表新一代 AI 資料中心技術，涵蓋 AI 基礎設施、高速連網、記憶體擴充與整合式安全方案，目標解決 AI 運算對頻寬、記憶體容量及資料中心安全性的需求。\r\n\r\n：Marvell Technology (MRVL) To Showcase AI Data Center Solutions At OCP 2026（Yahoo Finance UK）\r\n\r\n：2026-10-11\r\n\r\n：Marvell 將展示 AI 資料中心解決方案",
+    "id": 5
+  },
+  {
+    "title": "企業AI應用 最新產業趨勢與市場進展",
+    "summary": "市場持續聚焦 企業AI應用 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。",
+    "source": "科技產業觀察",
+    "publish_time": "2026-10-13",
+    "url": "https://www.bing.com/news/search?q=企業AI應用",
+    "category": "AI",
+    "topic": "企業AI應用",
+    "raw_content": "【類別】：AI\n【主題】：企業AI應用\n【標題】：企業AI應用 最新產業趨勢與市場進展\n【摘要】：市場持續聚焦 企業AI應用 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。\n【來源】：科技產業觀察\n【發布時間】：2026-10-13\n【原始連結】：https://www.bing.com/news/search?q=企業AI應用",
+    "id": 6
+  },
+  {
+    "title": "邊緣AI 最新產業趨勢與市場進展",
+    "summary": "市場持續聚焦 邊緣AI 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。",
+    "source": "科技產業觀察",
+    "publish_time": "2026-10-13",
+    "url": "https://www.bing.com/news/search?q=邊緣AI",
+    "category": "AI",
+    "topic": "邊緣AI",
+    "raw_content": "【類別】：AI\n【主題】：邊緣AI\n【標題】：邊緣AI 最新產業趨勢與市場進展\n【摘要】：市場持續聚焦 邊緣AI 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。\n【來源】：科技產業觀察\n【發布時間】：2026-10-13\n【原始連結】：https://www.bing.com/news/search?q=邊緣AI",
+    "id": 7
+  },
+  {
+    "title": "NVIDIA 加碼布局實體 AI，推動機器人與自駕系統安全技術落地",
+    "summary": "NVIDIA 持續擴大實體 AI（Physical AI）布局，並推廣其 Halos for Robotics 安全架構，協助人形機器人、自主移動機器人及自駕系統安全部署。NVIDIA 表示，安全性將成為實體 AI 大規模商業化的關鍵發展方向。",
+    "source": "Nvidia’s big bet on physical AI aims for safer robotaxis, humanoid robots（Ars Technica）",
+    "publish_time": "2026-10-08",
+    "url": "https://www.bing.com/news/search?q=實體AI與機器人",
+    "category": "AI",
+    "topic": "實體AI與機器人",
+    "raw_content": "：AI\n\n：實體AI與機器人\n\n：NVIDIA 加碼布局實體 AI，推動機器人與自駕系統安全技術落地\n\n：NVIDIA 持續擴大實體 AI（Physical AI）布局，並推廣其 Halos for Robotics 安全架構，協助人形機器人、自主移動機器人及自駕系統安全部署。NVIDIA 表示，安全性將成為實體 AI 大規模商業化的關鍵發展方向。\n\n：Nvidia’s big bet on physical AI aims for safer robotaxis, humanoid robots（Ars Technica）\n\n：2026-10-08\n\n：Nvidia’s big bet on physical AI aims for safer robotaxis, humanoid robots",
+    "id": 8
+  },
+  {
+    "title": "AI資安與治理 最新產業趨勢與市場進展",
+    "summary": "市場持續聚焦 AI資安與治理 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。",
+    "source": "科技產業觀察",
+    "publish_time": "2026-10-13",
+    "url": "https://www.bing.com/news/search?q=AI資安與治理",
+    "category": "AI",
+    "topic": "AI資安與治理",
+    "raw_content": "【類別】：AI\n【主題】：AI資安與治理\n【標題】：AI資安與治理 最新產業趨勢與市場進展\n【摘要】：市場持續聚焦 AI資安與治理 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。\n【來源】：科技產業觀察\n【發布時間】：2026-10-13\n【原始連結】：https://www.bing.com/news/search?q=AI資安與治理",
+    "id": 9
+  },
+  {
+    "title": "Meta 發表 Muse Wonder 新模型系列，擴大 AI 開發者與代理系統生態布局",
+    "summary": "Meta 於 2026 年 10 月 12 日推出 Muse Wonder 與 Muse Wonder Full，開放開發者透過 Meta Model API 與 Muse Code 使用。新模型主打 Agent 應用、長期記憶（Active Memory）與目標持續執行（Active Focus），進一步強化 AI 開發者生態與開放平台布局。",
+    "source": "Introducing Muse Wonder and Muse Wonder Full: Frontier Models for Agents（Meta 官方）",
+    "publish_time": "2026-10-12",
+    "url": "https://www.bing.com/news/search?q=開源AI生態",
+    "category": "AI",
+    "topic": "開源AI生態",
+    "raw_content": "：AI\r\n\r\n：開源AI生態\r\n\r\n：Meta 發表 Muse Wonder 新模型系列，擴大 AI 開發者與代理系統生態布局\r\n\r\n：Meta 於 2026 年 10 月 12 日推出 Muse Wonder 與 Muse Wonder Full，開放開發者透過 Meta Model API 與 Muse Code 使用。新模型主打 Agent 應用、長期記憶（Active Memory）與目標持續執行（Active Focus），進一步強化 AI 開發者生態與開放平台布局。\r\n\r\n：Introducing Muse Wonder and Muse Wonder Full: Frontier Models for Agents（Meta 官方）\r\n\r\n：2026-10-12\r\n\r\n：Meta 官方公告：Muse Wonder 與 Muse Wonder Full",
+    "id": 10
+  },
+  {
+    "title": "TRON 測試網導入後量子密碼技術，因應量子運算帶來的資安挑戰",
+    "summary": "TRON DAO 於 2026 年 10 月 12 日宣布，已在測試網部署後量子密碼學（Post-Quantum Cryptography）技術，以防範未來量子運算對現有加密機制的威脅。TRON 表示未來可視需求快速擴展至主網，反映量子運算對資訊安全領域的影響正受到高度關注。",
+    "source": "TRON: Post-Quantum Cryptography Hits Testnet（Blockchain.News）",
+    "publish_time": "2026-10-12",
+    "url": "https://www.bing.com/news/search?q=量子運算",
+    "category": "New technology",
+    "topic": "量子運算",
+    "raw_content": "：New technology\n\n：量子運算\n\n：TRON 測試網導入後量子密碼技術，因應量子運算帶來的資安挑戰\n\n：TRON DAO 於 2026 年 10 月 12 日宣布，已在測試網部署後量子密碼學（Post-Quantum Cryptography）技術，以防範未來量子運算對現有加密機制的威脅。TRON 表示未來可視需求快速擴展至主網，反映量子運算對資訊安全領域的影響正受到高度關注。\n\n：TRON: Post-Quantum Cryptography Hits Testnet（Blockchain.News）\n\n：2026-10-12\n\n：TRON: Post-Quantum Cryptography Hits Testnet",
+    "id": 11
+  },
+  {
+    "title": "NVIDIA 加速布局人形機器人安全技術，推動工廠與自駕應用落地",
+    "summary": "NVIDIA 持續擴展「Halos for Robotics」安全架構，協助人形機器人於工廠等環境安全運作。報導指出，包括 Agility Robotics 的 Digit 人形機器人已採用相關技術，顯示產業正加速解決人機協作與大規模部署的安全挑戰。",
+    "source": "Nvidia’s big bet on physical AI aims for safer robotaxis, humanoid robots（Ars Technica）",
+    "publish_time": "2026-10-08",
+    "url": "https://www.bing.com/news/search?q=人形機器人",
+    "category": "New technology",
+    "topic": "人形機器人",
+    "raw_content": "：New technology\n\n：人形機器人\n\n：NVIDIA 加速布局人形機器人安全技術，推動工廠與自駕應用落地\n\n：NVIDIA 持續擴展「Halos for Robotics」安全架構，協助人形機器人於工廠等環境安全運作。報導指出，包括 Agility Robotics 的 Digit 人形機器人已採用相關技術，顯示產業正加速解決人機協作與大規模部署的安全挑戰。\n\n：Nvidia’s big bet on physical AI aims for safer robotaxis, humanoid robots（Ars Technica）\n\n：2026-10-08\n\n：Nvidia’s big bet on physical AI aims for safer robotaxis, humanoid robots",
+    "id": 12
+  },
+  {
+    "title": "自動駕駛技術 最新產業趨勢與市場進展",
+    "summary": "市場持續聚焦 自動駕駛技術 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。",
+    "source": "科技產業觀察",
+    "publish_time": "2026-10-13",
+    "url": "https://www.bing.com/news/search?q=自動駕駛技術",
+    "category": "New technology",
+    "topic": "自動駕駛技術",
+    "raw_content": "【類別】：New technology\n【主題】：自動駕駛技術\n【標題】：自動駕駛技術 最新產業趨勢與市場進展\n【摘要】：市場持續聚焦 自動駕駛技術 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。\n【來源】：科技產業觀察\n【發布時間】：2026-10-13\n【原始連結】：https://www.bing.com/news/search?q=自動駕駛技術",
+    "id": 13
+  },
+  {
+    "title": "XREAL 推出 Android XR 智慧眼鏡 AURA，結合 Google Gemini 與高階空間運算",
+    "summary": "XR 眼鏡品牌 XREAL 於 2026 年 10 月 7 日正式公布 XREAL AURA，採用 Android XR 平台，整合 Google Gemini 與 Qualcomm Snapdragon Reality Elite，支援手勢追蹤與空間運算應用。產品已開放預購，被視為智慧眼鏡與 XR 市場的重要新進展。",
+    "source": "XREAL AURA Starts at $1,279, Bringing Wired XR Glasses with Android XR to Customers This Year（XREAL／PR Newswire）",
+    "publish_time": "2026-10-07",
+    "url": "https://www.bing.com/news/search?q=智慧眼鏡與XR",
+    "category": "New technology",
+    "topic": "智慧眼鏡與XR",
+    "raw_content": "：New technology\r\n\r\n：智慧眼鏡與XR\r\n\r\n：XREAL 推出 Android XR 智慧眼鏡 AURA，結合 Google Gemini 與高階空間運算\r\n\r\n：XR 眼鏡品牌 XREAL 於 2026 年 10 月 7 日正式公布 XREAL AURA，採用 Android XR 平台，整合 Google Gemini 與 Qualcomm Snapdragon Reality Elite，支援手勢追蹤與空間運算應用。產品已開放預購，被視為智慧眼鏡與 XR 市場的重要新進展。\r\n\r\n：XREAL AURA Starts at $1,279, Bringing Wired XR Glasses with Android XR to Customers This Year（XREAL／PR Newswire）\r\n\r\n：2026-10-07\r\n\r\n：XREAL AURA 官方發布資訊",
+    "id": 14
+  },
+  {
+    "title": "台積電 2 奈米製程需求升溫，蘋果、高通與聯發科同步導入新世代晶片",
+    "summary": "隨著 2 奈米時代來臨，蘋果、高通與聯發科已於 2026 年陸續推出採用台積電 2 奈米製程的旗艦晶片。報導指出，2 奈米導入 GAA（環繞式閘極）電晶體技術，並帶動 AI 晶片需求成長，使台積電加速擴充先進製程產能。",
+    "source": "Qualcomm, Apple, MediaTek Battle It Out on TSMC 2nm: Inside Their Flagship AI Strategies（TrendForce）",
+    "publish_time": "2026-10-06",
+    "url": "https://www.bing.com/news/search?q=先進半導體製程",
+    "category": "New technology",
+    "topic": "先進半導體製程",
+    "raw_content": "：New technology\r\n\r\n：先進半導體製程\r\n\r\n：台積電 2 奈米製程需求升溫，蘋果、高通與聯發科同步導入新世代晶片\r\n\r\n：隨著 2 奈米時代來臨，蘋果、高通與聯發科已於 2026 年陸續推出採用台積電 2 奈米製程的旗艦晶片。報導指出，2 奈米導入 GAA（環繞式閘極）電晶體技術，並帶動 AI 晶片需求成長，使台積電加速擴充先進製程產能。\r\n\r\n：Qualcomm, Apple, MediaTek Battle It Out on TSMC 2nm: Inside Their Flagship AI Strategies（TrendForce）\r\n\r\n：2026-10-06\r\n\r\n：TrendForce：TSMC 2nm 與旗艦 AI 晶片策略解析",
+    "id": 15
+  },
+  {
+    "title": "矽光子與CPO 最新產業趨勢與市場進展",
+    "summary": "市場持續聚焦 矽光子與CPO 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。",
+    "source": "科技產業觀察",
+    "publish_time": "2026-10-13",
+    "url": "https://www.bing.com/news/search?q=矽光子與CPO",
+    "category": "New technology",
+    "topic": "矽光子與CPO",
+    "raw_content": "【類別】：New technology\n【主題】：矽光子與CPO\n【標題】：矽光子與CPO 最新產業趨勢與市場進展\n【摘要】：市場持續聚焦 矽光子與CPO 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。\n【來源】：科技產業觀察\n【發布時間】：2026-10-13\n【原始連結】：https://www.bing.com/news/search?q=矽光子與CPO",
+    "id": 16
+  },
+  {
+    "title": "次世代電池技術 最新產業趨勢與市場進展",
+    "summary": "市場持續聚焦 次世代電池技術 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。",
+    "source": "科技產業觀察",
+    "publish_time": "2026-10-13",
+    "url": "https://www.bing.com/news/search?q=次世代電池技術",
+    "category": "New technology",
+    "topic": "次世代電池技術",
+    "raw_content": "【類別】：New technology\n【主題】：次世代電池技術\n【標題】：次世代電池技術 最新產業趨勢與市場進展\n【摘要】：市場持續聚焦 次世代電池技術 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。\n【來源】：科技產業觀察\n【發布時間】：2026-10-13\n【原始連結】：https://www.bing.com/news/search?q=次世代電池技術",
+    "id": 17
+  },
+  {
+    "title": "亞馬遜 Amazon Leo 擬結合 Prime 推出低軌衛星寬頻服務，挑戰 Starlink 市場地位",
+    "summary": "亞馬遜於 2026 年 10 月 11 日公布 Amazon Leo（前身為 Project Kuiper）最新商業策略，計劃將低軌衛星寬頻服務與 Prime 會員方案整合，並擴大住宅、企業、航空及政府市場布局，以挑戰 Starlink 在衛星網路市場的領先地位。",
+    "source": "Amazon Leo Plans Prime Subscription Bundling to Challenge Starlink in Consumer Satellite Broadband Market（SatNews）",
+    "publish_time": "2026-10-11",
+    "url": "https://www.bing.com/news/search?q=衛星通訊與低軌衛星",
+    "category": "New technology",
+    "topic": "衛星通訊與低軌衛星",
+    "raw_content": "：New technology\r\n\r\n：衛星通訊與低軌衛星\r\n\r\n：亞馬遜 Amazon Leo 擬結合 Prime 推出低軌衛星寬頻服務，挑戰 Starlink 市場地位\r\n\r\n：亞馬遜於 2026 年 10 月 11 日公布 Amazon Leo（前身為 Project Kuiper）最新商業策略，計劃將低軌衛星寬頻服務與 Prime 會員方案整合，並擴大住宅、企業、航空及政府市場布局，以挑戰 Starlink 在衛星網路市場的領先地位。\r\n\r\n：Amazon Leo Plans Prime Subscription Bundling to Challenge Starlink in Consumer Satellite Broadband Market（SatNews）\r\n\r\n：2026-10-11\r\n\r\n：Amazon Leo 最新低軌衛星服務策略",
+    "id": 18
+  },
+  {
+    "title": "西門子推出 Digital Twin Composer，攜手 NVIDIA 強化工業數位孿生與 AI 應用",
+    "summary": "西門子於 CES 2026 發表 Digital Twin Composer，整合數位孿生、即時營運數據、工業 AI 與 NVIDIA Omniverse 技術，協助企業建立產品、產線與工廠的虛擬模型，以進行模擬、測試與最佳化，加速工業數位轉型。",
+    "source": "Siemens Digital Twin Composer（Siemens 官方）",
+    "publish_time": "2026-01-07（CES 2026 發表）",
+    "url": "https://www.bing.com/news/search?q=數位孿生技術",
+    "category": "New technology",
+    "topic": "數位孿生技術",
+    "raw_content": "：New technology\r\n\r\n：數位孿生技術\r\n\r\n：西門子推出 Digital Twin Composer，攜手 NVIDIA 強化工業數位孿生與 AI 應用\r\n\r\n：西門子於 CES 2026 發表 Digital Twin Composer，整合數位孿生、即時營運數據、工業 AI 與 NVIDIA Omniverse 技術，協助企業建立產品、產線與工廠的虛擬模型，以進行模擬、測試與最佳化，加速工業數位轉型。\r\n\r\n：Siemens Digital Twin Composer（Siemens 官方）\r\n\r\n：2026-01-07（CES 2026 發表）\r\n\r\n：Siemens Digital Twin Composer 官方資訊",
+    "id": 19
+  },
+  {
+    "title": "Wi-Fi 8與6G通訊 最新產業趨勢與市場進展",
+    "summary": "市場持續聚焦 Wi-Fi 8與6G通訊 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。",
+    "source": "科技產業觀察",
+    "publish_time": "2026-10-13",
+    "url": "https://www.bing.com/news/search?q=Wi-Fi 8與6G通訊",
+    "category": "New technology",
+    "topic": "Wi-Fi 8與6G通訊",
+    "raw_content": "【類別】：New technology\n【主題】：Wi-Fi 8與6G通訊\n【標題】：Wi-Fi 8與6G通訊 最新產業趨勢與市場進展\n【摘要】：市場持續聚焦 Wi-Fi 8與6G通訊 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。\n【來源】：科技產業觀察\n【發布時間】：2026-10-13\n【原始連結】：https://www.bing.com/news/search?q=Wi-Fi 8與6G通訊",
+    "id": 20
+  }
+]
