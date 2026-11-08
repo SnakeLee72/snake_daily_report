@@ -19,6 +19,8 @@ import json
 from datetime import datetime
 from pathlib import Path
 from config import REPORTS_DIR, TOPIC_CATEGORIES
+from item_quality import is_generic_url
+from summarizer import SOURCE_LABELS
 
 def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str = None) -> Path:
     """
@@ -39,27 +41,51 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
     total_count = len(news_items)
     
     # 今日一句話
-    punchline = ai_summary.get(
-        "punchline", 
-        "全球科技浪潮全面步入 AI 代理人商業落地與硬體供應鏈深水區，掌握算力槓桿與資本效率者將定義新秩序。"
-    )
+    punchline = ai_summary.get("punchline")
+    analysis_source = ai_summary.get("analysis_source")
+    if punchline:
+        takeaway_html = f'''
+        <div class="takeaway-banner">
+            <span class="takeaway-icon">💡</span>
+            <div>
+                <div class="takeaway-label">EXECUTIVE TAKEAWAY · 今日一句話核心定調</div>
+                <div class="takeaway-text">{punchline}</div>
+            </div>
+        </div>
+        '''
+    else:
+        takeaway_html = '''
+        <div class="takeaway-banner">
+            <span class="takeaway-icon">ℹ️</span>
+            <div>
+                <div class="takeaway-label">本日沒有 AI 分析</div>
+                <div class="takeaway-text">分析題未完成，以下僅列出收集到的新聞，未經綜整。</div>
+            </div>
+        </div>
+        '''
+
+    # 資料品質統計
+    fallback_count = sum(1 for it in news_items if it.get("is_fallback"))
+    stale_count = sum(1 for it in news_items if it.get("is_stale"))
+    search_link_count = sum(1 for it in news_items if it.get("is_search_link"))
+    source_label = SOURCE_LABELS.get(analysis_source, "無")
     
     # 1. 市場溫度儀表板 (Market Sentiment)
     sentiment_data = ai_summary.get("market_sentiment", {})
     sentiment_html = ""
     default_indicators = [
-        ("tech_momentum", "🚀 全球科技動能", "強勁擴張", "AI 代理人與基礎設施投資持續加速", "var(--accent-cyan)", "up"),
-        ("capital_flow", "⚖️ 宏觀資本流向", "震盪輪動", "資金高度聚焦科技權值股與避險資產", "var(--accent-amber)", "neutral"),
-        ("supply_chain", "🏭 硬體供應鏈景氣", "高檔滿載", "AI 伺服器拉貨強勁帶動規格全面升級", "var(--accent-green)", "up"),
-        ("risk_level", "🛡️ 總體市場風險", "中等觀望", "美債殖利率維持高位，靜待通膨數據指引", "var(--accent-purple)", "warning")
+        ("tech_momentum", "🚀 全球科技動能", "var(--accent-cyan)"),
+        ("capital_flow", "⚖️ 宏觀資本流向", "var(--accent-amber)"),
+        ("supply_chain", "🏭 硬體供應鏈景氣", "var(--accent-green)"),
+        ("risk_level", "🛡️ 總體市場風險", "var(--accent-purple)")
     ]
-    for key, def_title, def_status, def_desc, def_color, def_trend in default_indicators:
-        val = sentiment_data.get(key, {})
-        title = val.get("title", def_title)
-        status = val.get("status", def_status)
-        desc = val.get("desc", def_desc)
-        badge_color = val.get("badge_color", def_color)
-        trend = val.get("trend", def_trend)
+    for key, title, badge_color in default_indicators:
+        val = sentiment_data.get(key)
+        if not val:
+            continue
+        status = val.get("status", "")
+        desc = val.get("desc", "")
+        trend = val.get("trend", "neutral")
         trend_icon = "▲" if trend == "up" else ("▼" if trend == "down" else "◆")
         
         sentiment_html += f'''
@@ -76,17 +102,7 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
 
     # 2. 今日必看 3 件事 (The Big 3 雜誌頭條排版)
     big_three_items = ai_summary.get("the_big_three", [])
-    if not big_three_items and len(news_items) >= 3:
-        for i, it in enumerate(news_items[:3], 1):
-            big_three_items.append({
-                "rank": i,
-                "category": it.get("category", "焦點"),
-                "topic": it.get("topic", ""),
-                "headline": it.get("title", ""),
-                "why_it_matters": it.get("summary", ""),
-                "key_metric": "產業重大進展",
-                "url": it.get("url", "#")
-            })
+    why_label = "💡 為什麼重要 (WHY IT MATTERS)" if analysis_source else "📝 新聞摘要 (SUMMARY)"
 
     big_three_html = ""
     for item in big_three_items:
@@ -96,10 +112,13 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
         hl = item.get("headline", "")
         why = item.get("why_it_matters", "")
         metric = item.get("key_metric", "")
-        url = item.get("url", "#")
+        url = item.get("url", "")
         cat_color = TOPIC_CATEGORIES.get(cat, {}).get("color", "var(--accent-cyan)")
         
         is_hero = (r == 1)
+        metric_html = f'<div class="metric-pill"><span class="metric-icon">📊</span><span class="metric-text">{metric}</span></div>' if metric else '<span></span>'
+        hero_link_text = "開啟搜尋頁" if is_generic_url(url) else "開啟原文直連"
+        hero_link_html = f'<a href="{url}" target="_blank" rel="noopener noreferrer" class="link-btn-hero">{hero_link_text} <span class="arrow-icon">↗</span></a>' if url else ''
         card_class = "big-three-card hero-lead" if is_hero else "big-three-card"
         
         big_three_html += f'''
@@ -115,18 +134,13 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             <h3 class="big-three-headline">{hl}</h3>
             
             <div class="why-it-matters-box">
-                <div class="box-label">💡 為什麼重要 (WHY IT MATTERS)</div>
+                <div class="box-label">{why_label}</div>
                 <p class="box-content">{why}</p>
             </div>
             
             <div class="big-three-footer">
-                <div class="metric-pill">
-                    <span class="metric-icon">📊</span>
-                    <span class="metric-text">{metric}</span>
-                </div>
-                <a href="{url}" target="_blank" rel="noopener noreferrer" class="link-btn-hero">
-                    開啟原文直連 <span class="arrow-icon">↗</span>
-                </a>
+                {metric_html}
+                {hero_link_html}
             </div>
         </div>
         '''
@@ -161,31 +175,51 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
         cat_items = [x for x in news_items if x.get("category") == cat_name]
         cat_icon = cat_meta.get("icon", "📌")
         cat_color = cat_meta.get("color", "#38bdf8")
-        cat_line = sector_bottom_lines.get(
-            cat_name, 
-            f"今日 {cat_name} 板塊整體聚焦產業前線動能，指標企業持續推進關鍵戰略布局。"
-        )
+        cat_line = sector_bottom_lines.get(cat_name)
+        bottom_line_html = f'''
+            <div class="section-bottom-line-bar">
+                <span class="bottom-line-tag" style="color: {cat_color};">📌 一句話結論</span>
+                <span class="bottom-line-text">{cat_line}</span>
+            </div>
+        ''' if cat_line else ""
         
         cards_html = ""
         for it in cat_items:
+            url = it.get("url", "")
+            if not url:
+                link_html = '<span class="link-btn link-unavailable">無原文連結</span>'
+            else:
+                link_text = "開啟搜尋頁" if it.get("is_search_link") else "開啟原文"
+                link_html = f'<a href="{url}" target="_blank" rel="noopener noreferrer" class="link-btn">{link_text} <span class="arrow-icon">↗</span></a>'
+
+            quality_badge = ""
+            if it.get("is_fallback"):
+                quality_badge = '<span class="quality-badge quality-missing">未取得</span>'
+            elif it.get("is_stale"):
+                quality_badge = f'<span class="quality-badge quality-stale">舊聞 · {it.get("age_days")} 天前</span>'
+
+            summary_text = it.get("summary") or "此來源只提供標題，沒有摘要內容。"
+            card_class = "news-card is-missing" if it.get("is_fallback") else "news-card"
+
             cards_html += f'''
-            <div class="news-card" data-category="{cat_name}" data-title="{it.get('title', '')}" data-topic="{it.get('topic', '')}" data-source="{it.get('source', '')}">
+            <div class="{card_class}" data-category="{cat_name}" data-title="{it.get('title', '')}" data-topic="{it.get('topic', '')}" data-source="{it.get('source', '')}">
                 <div class="card-header">
                     <span class="topic-tag" style="background: {cat_color}16; color: {cat_color}; border-color: {cat_color}40;">
                         {it.get('topic')}
                     </span>
-                    <span class="pub-time">{it.get('publish_time')}</span>
+                    <span class="card-meta">
+                        {quality_badge}
+                        <span class="pub-time">{it.get('publish_time') or '日期未標示'}</span>
+                    </span>
                 </div>
                 <h4 class="card-title">{it.get('title')}</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">{it.get('summary')}</p>
+                    <p class="card-summary clamped">{summary_text}</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
                     <span class="source-tag" title="{it.get('source')}">🏷️ {it.get('source')}</span>
-                    <a href="{it.get('url')}" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    {link_html}
                 </div>
             </div>
             '''
@@ -209,10 +243,7 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
                     <span class="toggle-arrow" id="arrow-{cat_meta['code']}">▼</span>
                 </div>
             </div>
-            <div class="section-bottom-line-bar">
-                <span class="bottom-line-tag" style="color: {cat_color};">📌 一句話結論</span>
-                <span class="bottom-line-text">{cat_line}</span>
-            </div>
+            {bottom_line_html}
             <div class="section-body" id="body-{cat_meta['code']}">
                 <div class="news-grid">
                     {cards_html}
@@ -229,7 +260,7 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             noise_html += f'''
             <div class="noise-item">
                 <span class="noise-cat">[{n.get('category', '速讀')}]</span>
-                <a href="{n.get('url', '#')}" target="_blank" class="noise-title">{n.get('title')}</a>
+                <a href="{n.get('url') or '#'}" target="_blank" class="noise-title">{n.get('title')}</a>
                 <span class="noise-source">({n.get('source', '')})</span>
             </div>
             '''
@@ -244,6 +275,70 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             <span class="watchlist-text">{w}</span>
         </li>
         '''
+
+    # 只顯示當日真的有內容的分析區塊
+    sentiment_section_html = f'''
+        <!-- 模組 3: 市場溫度與多空風向儀表板 (Market Sentiment) -->
+        <section class="sentiment-section" id="sentimentSection">
+            <div class="section-tag-header">
+                <span class="section-tag-title">🌡️ 市場溫度與多空風向儀表板 (MARKET SENTIMENT & RISK PULSE)</span>
+            </div>
+            <div class="sentiment-grid">
+                {sentiment_html}
+            </div>
+        </section>
+    ''' if sentiment_html else ""
+
+    impact_section_html = f'''
+        <!-- 模組 5: 產業影響鏈矩陣 (Supply Chain Impact Matrix) -->
+        <section class="impact-section" id="impactSection">
+            <div class="section-tag-header">
+                <span class="section-tag-title" style="color: var(--accent-green);">🔗 產業影響鏈矩陣 (SUPPLY CHAIN IMPACT MATRIX)</span>
+                <span style="font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">TRIGGER ➔ COMPONENT ➔ STOCKS</span>
+            </div>
+            <div class="impact-grid">
+                {impact_html}
+            </div>
+        </section>
+    ''' if impact_html else ""
+
+    noise_card_html = f'''
+            <div class="bottom-intel-card">
+                <div class="bottom-intel-header" style="color: var(--accent-purple);">
+                    <span>📡 今日市場雜訊與速報 (MARKET NOISE & QUICK HITS)</span>
+                </div>
+                <div class="noise-list">
+                    {noise_html}
+                </div>
+            </div>
+    ''' if noise_html else ""
+
+    watchlist_card_html = f'''
+            <div class="bottom-intel-card">
+                <div class="bottom-intel-header" style="color: var(--accent-cyan);">
+                    <span>🎯 明日關鍵觀察指標 (TOMORROW'S CATALYST WATCHLIST)</span>
+                </div>
+                <ul class="watchlist-list">
+                    {watchlist_html}
+                </ul>
+            </div>
+    ''' if watchlist_html else ""
+
+    bottom_intel_html = f'''
+        <!-- 模組 8 & 9: 雜訊速讀 & 明日關鍵觀察指標 -->
+        <div class="bottom-intel-grid">
+            {noise_card_html}
+            {watchlist_card_html}
+        </div>
+    ''' if (noise_html or watchlist_html) else ""
+
+    # 手機導覽只連到當日存在的區塊
+    impact_nav_html = '''
+        <button class="bottom-nav-item" onclick="scrollToElement('impactSection')">
+            <span class="bottom-nav-icon">🔗</span>
+            <span>影響鏈</span>
+        </button>
+    ''' if impact_html else ""
 
     # 7. 篩選標籤按鈕
     filter_tabs_html = f'<button class="tab-btn active" data-category="all" onclick="filterCategory(\'all\', this)">全部 ({total_count})</button>'
@@ -1019,6 +1114,34 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             color: var(--text-dim);
             font-family: 'JetBrains Mono', monospace;
         }}
+        .card-meta {{
+            display: inline-flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 6px;
+        }}
+        .quality-badge {{
+            font-size: 10.5px;
+            font-weight: 700;
+            padding: 1px 6px;
+            border-radius: var(--radius-sm);
+            border: 1px solid currentColor;
+            white-space: nowrap;
+        }}
+        .quality-stale {{
+            color: var(--accent-amber);
+        }}
+        .quality-missing {{
+            color: var(--text-dim);
+        }}
+        .news-card.is-missing {{
+            opacity: 0.6;
+        }}
+        .link-unavailable {{
+            color: var(--text-dim);
+            cursor: default;
+        }}
         .card-title {{
             font-size: 15px;
             font-weight: 700;
@@ -1325,7 +1448,8 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
                 <div class="header-meta-bar">
                     <span class="header-meta-item">📅 {display_date}</span>
                     <span class="header-meta-item">🕒 監測產出時間：{now_time_str}</span>
-                    <span class="header-meta-item">📊 深度收錄：共 {total_count} 則關鍵情資</span>
+                    <span class="header-meta-item">📊 收錄 {total_count} 則（未取得 {fallback_count} · 舊聞 {stale_count} · 僅搜尋頁 {search_link_count}）</span>
+                    <span class="header-meta-item">🤖 AI 分析：{source_label}</span>
                 </div>
             </div>
             <div class="header-actions">
@@ -1337,24 +1461,9 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
         </header>
 
         <!-- 模組 2: 今日一句話 (Executive Takeaway) -->
-        <div class="takeaway-banner">
-            <span class="takeaway-icon">💡</span>
-            <div>
-                <div class="takeaway-label">EXECUTIVE TAKEAWAY · 今日一句話核心定調</div>
-                <div class="takeaway-text">{punchline}</div>
-            </div>
-        </div>
+        {takeaway_html}
 
-        <!-- 模組 3: 市場溫度與多空風向儀表板 (Market Sentiment) -->
-        <section class="sentiment-section" id="sentimentSection">
-            <div class="section-tag-header">
-                <span class="section-tag-title">🌡️ 市場溫度與多空風向儀表板 (MARKET SENTIMENT & RISK PULSE)</span>
-                <span style="font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">REAL-TIME MULTI-DIMENSIONAL RADAR</span>
-            </div>
-            <div class="sentiment-grid">
-                {sentiment_html}
-            </div>
-        </section>
+        {sentiment_section_html}
 
         <!-- 模組 4: 今日必看 3 件事 (The Big 3 特刊頭條) -->
         <section class="big-three-section" id="bigThreeSection">
@@ -1367,16 +1476,7 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             </div>
         </section>
 
-        <!-- 模組 5: 產業影響鏈矩陣 (Supply Chain Impact Matrix) -->
-        <section class="impact-section" id="impactSection">
-            <div class="section-tag-header">
-                <span class="section-tag-title" style="color: var(--accent-green);">🔗 產業影響鏈矩陣 (SUPPLY CHAIN IMPACT MATRIX)</span>
-                <span style="font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">TRIGGER ➔ COMPONENT ➔ STOCKS</span>
-            </div>
-            <div class="impact-grid">
-                {impact_html}
-            </div>
-        </section>
+        {impact_section_html}
 
         <!-- 看盤統計看盤卡片 -->
         <div class="stats-bar">
@@ -1399,31 +1499,12 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             {sections_html}
         </div>
 
-        <!-- 模組 8 & 9: 雜訊速讀 & 明日關鍵觀察指標 -->
-        <div class="bottom-intel-grid">
-            <div class="bottom-intel-card">
-                <div class="bottom-intel-header" style="color: var(--accent-purple);">
-                    <span>📡 今日市場雜訊與速報 (MARKET NOISE & QUICK HITS)</span>
-                </div>
-                <div class="noise-list">
-                    {noise_html if noise_html else '<p style="font-size:12.5px; color:var(--text-dim);">今日無顯著次要雜訊，各篇情資均具備高度產業價值。</p>'}
-                </div>
-            </div>
-            
-            <div class="bottom-intel-card">
-                <div class="bottom-intel-header" style="color: var(--accent-cyan);">
-                    <span>🎯 明日關鍵觀察指標 (TOMORROW'S CATALYST WATCHLIST)</span>
-                </div>
-                <ul class="watchlist-list">
-                    {watchlist_html}
-                </ul>
-            </div>
-        </div>
+        {bottom_intel_html}
 
         <!-- 模組 10: 資料來源與金融合規免責聲明 -->
         <footer class="footer-compliance">
             <div class="footer-sources">
-                🌐 情報來源：彭博 (Bloomberg)、路透 (Reuters)、CNBC、工商時報、經濟日報、中央社、各大科技官方新聞稿與全球監管機構公告
+                🌐 情報來源：各則來源與發布日期標示於卡片；AI 分析可能有誤，請以原文為準
             </div>
             <div class="footer-disclaimer">
                 免責聲明 (Disclaimer)：本網站與日報所提供之所有資訊僅供科技產業動態研究與個人學術參考，不構成任何形式之投資邀約、推薦、買賣建議或金融顧問意見。投資涉及風險，證券價格可升可跌，請獨立評估或諮詢專業財務顧問。
@@ -1437,10 +1518,7 @@ def render_html_dashboard(news_items: list, ai_summary: dict, target_date: str =
             <span class="bottom-nav-icon">🔥</span>
             <span>必看Top3</span>
         </button>
-        <button class="bottom-nav-item" onclick="scrollToElement('impactSection')">
-            <span class="bottom-nav-icon">🔗</span>
-            <span>影響鏈</span>
-        </button>
+        {impact_nav_html}
         <button class="bottom-nav-item" onclick="scrollToElement('filterToolbar')">
             <span class="bottom-nav-icon">📂</span>
             <span>分類篩選</span>

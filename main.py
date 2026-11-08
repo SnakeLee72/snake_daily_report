@@ -19,6 +19,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from config import DATA_DIR, REPORTS_DIR, TOPIC_CATEGORIES
+from item_quality import annotate_items, is_generic_url
 from summarizer import generate_ai_summary
 from report_generator import render_html_dashboard
 from exporter import export_html_to_pdf, send_email_report
@@ -48,16 +49,21 @@ def deduplicate_news(items: list) -> list:
         url = item.get("url", "").strip()
         title = item.get("title", "").strip()
         category = item.get("category", "")
-        
-        # 1. 網址去重（排除通用搜尋或預設 fallback 網址，避免同源 fallback 誤殺不同主題新聞）
-        is_generic_url = any(u in url.lower() for u in ["bing.com/news", "google.com/search", "yahoo.com/news", "bing.com/search"])
-        if url and not is_generic_url and url in seen_urls:
+
+        # 未取得的主題標題格式相同，不參與去重，才能在報表如實列出
+        if item.get("is_fallback"):
+            cleaned_items.append(item)
+            continue
+
+        # 1. 網址去重（排除通用搜尋網址，避免誤殺不同主題新聞）
+        is_search_url = is_generic_url(url)
+        if url and not is_search_url and url in seen_urls:
             continue
             
         # 2. 標題同類去重比對
         is_dup = False
         for kept in cleaned_items:
-            if kept.get("category") == category:
+            if kept.get("category") == category and not kept.get("is_fallback"):
                 if is_similar(title, kept.get("title", "")):
                     is_dup = True
                     break
@@ -68,7 +74,7 @@ def deduplicate_news(items: list) -> list:
         summary = item.get("summary", "").strip()
         item["summary"] = summary
             
-        if url and not is_generic_url:
+        if url and not is_search_url:
             seen_urls.add(url)
         cleaned_items.append(item)
         
@@ -123,13 +129,18 @@ def run_pipeline(mode: str = "copilot", limit: int = 50, export_pdf: bool = True
 
     # --- [階段二：去重與資料合規化] ---
     print("\n[階段 2/4] 執行資料去重與合規化審查...")
-    processed_items = deduplicate_news(raw_items)
-    print(f"去重完成，保留 {len(processed_items)} 則高價值獨家情報。")
+    processed_items = deduplicate_news(annotate_items(raw_items, today_str))
+    print(f"去重完成，保留 {len(processed_items)} 則。")
+    print(
+        f"未取得 {sum(1 for i in processed_items if i['is_fallback'])} 則，"
+        f"舊聞 {sum(1 for i in processed_items if i['is_stale'])} 則，"
+        f"僅搜尋頁 {sum(1 for i in processed_items if i['is_search_link'])} 則。"
+    )
 
     # --- [階段三：AI 智能摘要] ---
     print("\n[階段 3/4] 啟動 AI 智能歸納引擎生成今日觀察...")
-    ai_summary = generate_ai_summary(processed_items)
-    print(f" 今日一句總結：{ai_summary.get('punchline', '')}")
+    ai_summary = generate_ai_summary(processed_items, mode=mode, report_date=today_str)
+    print(f" 今日一句總結：{ai_summary.get('punchline') or '（本次沒有 AI 分析）'}")
 
     # --- [階段四：產生 HTML 報告 Dashboard] ---
     print("\n[階段 4/4] 渲染現代科技風深色 HTML Dashboard...")

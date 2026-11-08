@@ -10,13 +10,13 @@ import xml.etree.ElementTree as ET
 import re
 import json
 from datetime import datetime
-from config import TOPIC_CATEGORIES, get_all_topics, DATA_DIR
+from config import get_all_topics, DATA_DIR, NEWS_MAX_AGE_DAYS
 
 def fetch_rss_news_for_topic(topic: str, category: str, topic_id: int) -> dict:
     """
     透過 Google News RSS 取得指定主題最新一則即時新聞
     """
-    query = urllib.parse.quote(f"{topic} 新聞")
+    query = urllib.parse.quote(f"{topic} 新聞 when:{NEWS_MAX_AGE_DAYS}d")
     rss_url = f"https://news.google.com/rss/search?q={query}&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
     
     headers = {
@@ -47,10 +47,10 @@ def fetch_rss_news_for_topic(topic: str, category: str, topic_id: int) -> dict:
                         source = parts[1].strip()
                         
                 if not source:
-                    source = "科技財經即時快訊"
+                    source = "未標示來源"
                     
                 # 整理發布時間 (轉成 YYYY-MM-DD 或保持原樣)
-                formatted_time = datetime.now().strftime("%Y-%m-%d")
+                formatted_time = ""
                 if pub_date:
                     try:
                         # 範例: Mon, 07 Sep 2026 13:45:00 GMT
@@ -59,16 +59,14 @@ def fetch_rss_news_for_topic(topic: str, category: str, topic_id: int) -> dict:
                     except Exception:
                         formatted_time = pub_date[:16]
 
-                # 自動生成 100 字內摘要
-                summary = f"最新消息指出，市場高度關注「{topic}」在技術創新、營運佈局或產業政策上的重大轉變。相關專家與分析指出，其後續動態將對整體生態系產生關鍵影響。"
-                
+                # Google News RSS 只提供標題，不產生看似真實的摘要
                 return {
                     "id": topic_id,
                     "title": title,
-                    "summary": summary[:98],
+                    "summary": "",
                     "source": source,
                     "publish_time": formatted_time,
-                    "url": link if link.startswith("http") else f"https://www.google.com/search?q={query}",
+                    "url": link if link.startswith("http") else "",
                     "category": category,
                     "topic": topic
                 }
@@ -76,16 +74,17 @@ def fetch_rss_news_for_topic(topic: str, category: str, topic_id: int) -> dict:
         # print(f"[除錯] 檢索 {topic} RSS 略過: {e}")
         pass
 
-    # 兜底回傳資訊
+    # 未取得資料時如實標示
     return {
         "id": topic_id,
-        "title": f"【焦點追蹤】{topic} 產業發展與市場最新脈動",
-        "summary": f"近期市場針對「{topic}」展現高度關注，在相關技術規格、市場份額與產品推陳出新方面皆有重要進展，持續牽動整體產業鏈動向。",
-        "source": "綜合財經科技資訊",
-        "publish_time": datetime.now().strftime("%Y-%m-%d"),
-        "url": f"https://www.google.com/search?q={urllib.parse.quote(topic)}",
+        "title": f"{topic}：本次未取得資料",
+        "summary": "RSS 檢索沒有回傳結果。",
+        "source": "系統標記",
+        "publish_time": "",
+        "url": "",
         "category": category,
-        "topic": topic
+        "topic": topic,
+        "is_fallback": True
     }
 
 def collect_daily_topics_direct(limit: int = 50, categories: list = None) -> list:
