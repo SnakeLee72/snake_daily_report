@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Daily Report · 全球科技與財經決策日報 - 2026年11月04日</title>
+    <title>Snake Daily Report · 全球科技與財經決策日報 - 2026年11月10日</title>
     <meta name="description" content="每日全球科技、AI、半導體、Notebook/ODM、台股美股與宏觀市場決策情報">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -750,6 +750,34 @@
             color: var(--text-dim);
             font-family: 'JetBrains Mono', monospace;
         }
+        .card-meta {
+            display: inline-flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 6px;
+        }
+        .quality-badge {
+            font-size: 10.5px;
+            font-weight: 700;
+            padding: 1px 6px;
+            border-radius: var(--radius-sm);
+            border: 1px solid currentColor;
+            white-space: nowrap;
+        }
+        .quality-stale {
+            color: var(--accent-amber);
+        }
+        .quality-missing {
+            color: var(--text-dim);
+        }
+        .news-card.is-missing {
+            opacity: 0.6;
+        }
+        .link-unavailable {
+            color: var(--text-dim);
+            cursor: default;
+        }
         .card-title {
             font-size: 15px;
             font-weight: 700;
@@ -1054,9 +1082,10 @@
                 <h1 class="header-title">Snake Daily Report</h1>
                 <p class="header-subtitle">GLOBAL TECH & CAPITAL MARKETS TERMINAL · 全球科技與資本市場日報</p>
                 <div class="header-meta-bar">
-                    <span class="header-meta-item">📅 2026年11月04日</span>
-                    <span class="header-meta-item">🕒 監測產出時間：2026-11-04 12:21:03</span>
-                    <span class="header-meta-item">📊 深度收錄：共 45 則關鍵情資</span>
+                    <span class="header-meta-item">📅 2026年11月10日</span>
+                    <span class="header-meta-item">🕒 監測產出時間：2026-11-10 12:13:11</span>
+                    <span class="header-meta-item">📊 收錄 38 則（未取得 0 · 舊聞 2 · 僅搜尋頁 0）</span>
+                    <span class="header-meta-item">🤖 AI 分析：Microsoft 365 Copilot</span>
                 </div>
             </div>
             <div class="header-actions">
@@ -1068,64 +1097,67 @@
         </header>
 
         <!-- 模組 2: 今日一句話 (Executive Takeaway) -->
+        
         <div class="takeaway-banner">
             <span class="takeaway-icon">💡</span>
             <div>
                 <div class="takeaway-label">EXECUTIVE TAKEAWAY · 今日一句話核心定調</div>
-                <div class="takeaway-text">全球科技浪潮全面步入 AI 代理人商業落地與硬體供應鏈深水區，掌握算力槓桿與資本效率者將定義新秩序。</div>
+                <div class="takeaway-text">AI基礎設施、代理式AI與半導體供應鏈同步升溫，但資金面仍受外資賣超、加密貨幣資金流出及地緣風險干擾。</div>
             </div>
         </div>
+        
 
+        
         <!-- 模組 3: 市場溫度與多空風向儀表板 (Market Sentiment) -->
         <section class="sentiment-section" id="sentimentSection">
             <div class="section-tag-header">
                 <span class="section-tag-title">🌡️ 市場溫度與多空風向儀表板 (MARKET SENTIMENT & RISK PULSE)</span>
-                <span style="font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">REAL-TIME MULTI-DIMENSIONAL RADAR</span>
             </div>
             <div class="sentiment-grid">
                 
         <div class="sentiment-card" style="--indicator-color: var(--accent-cyan);">
             <div class="sentiment-card-top">
-                <span class="sentiment-title">全球科技動能</span>
+                <span class="sentiment-title">🚀 全球科技動能</span>
                 <span class="sentiment-badge" style="background: var(--accent-cyan)18; color: var(--accent-cyan); border-color: var(--accent-cyan)44;">
-                    ▲ 強勁擴張
+                    ▲ 強勢回溫
                 </span>
             </div>
-            <div class="sentiment-desc">AI 代理人與基礎設施投資持續加速</div>
+            <div class="sentiment-desc">AI模型、AI資料中心、AI伺服器、AI晶片與Robotaxi相關消息密集，且美股科技股與半導體股出現明顯反彈。</div>
         </div>
         
         <div class="sentiment-card" style="--indicator-color: var(--accent-amber);">
             <div class="sentiment-card-top">
-                <span class="sentiment-title">宏觀資本流向</span>
+                <span class="sentiment-title">⚖️ 宏觀資本流向</span>
                 <span class="sentiment-badge" style="background: var(--accent-amber)18; color: var(--accent-amber); border-color: var(--accent-amber)44;">
-                    ◆ 震盪輪動
+                    ▼ 分歧偏弱
                 </span>
             </div>
-            <div class="sentiment-desc">資金高度聚焦科技權值股與避險資產</div>
+            <div class="sentiment-desc">台股外資連續第8個交易日賣超900.56億元，同時Bitcoin現貨ETF單週流出12.8億美元。</div>
         </div>
         
         <div class="sentiment-card" style="--indicator-color: var(--accent-green);">
             <div class="sentiment-card-top">
-                <span class="sentiment-title">硬體供應鏈景氣</span>
+                <span class="sentiment-title">🏭 硬體供應鏈景氣</span>
                 <span class="sentiment-badge" style="background: var(--accent-green)18; color: var(--accent-green); border-color: var(--accent-green)44;">
-                    ▲ 高檔滿載
+                    ▲ 持續擴張
                 </span>
             </div>
-            <div class="sentiment-desc">AI 伺服器拉貨強勁帶動關鍵零組件規格升級</div>
+            <div class="sentiment-desc">AI伺服器出貨預估成長36%，HBM供給吃緊延續至2028年，台積電評估切入3D DRAM。</div>
         </div>
         
         <div class="sentiment-card" style="--indicator-color: var(--accent-purple);">
             <div class="sentiment-card-top">
-                <span class="sentiment-title">總體市場風險</span>
+                <span class="sentiment-title">🛡️ 總體市場風險</span>
                 <span class="sentiment-badge" style="background: var(--accent-purple)18; color: var(--accent-purple); border-color: var(--accent-purple)44;">
-                    ◆ 中等觀望
+                    ▲ 仍然偏高
                 </span>
             </div>
-            <div class="sentiment-desc">美債殖利率維持高位，靜待通膨與利率決策指引</div>
+            <div class="sentiment-desc">市場持續關注中東局勢、歐洲通膨、美國升息預期與AI基礎設施監管風險。</div>
         </div>
         
             </div>
         </section>
+    
 
         <!-- 模組 4: 今日必看 3 件事 (The Big 3 特刊頭條) -->
         <section class="big-three-section" id="bigThreeSection">
@@ -1137,55 +1169,45 @@
                 
         <div class="big-three-card hero-lead">
             <div class="big-three-header">
-                <div class="big-three-rank" style="color: #818cf8;">#01</div>
+                <div class="big-three-rank" style="color: #f472b6;">#01</div>
                 <div class="big-three-tags">
-                    <span class="badge-cat" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">New technology</span>
-                    <span class="badge-topic">量子運算</span>
+                    <span class="badge-cat" style="background: #f472b618; color: #f472b6; border-color: #f472b640;">台灣股市</span>
+                    <span class="badge-topic">AI伺服器供應鏈</span>
                 </div>
                 <span class="hero-label">★ TOP STORY OF THE DAY</span>
             </div>
-            <h3 class="big-three-headline">Google實現量子運算重大突破，Willow處理器達成「Magic State Cultivation」技術驗證</h3>
+            <h3 class="big-three-headline">TrendForce Corp：全球 AI 伺服器出貨量明年將成長 36%，供應鏈需求持續強勁</h3>
             
             <div class="why-it-matters-box">
                 <div class="box-label">💡 為什麼重要 (WHY IT MATTERS)</div>
-                <p class="box-content">Google Quantum AI 宣布在 Willow 量子處理器上成功驗證「Magic State Cultivation（魔術態培育）」技術，將關鍵量子態錯誤率降低約40倍，並達成99.99%的邏輯保真度。此成果被視為突破容錯量子運算瓶頸的重要里程碑。</p>
+                <p class="box-content">AI伺服器需求是目前科技資本支出的核心驅動因素，影響半導體、ODM、PCB、載板與資料中心供應鏈。</p>
             </div>
             
             <div class="big-three-footer">
-                <div class="metric-pill">
-                    <span class="metric-icon">📊</span>
-                    <span class="metric-text">99.99%</span>
-                </div>
-                <a href="https://www.theblock.co/news/web3/2026-10-16-google-quantum-computing-breakthrough-418787" target="_blank" rel="noopener noreferrer" class="link-btn-hero">
-                    開啟原文直連 <span class="arrow-icon">↗</span>
-                </a>
+                <div class="metric-pill"><span class="metric-icon">📊</span><span class="metric-text">2027年全球AI伺服器出貨量預估年增36%</span></div>
+                <a href="https://www.taipeitimes.com/News/biz/archives/2026/11/06/2003867228" target="_blank" rel="noopener noreferrer" class="link-btn-hero">開啟原文直連 <span class="arrow-icon">↗</span></a>
             </div>
         </div>
         
         <div class="big-three-card">
             <div class="big-three-header">
-                <div class="big-three-rank" style="color: #818cf8;">#02</div>
+                <div class="big-three-rank" style="color: #38bdf8;">#02</div>
                 <div class="big-three-tags">
-                    <span class="badge-cat" style="background: #818cf818; color: #818cf8; border-color: #818cf840;">New technology</span>
-                    <span class="badge-topic">先進半導體製程</span>
+                    <span class="badge-cat" style="background: #38bdf818; color: #38bdf8; border-color: #38bdf840;">AI</span>
+                    <span class="badge-topic">AI Agent</span>
                 </div>
                 
             </div>
-            <h3 class="big-three-headline">台積電2奈米製程產能加速擴張，年底月產能可望突破10萬片晶圓</h3>
+            <h3 class="big-three-headline">Anthropic 發布 Claude Fable 5.2 與 Mythos 5.2，強化多步驟 AI Agent 協作能力</h3>
             
             <div class="why-it-matters-box">
                 <div class="box-label">💡 為什麼重要 (WHY IT MATTERS)</div>
-                <p class="box-content">TSMC 2奈米（N2）先進製程需求強勁，受惠於AI與高效能運算市場帶動，NVIDIA、AMD、Apple等客戶積極導入。市場預估台積電2026年底2奈米月產能將突破10萬片晶圓，成為先進半導體製程的重要里程碑。</p>
+                <p class="box-content">Anthropic推出新一代Agent模型，代表AI競賽正從聊天工具走向多步驟自主代理與工作流自動化。</p>
             </div>
             
             <div class="big-three-footer">
-                <div class="metric-pill">
-                    <span class="metric-icon">📊</span>
-                    <span class="metric-text">產業指標性突破</span>
-                </div>
-                <a href="https://www.trendforce.com/news/2026/10/06/news-qualcomm-apple-mediatek-battle-it-out-on-tsmc-2nm-inside-their-flagship-ai-strategies/" target="_blank" rel="noopener noreferrer" class="link-btn-hero">
-                    開啟原文直連 <span class="arrow-icon">↗</span>
-                </a>
+                <div class="metric-pill"><span class="metric-icon">📊</span><span class="metric-text">2026-11-09</span></div>
+                <a href="https://aiagentstore.ai/ai-agent-news/today" target="_blank" rel="noopener noreferrer" class="link-btn-hero">開啟原文直連 <span class="arrow-icon">↗</span></a>
             </div>
         </div>
         
@@ -1194,31 +1216,27 @@
                 <div class="big-three-rank" style="color: #f472b6;">#03</div>
                 <div class="big-three-tags">
                     <span class="badge-cat" style="background: #f472b618; color: #f472b6; border-color: #f472b640;">台灣股市</span>
-                    <span class="badge-topic">上市櫃公司營收與財報</span>
+                    <span class="badge-topic">台積電與半導體權值股</span>
                 </div>
                 
             </div>
-            <h3 class="big-three-headline">台積電第三季EPS達29.43元創高，第四季營收展望續創新高</h3>
+            <h3 class="big-three-headline">台積電傳研擬跨足 AI 先進記憶體製造，擴大人工智慧晶片供應鏈布局</h3>
             
             <div class="why-it-matters-box">
                 <div class="box-label">💡 為什麼重要 (WHY IT MATTERS)</div>
-                <p class="box-content">台積電公布2026年第三季財報，單季合併營收達1.49兆元、年增50.9%，稅後純益7,630億元、年增68.7%，EPS達29.43元。公司預估第四季美元營收將達523億至543億美元，受惠2奈米與AI需求持續強勁。</p>
+                <p class="box-content">台積電評估跨足3D DRAM，顯示AI供應鏈可能進一步向高階記憶體整合，有機會改變半導體產業版圖。</p>
             </div>
             
             <div class="big-three-footer">
-                <div class="metric-pill">
-                    <span class="metric-icon">📊</span>
-                    <span class="metric-text">50.9% · 630億元</span>
-                </div>
-                <a href="https://pr.tsmc.com/english/news/3346" target="_blank" rel="noopener noreferrer" class="link-btn-hero">
-                    開啟原文直連 <span class="arrow-icon">↗</span>
-                </a>
+                <div class="metric-pill"><span class="metric-icon">📊</span><span class="metric-text">3D DRAM</span></div>
+                <a href="https://www.taipeitimes.com/News/biz/archives/2026/11/09/2003867384" target="_blank" rel="noopener noreferrer" class="link-btn-hero">開啟原文直連 <span class="arrow-icon">↗</span></a>
             </div>
         </div>
         
             </div>
         </section>
 
+        
         <!-- 模組 5: 產業影響鏈矩陣 (Supply Chain Impact Matrix) -->
         <section class="impact-section" id="impactSection">
             <div class="section-tag-header">
@@ -1230,56 +1248,91 @@
         <div class="impact-chain-card">
             <div class="impact-node trigger-node">
                 <div class="node-badge">⚡ 驅動事件 (TRIGGER)</div>
-                <div class="node-title">全球大模型生態加速整合（如 NVIDIA 擴大開源模型與軟體併購）</div>
+                <div class="node-title">TrendForce預估AI伺服器出貨量明年成長36%</div>
             </div>
             <div class="impact-arrow">➔</div>
             <div class="impact-node process-node">
                 <div class="node-badge">⚙️ 規格/零組件影響 (IMPACT)</div>
-                <div class="node-title">高階 GPU 伺服器、液冷散熱、高速傳輸介面與先進封裝</div>
+                <div class="node-title">AI伺服器與半導體供應鏈</div>
             </div>
             <div class="impact-arrow">➔</div>
             <div class="impact-node target-node">
                 <div class="node-badge">🎯 台美關鍵受惠標的 (BENEFICIARIES)</div>
-                <div class="node-title highlighted-stocks">台積電 (2330)、廣達 (2382)、緯創 (3231)、奇鋐 (3017)、雙鴻 (3324)</div>
+                <div class="node-title highlighted-stocks">TrendForce Corp</div>
             </div>
         </div>
         
         <div class="impact-chain-card">
             <div class="impact-node trigger-node">
                 <div class="node-badge">⚡ 驅動事件 (TRIGGER)</div>
-                <div class="node-title">美債殖利率逼近 5% 高檔震盪 & 全球央行通膨利率決策</div>
+                <div class="node-title">台積電評估生產3D DRAM</div>
             </div>
             <div class="impact-arrow">➔</div>
             <div class="impact-node process-node">
                 <div class="node-badge">⚙️ 規格/零組件影響 (IMPACT)</div>
-                <div class="node-title">科技成長股估值承壓、外匯匯率波動、黃金避險需求走揚</div>
+                <div class="node-title">AI記憶體與先進封裝供應鏈</div>
             </div>
             <div class="impact-arrow">➔</div>
             <div class="impact-node target-node">
                 <div class="node-badge">🎯 台美關鍵受惠標的 (BENEFICIARIES)</div>
-                <div class="node-title highlighted-stocks">高現金流科技巨頭（蘋果、微軟）、避險資產（黃金）、公股金控</div>
+                <div class="node-title highlighted-stocks">台積電、Nvidia Corp</div>
             </div>
         </div>
         
         <div class="impact-chain-card">
             <div class="impact-node trigger-node">
                 <div class="node-badge">⚡ 驅動事件 (TRIGGER)</div>
-                <div class="node-title">人形機器人與端側 AI 部署加速（如 Figure 與雲端基礎設施結盟）</div>
+                <div class="node-title">HBM短缺可能延續至2028年</div>
             </div>
             <div class="impact-arrow">➔</div>
             <div class="impact-node process-node">
                 <div class="node-badge">⚙️ 規格/零組件影響 (IMPACT)</div>
-                <div class="node-title">精密減速機、微型感測元件、車載/工業級相機模組</div>
+                <div class="node-title">記憶體產業</div>
             </div>
             <div class="impact-arrow">➔</div>
             <div class="impact-node target-node">
                 <div class="node-badge">🎯 台美關鍵受惠標的 (BENEFICIARIES)</div>
-                <div class="node-title highlighted-stocks">大立光 (3008)、亞光 (3019)、上銀 (2049)、鴻海 (2317)</div>
+                <div class="node-title highlighted-stocks"></div>
+            </div>
+        </div>
+        
+        <div class="impact-chain-card">
+            <div class="impact-node trigger-node">
+                <div class="node-badge">⚡ 驅動事件 (TRIGGER)</div>
+                <div class="node-title">Mavria推出工廠化AI資料中心平台Terrain</div>
+            </div>
+            <div class="impact-arrow">➔</div>
+            <div class="impact-node process-node">
+                <div class="node-badge">⚙️ 規格/零組件影響 (IMPACT)</div>
+                <div class="node-title">AI基礎設施與資料中心建置</div>
+            </div>
+            <div class="impact-arrow">➔</div>
+            <div class="impact-node target-node">
+                <div class="node-badge">🎯 台美關鍵受惠標的 (BENEFICIARIES)</div>
+                <div class="node-title highlighted-stocks">Mavria</div>
+            </div>
+        </div>
+        
+        <div class="impact-chain-card">
+            <div class="impact-node trigger-node">
+                <div class="node-badge">⚡ 驅動事件 (TRIGGER)</div>
+                <div class="node-title">Tesla Robotaxi擴展至第8個城市</div>
+            </div>
+            <div class="impact-arrow">➔</div>
+            <div class="impact-node process-node">
+                <div class="node-badge">⚙️ 規格/零組件影響 (IMPACT)</div>
+                <div class="node-title">自駕車商業化與智慧交通</div>
+            </div>
+            <div class="impact-arrow">➔</div>
+            <div class="impact-node target-node">
+                <div class="node-badge">🎯 台美關鍵受惠標的 (BENEFICIARIES)</div>
+                <div class="node-title highlighted-stocks">Tesla</div>
             </div>
         </div>
         
             </div>
         </section>
+    
 
         <!-- 看盤統計看盤卡片 -->
         <div class="stats-bar">
@@ -1287,7 +1340,7 @@
             <div class="stat-card" onclick="scrollToSection('A')" style="--card-accent: #38bdf8;">
                 <div class="stat-info">
                     <div class="stat-name">AI</div>
-                    <div class="stat-num">9 <span class="stat-unit">則</span></div>
+                    <div class="stat-num">7 <span class="stat-unit">則</span></div>
                 </div>
                 <div class="stat-icon-wrapper" style="background: #38bdf815; color: #38bdf8;">
                     🤖
@@ -1296,7 +1349,7 @@
             <div class="stat-card" onclick="scrollToSection('B')" style="--card-accent: #818cf8;">
                 <div class="stat-info">
                     <div class="stat-name">New technology</div>
-                    <div class="stat-num">9 <span class="stat-unit">則</span></div>
+                    <div class="stat-num">8 <span class="stat-unit">則</span></div>
                 </div>
                 <div class="stat-icon-wrapper" style="background: #818cf815; color: #818cf8;">
                     💻
@@ -1314,7 +1367,7 @@
             <div class="stat-card" onclick="scrollToSection('D')" style="--card-accent: #f472b6;">
                 <div class="stat-info">
                     <div class="stat-name">台灣股市</div>
-                    <div class="stat-num">9 <span class="stat-unit">則</span></div>
+                    <div class="stat-num">7 <span class="stat-unit">則</span></div>
                 </div>
                 <div class="stat-icon-wrapper" style="background: #f472b615; color: #f472b6;">
                     ⚡
@@ -1323,7 +1376,7 @@
             <div class="stat-card" onclick="scrollToSection('E')" style="--card-accent: #fbbf24;">
                 <div class="stat-info">
                     <div class="stat-name">美國股市</div>
-                    <div class="stat-num">8 <span class="stat-unit">則</span></div>
+                    <div class="stat-num">6 <span class="stat-unit">則</span></div>
                 </div>
                 <div class="stat-icon-wrapper" style="background: #fbbf2415; color: #fbbf24;">
                     🌱
@@ -1338,12 +1391,12 @@
                 <input type="text" id="searchInput" class="search-input" placeholder="輸入關鍵字、主題、公司或股票代號（如：台積電、NVIDIA、聯準會、AI Agent）即時檢索..." oninput="filterNews()">
             </div>
             <div class="filter-tabs">
-                <button class="tab-btn active" data-category="all" onclick="filterCategory('all', this)">全部 (45)</button>
-                <button class="tab-btn" data-category="AI" onclick="filterCategory('AI', this)">AI (9)</button>
-                <button class="tab-btn" data-category="New technology" onclick="filterCategory('New technology', this)">New technology (9)</button>
+                <button class="tab-btn active" data-category="all" onclick="filterCategory('all', this)">全部 (38)</button>
+                <button class="tab-btn" data-category="AI" onclick="filterCategory('AI', this)">AI (7)</button>
+                <button class="tab-btn" data-category="New technology" onclick="filterCategory('New technology', this)">New technology (8)</button>
                 <button class="tab-btn" data-category="投資市場" onclick="filterCategory('投資市場', this)">投資市場 (10)</button>
-                <button class="tab-btn" data-category="台灣股市" onclick="filterCategory('台灣股市', this)">台灣股市 (9)</button>
-                <button class="tab-btn" data-category="美國股市" onclick="filterCategory('美國股市', this)">美國股市 (8)</button>
+                <button class="tab-btn" data-category="台灣股市" onclick="filterCategory('台灣股市', this)">台灣股市 (7)</button>
+                <button class="tab-btn" data-category="美國股市" onclick="filterCategory('美國股市', this)">美國股市 (6)</button>
             </div>
         </div>
 
@@ -1361,197 +1414,166 @@
                         <span class="section-subtitle">SECTOR INTELLIGENCE · 深度即時追蹤</span>
                     </div>
                     <span class="section-count-badge" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
-                        9 則焦點
+                        7 則焦點
                     </span>
                 </div>
                 <div class="section-header-right">
                     <span class="toggle-arrow" id="arrow-A">▼</span>
                 </div>
             </div>
+            
             <div class="section-bottom-line-bar">
                 <span class="bottom-line-tag" style="color: #38bdf8;">📌 一句話結論</span>
-                <span class="bottom-line-text">AI 領域軍備競賽加劇，模型算力正全面下沉轉化為高自主性代理人應用；首要動態：Google 推出 Genie 4 世界模型，強化 AI Agent 與機器人即時互動能力。</span>
+                <span class="bottom-line-text">代理式AI、多模態AI、開源模型與AI治理同步加速發展，產業競爭從模型能力擴展至基礎設施與企業應用落地。</span>
             </div>
+        
             <div class="section-body" id="body-A">
                 <div class="news-grid">
                     
-            <div class="news-card" data-category="AI" data-title="Google 推出 Genie 4 世界模型，強化 AI Agent 與機器人即時互動能力" data-topic="AI Agent" data-source="Google 官方部落格 The Keyword">
+            <div class="news-card" data-category="AI" data-title="Anthropic 發布 Claude Fable 5.2 與 Mythos 5.2，強化多步驟 AI Agent 協作能力" data-topic="AI Agent" data-source="Anthropic（經 AI Agent News Today 彙整報導）">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         AI Agent
                     </span>
-                    <span class="pub-time">2026-11-02</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
                 </div>
-                <h4 class="card-title">Google 推出 Genie 4 世界模型，強化 AI Agent 與機器人即時互動能力</h4>
+                <h4 class="card-title">Anthropic 發布 Claude Fable 5.2 與 Mythos 5.2，強化多步驟 AI Agent 協作能力</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">Google 於 2026 年 11 月發布最新 AI 動態，宣布 Genie 4 世界模型可建立具備即時互動、原生音訊、進階物理模擬與自然語言控制的虛擬環境。官方表示，該技術可作為 AI Agent 與機器人訓練平台，推進自主代理系統與通用人工智慧（AGI）發展。</p>
+                    <p class="card-summary clamped">Anthropic 於 2026-11-09 發表 Claude Fable 5.2 與 Mythos 5.2，新模型針對程式開發、多步驟推理、機器人控制及多代理協作進行優化，可提升複雜任務自動化效率並降低執行成本。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="Google 官方部落格 The Keyword">🏷️ Google 官方部落格 The Keyword</span>
-                    <a href="https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="Anthropic（經 AI Agent News Today 彙整報導）">🏷️ Anthropic（經 AI Agent News Today 彙整報導）</span>
+                    <a href="https://aiagentstore.ai/ai-agent-news/today" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="AI" data-title="Google DeepMind 發表多模態世界模型 Genie 4，原生整合影像、音訊與互動對話" data-topic="多模態AI" data-source="Google DeepMind 官方部落格、The Keyword">
+            <div class="news-card" data-category="AI" data-title="Meituan 發布 LongCat-2.5 多模態 AI 模型，具 1.6 兆參數並強化自主代理能力" data-topic="多模態AI" data-source="opensourceforu（報導 Meituan LongCat-2.5 發布消息）">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         多模態AI
                     </span>
-                    <span class="pub-time">2026-10-27</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-03</span>
+                    </span>
                 </div>
-                <h4 class="card-title">Google DeepMind 發表多模態世界模型 Genie 4，原生整合影像、音訊與互動對話</h4>
+                <h4 class="card-title">Meituan 發布 LongCat-2.5 多模態 AI 模型，具 1.6 兆參數並強化自主代理能力</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">Google DeepMind 於 2026 年 10 月推出 Genie 4，多模態 AI 模型可同步生成逼真的視覺場景、環境音效、音樂及即時對話，並支援以自然語言即時修改模擬世界。官方認為此技術有助於機器人訓練、AI Agent 開發及邁向 AGI。</p>
+                    <p class="card-summary clamped">Meituan 於 2026-11-02 推出 LongCat-2.5，採用原生多模態架構，可同時處理文字與影像，支援長週期任務、自主程式開發、視覺設計及 3D 工作，並具備 100 萬 Token 上下文能力。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="Google DeepMind 官方部落格、The Keyword">🏷️ Google DeepMind 官方部落格、The Keyword</span>
-                    <a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="opensourceforu（報導 Meituan LongCat-2.5 發布消息）">🏷️ opensourceforu（報導 Meituan LongCat-2.5 發布消息）</span>
+                    <a href="https://www.opensourceforu.com/2026/11/meituan-longcat-2-5-ai-model/" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="AI" data-title="Google 全球推出 Gemini 4 Argon 推論模型，支援百萬 Token 長鏈推理能力" data-topic="AI推論技術" data-source="Google AI for Developers、Google AI Studio">
+            <div class="news-card" data-category="AI" data-title="Ambiq 推出 heliaAOT 1.0，大幅降低邊緣 AI 推論延遲最高達 76%" data-topic="AI推論技術" data-source="Business Wire（由 Yahoo Finance UK 轉載）">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         AI推論技術
                     </span>
-                    <span class="pub-time">2026-10（官方文件更新）；2026-10-13（全球發布）</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
                 </div>
-                <h4 class="card-title">Google 全球推出 Gemini 4 Argon 推論模型，支援百萬 Token 長鏈推理能力</h4>
+                <h4 class="card-title">Ambiq 推出 heliaAOT 1.0，大幅降低邊緣 AI 推論延遲最高達 76%</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">Google 近日正式向開發者與企業全球推出旗艦推論模型 Gemini 4 Argon。該模型專為複雜軟體工程、科學研究、數學問題與多步驟 AI Agent 任務設計，支援最高 100 萬 Token 上下文視窗與長鏈推理，代表 AI 推論技術的重要進展。</p>
+                    <p class="card-summary clamped">Ambiq 於 2026-11-09 發布 heliaAOT 1.0 AI 編譯器，可將模型轉換為最佳化 C 程式碼，在 Apollo 平台上實現最高 76% 推論延遲降低與 72% 能耗下降，提升邊緣裝置 AI 推論效率。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="Google AI for Developers、Google AI Studio">🏷️ Google AI for Developers、Google AI Studio</span>
-                    <a href="https://ai.google.dev/gemini-api/docs/models/gemini-4-argon" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="Business Wire（由 Yahoo Finance UK 轉載）">🏷️ Business Wire（由 Yahoo Finance UK 轉載）</span>
+                    <a href="https://uk.finance.yahoo.com/news/ambiq-launches-heliaaot-1-0-133000071.html" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="AI" data-title="AI資料中心 最新產業趨勢與市場進展" data-topic="AI資料中心" data-source="科技產業觀察">
+            <div class="news-card" data-category="AI" data-title="Mavria 獲 1 億美元種子輪融資，推出工廠化 AI 資料中心平台 Terrain" data-topic="AI資料中心" data-source="Securities.io">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         AI資料中心
                     </span>
-                    <span class="pub-time">2026-11-04</span>
-                </div>
-                <h4 class="card-title">AI資料中心 最新產業趨勢與市場進展</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">市場持續聚焦 AI資料中心 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="card-footer">
-                    <span class="source-tag" title="科技產業觀察">🏷️ 科技產業觀察</span>
-                    <a href="https://www.bing.com/news/search?q=AI資料中心" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card" data-category="AI" data-title="Snowflake 發表企業級 AI Agent 治理平台，強化企業 AI 應用落地與管控" data-topic="企業AI應用" data-source="Snowflake 官方公告（發表於 Snowflake Expedition 2026）">
-                <div class="card-header">
-                    <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
-                        企業AI應用
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
                     </span>
-                    <span class="pub-time">2026-11-03</span>
                 </div>
-                <h4 class="card-title">Snowflake 發表企業級 AI Agent 治理平台，強化企業 AI 應用落地與管控</h4>
+                <h4 class="card-title">Mavria 獲 1 億美元種子輪融資，推出工廠化 AI 資料中心平台 Terrain</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">Snowflake 於 2026 年 11 月宣布推出新一代企業 AI Agent 管理功能，包括 Business Ontology 與 Cortex AI Gateway，協助企業以統一商業語意、安全機制及治理框架部署 AI Agent，提升企業 AI 應用的可靠性、可追蹤性與合規性。</p>
+                    <p class="card-summary clamped">Mavria 於 2026-11-09 宣布推出工廠預製式 AI 資料中心方案 Terrain，採標準化 5MW 模組整合電力、散熱與 IT 設備，加速 AI 運算基礎設施部署；同時完成由 Paradigm 領投的 1 億美元種子輪融資。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="Snowflake 官方公告（發表於 Snowflake Expedition 2026）">🏷️ Snowflake 官方公告（發表於 Snowflake Expedition 2026）</span>
-                    <a href="https://markets.ft.com/data/announce/detail?dockey=600-202611030904BIZWIRE_USPRX____20261103_BW628258-1" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="Securities.io">🏷️ Securities.io</span>
+                    <a href="https://www.securities.io/factory-built-ai-data-center-startup-mavria-raises-100-million-seed-at-1-billion-valuation/" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="AI" data-title="EDGE AI Taipei 2026登場，聚焦生成式邊緣AI、Agentic AI與裝置端智慧應用" data-topic="邊緣AI" data-source="EDGE AI Foundation／《電子工程專輯》">
-                <div class="card-header">
-                    <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
-                        邊緣AI
-                    </span>
-                    <span class="pub-time">2026-09-18</span>
-                </div>
-                <h4 class="card-title">EDGE AI Taipei 2026登場，聚焦生成式邊緣AI、Agentic AI與裝置端智慧應用</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">EDGE AI Taipei 2026 於台北舉辦，匯聚全球晶片、機器人與AI生態系領袖，重點關注生成式邊緣AI、小型語言模型、多模態AI與Agentic AI在裝置端的實際部署，加速邊緣AI商業化與智慧設備創新。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="card-footer">
-                    <span class="source-tag" title="EDGE AI Foundation／《電子工程專輯》">🏷️ EDGE AI Foundation／《電子工程專輯》</span>
-                    <a href="https://www.eettaiwan.com/20260918nt21-edge-ai-taipei-2026-foundation-startup-pitch-competition/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card" data-category="AI" data-title="特斯拉啟動 Optimus 人形機器人生產，實體 AI 進入量產新階段" data-topic="實體AI與機器人" data-source="Tesla 相關產業公告／《The Manila Times》報導">
+            <div class="news-card" data-category="AI" data-title="Embodied AI 發表 AIR 人形機器人，可在工廠環境中邊工作邊學習" data-topic="實體AI與機器人" data-source="Business Wire／RoboticsTomorrow">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         實體AI與機器人
                     </span>
-                    <span class="pub-time">2026-10-26</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-06</span>
+                    </span>
                 </div>
-                <h4 class="card-title">特斯拉啟動 Optimus 人形機器人生產，實體 AI 進入量產新階段</h4>
+                <h4 class="card-title">Embodied AI 發表 AIR 人形機器人，可在工廠環境中邊工作邊學習</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">Tesla 宣布在美國加州 Fremont 啟動 Optimus 人形機器人生產作業。業界認為，這是實體 AI（Physical AI）與人形機器人產業的重要里程碑，象徵技術正從研發驗證邁向大規模商業化與實際場域部署。</p>
+                    <p class="card-summary clamped">瑞士機器人公司 Embodied AI 於 2026-11-06 發表 AIR 人形機器人，採安全導向設計，可直接與工廠人員協同作業。該機器人透過人類示範學習任務，約一個月內可自主執行工作，目前已與多家全球製造商展開測試。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="Tesla 相關產業公告／《The Manila Times》報導">🏷️ Tesla 相關產業公告／《The Manila Times》報導</span>
-                    <a href="https://www.manilatimes.net/2026/10/26/tmt-newswire/globenewswire/yyforce-applauds-tesla-and-elon-musk-on-commencing-manufacturing-of-optimus-humanoid-robots/2454113" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="Business Wire／RoboticsTomorrow">🏷️ Business Wire／RoboticsTomorrow</span>
+                    <a href="https://www.businesswire.com/news/home/20261106661068/en/Embodied-AI-Unveils-AIR-a-Physically-Safe-Humanoid-Robot-That-Learns-on-the-Job" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="AI" data-title="IBM推出 AI Agent 身分與存取控制機制，強化企業級 AI 治理與安全管理" data-topic="AI資安與治理" data-source="IBM 官方新聞中心（IBM Newsroom）">
+            <div class="news-card" data-category="AI" data-title="Vanta 簽署協議收購 AI 資安公司 Pillar Security，強化 AI 治理與代理安全防護" data-topic="AI資安與治理" data-source="Unite.AI">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         AI資安與治理
                     </span>
-                    <span class="pub-time">2026-10-27</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
                 </div>
-                <h4 class="card-title">IBM推出 AI Agent 身分與存取控制機制，強化企業級 AI 治理與安全管理</h4>
+                <h4 class="card-title">Vanta 簽署協議收購 AI 資安公司 Pillar Security，強化 AI 治理與代理安全防護</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">IBM 於 TechXchange 2026 發表全新 AI Agent 治理方案，導入 Agent Identity（代理身分）、存取權限控制與行為追蹤機制，協助企業管理 AI Agent 的權限、責任歸屬與稽核紀錄，提升 AI 資安與治理能力。</p>
+                    <p class="card-summary clamped">Vanta 於 2026-11-09 宣布將收購 Pillar Security，把 AI 代理測試、執行期防護與治理能力整合至合規平台，實現 AI 政策、風險管理、監控及稽核證據的一體化管理，強化企業 AI 資安治理。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="IBM 官方新聞中心（IBM Newsroom）">🏷️ IBM 官方新聞中心（IBM Newsroom）</span>
-                    <a href="https://newsroom.ibm.com/2026-10-27-ibm-introduces-identity-and-control-for-ai-agents,-securing-frontier-intelligence-for-the-enterprise" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="Unite.AI">🏷️ Unite.AI</span>
+                    <a href="https://www.unite.ai/vanta-signs-deal-to-acquire-ai-security-firm-pillar-security/" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="AI" data-title="Meta發表開源權重模型 Muse Spark Open，主打 AI Agent 與本地端部署" data-topic="開源AI生態" data-source="TechCrunch、Meta 官方發布資訊">
+            <div class="news-card" data-category="AI" data-title="Meta 發布開源模型 Muse Ember，擴大開源 AI 生態佈局" data-topic="開源AI生態" data-source="Meta（AI Model Release Calendar、AI Model Release Tracker）">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #38bdf816; color: #38bdf8; border-color: #38bdf840;">
                         開源AI生態
                     </span>
-                    <span class="pub-time">2026-10-15</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
                 </div>
-                <h4 class="card-title">Meta發表開源權重模型 Muse Spark Open，主打 AI Agent 與本地端部署</h4>
+                <h4 class="card-title">Meta 發布開源模型 Muse Ember，擴大開源 AI 生態佈局</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">Meta 於 2026 年 10 月推出開源權重（Open-weight）模型 Muse Spark Open，支援多模態輸入、100萬 Token 上下文及複雜推理任務。模型權重開放下載，並可於本地端硬體運行，被視為推動開源 AI 生態與 AI Agent 發展的重要里程碑。</p>
+                    <p class="card-summary clamped">Meta 於 2026-11-09 發布新一代 AI 模型 Muse Ember，延續其開放生態策略。該模型主打推理與程式開發能力，並以較低成本提供接近高階模型的效能，有望進一步推動開源 AI 社群與企業導入。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="TechCrunch、Meta 官方發布資訊">🏷️ TechCrunch、Meta 官方發布資訊</span>
-                    <a href="https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="Meta（AI Model Release Calendar、AI Model Release Tracker）">🏷️ Meta（AI Model Release Calendar、AI Model Release Tracker）</span>
+                    <a href="https://www.scriptbyai.com/ai-model-release-calendar/" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
@@ -1570,197 +1592,187 @@
                         <span class="section-subtitle">SECTOR INTELLIGENCE · 深度即時追蹤</span>
                     </div>
                     <span class="section-count-badge" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
-                        9 則焦點
+                        8 則焦點
                     </span>
                 </div>
                 <div class="section-header-right">
                     <span class="toggle-arrow" id="arrow-B">▼</span>
                 </div>
             </div>
+            
             <div class="section-bottom-line-bar">
                 <span class="bottom-line-tag" style="color: #818cf8;">📌 一句話結論</span>
-                <span class="bottom-line-text">前沿科技（量子計算、人形機器人）加速獲得重磅注資；首要動態：Google實現量子運算重大突破，Willow處理器達成「Magic State Cultivation」技術驗證。</span>
+                <span class="bottom-line-text">自駕車、低軌衛星、XR、人形機器人與300mm SiC製程持續推進，反映新科技商業化速度加快。</span>
             </div>
+        
             <div class="section-body" id="body-B">
                 <div class="news-grid">
                     
-            <div class="news-card" data-category="New technology" data-title="Google實現量子運算重大突破，Willow處理器達成「Magic State Cultivation」技術驗證" data-topic="量子運算" data-source="Google Quantum AI／《The Block》報導">
+            <div class="news-card" data-category="New technology" data-title="Quantum Computing Inc. 公布 2026 年第三季財報，量子光子與先進封裝業務帶動營收創新高" data-topic="量子運算" data-source="PR Newswire（刊載於 AOL）">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         量子運算
                     </span>
-                    <span class="pub-time">2026-10-16（2026-10-19更新）</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
                 </div>
-                <h4 class="card-title">Google實現量子運算重大突破，Willow處理器達成「Magic State Cultivation」技術驗證</h4>
+                <h4 class="card-title">Quantum Computing Inc. 公布 2026 年第三季財報，量子光子與先進封裝業務帶動營收創新高</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">Google Quantum AI 宣布在 Willow 量子處理器上成功驗證「Magic State Cultivation（魔術態培育）」技術，將關鍵量子態錯誤率降低約40倍，並達成99.99%的邏輯保真度。此成果被視為突破容錯量子運算瓶頸的重要里程碑。</p>
+                    <p class="card-summary clamped">Quantum Computing Inc. 於 2026-11-09 公布第三季營收達 950 萬美元，超越 2026 年上半年總和。公司表示，光子元件、量子通訊產品及先進封裝業務成長，正加速推進量子運算商業化與製造能力擴張。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="Google Quantum AI／《The Block》報導">🏷️ Google Quantum AI／《The Block》報導</span>
-                    <a href="https://www.theblock.co/news/web3/2026-10-16-google-quantum-computing-breakthrough-418787" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="PR Newswire（刊載於 AOL）">🏷️ PR Newswire（刊載於 AOL）</span>
+                    <a href="https://www.aol.com/articles/quantum-computing-inc-reports-third-210500000.html" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="New technology" data-title="Waymo於底特律啟動全無人自駕車測試，自動駕駛商業化版圖再擴大" data-topic="自動駕駛技術" data-source="AI Tech Model（彙整 Waymo 最新自動駕駛動態）">
+            <div class="news-card" data-category="New technology" data-title="Tongji University 發表全球首套雲端控制自動駕駛測試系統，強化 L3/L4 安全驗證" data-topic="自動駕駛技術" data-source="City News Service">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         自動駕駛技術
                     </span>
-                    <span class="pub-time">2026-10-10（報導發布）</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
                 </div>
-                <h4 class="card-title">Waymo於底特律啟動全無人自駕車測試，自動駕駛商業化版圖再擴大</h4>
+                <h4 class="card-title">Tongji University 發表全球首套雲端控制自動駕駛測試系統，強化 L3/L4 安全驗證</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">Waymo 於 2026 年 10 月在美國底特律展開完全無安全員隨車的自動駕駛測試，初期提供員工搭乘。此舉代表其 Robotaxi 技術從既有營運城市進一步擴展至新市場，被視為自動駕駛商業化的重要里程碑。</p>
+                    <p class="card-summary clamped">Tongji University 於 2026-11-09 啟用全球首套「雲控交通流模擬測試系統」，可透過 AI 控制數十個交通參與者，模擬濃霧、動物穿越、車流匯入等複雜情境，提升 L3 與 L4 自動駕駛系統的安全測試能力。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="AI Tech Model（彙整 Waymo 最新自動駕駛動態）">🏷️ AI Tech Model（彙整 Waymo 最新自動駕駛動態）</span>
-                    <a href="https://aitechmodel.com/what-is-new-with-ai-autonomous-vehicles-in-october-2026-latest-model-cards-and-company-releases-and-key-takeaways/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="City News Service">🏷️ City News Service</span>
+                    <a href="https://www.citynewsservice.cn/articles/china-biz-buzz/auto/tongji-university-unveils-worlds-first-cloud-controlled-autonomous-driving-test-system-dmjbvz4n" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="New technology" data-title="Google與Samsung發表Gemini驅動Android XR智慧眼鏡，瞄準AI穿戴新世代" data-topic="智慧眼鏡與XR" data-source="Google、Samsung／《Gadgets 360》">
+            <div class="news-card" data-category="New technology" data-title="Samsung Android XR 智慧眼鏡將於 11 月 12 日開放預購，攜手 Google 與 Warby Parker 推進 XR 生態" data-topic="智慧眼鏡與XR" data-source="YugaTech">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         智慧眼鏡與XR
                     </span>
-                    <span class="pub-time">2026-05-20</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-07</span>
+                    </span>
                 </div>
-                <h4 class="card-title">Google與Samsung發表Gemini驅動Android XR智慧眼鏡，瞄準AI穿戴新世代</h4>
+                <h4 class="card-title">Samsung Android XR 智慧眼鏡將於 11 月 12 日開放預購，攜手 Google 與 Warby Parker 推進 XR 生態</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">Google 與 Samsung 在 Google I/O 2026 展示搭載 Gemini AI 的 Android XR 智慧眼鏡，支援即時翻譯、導航、訊息互動、環境理解與語音助理功能。產品將於 2026 年秋季上市，被視為 XR 與 AI 穿戴裝置的重要里程碑。</p>
+                    <p class="card-summary clamped">Samsung 首款 Android XR 智慧眼鏡「Intelligent Eyewear」將於 2026-11-12 開放預購，搭載 Google Gemini AI 與 Android XR 平台，支援語音互動、即時資訊查詢、導航與拍攝功能，率先於美國與韓國市場推出。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="Google、Samsung／《Gadgets 360》">🏷️ Google、Samsung／《Gadgets 360》</span>
-                    <a href="https://www.gadgets360.com/wearables/news/google-io-2026-google-samsung-gemini-powered-android-xr-smart-glasses-features-specifications-availability-11519677" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="YugaTech">🏷️ YugaTech</span>
+                    <a href="https://www.yugatech.com/news/samsung-android-xr-smart-glasses-pre-orders-start-november-12-initial-launch-limited-to-us-and-korea/" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="New technology" data-title="台積電2奈米製程產能加速擴張，年底月產能可望突破10萬片晶圓" data-topic="先進半導體製程" data-source="《Wccftech》引述《Economic Daily News》、TrendForce">
+            <div class="news-card" data-category="New technology" data-title="Infineon Technologies AG 首度完成 300mm 碳化矽晶圓功率元件製造，推進下一代先進半導體製程" data-topic="先進半導體製程" data-source="Semiconductor Today">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         先進半導體製程
                     </span>
-                    <span class="pub-time">2026-10-06（TrendForce報導）</span>
-                </div>
-                <h4 class="card-title">台積電2奈米製程產能加速擴張，年底月產能可望突破10萬片晶圓</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">TSMC 2奈米（N2）先進製程需求強勁，受惠於AI與高效能運算市場帶動，NVIDIA、AMD、Apple等客戶積極導入。市場預估台積電2026年底2奈米月產能將突破10萬片晶圓，成為先進半導體製程的重要里程碑。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="card-footer">
-                    <span class="source-tag" title="《Wccftech》引述《Economic Daily News》、TrendForce">🏷️ 《Wccftech》引述《Economic Daily News》、TrendForce</span>
-                    <a href="https://www.trendforce.com/news/2026/10/06/news-qualcomm-apple-mediatek-battle-it-out-on-tsmc-2nm-inside-their-flagship-ai-strategies/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card" data-category="New technology" data-title="Intel宣布擴大300mm矽光子產能，CPO商業化進程加速" data-topic="矽光子與CPO" data-source="TrendForce">
-                <div class="card-header">
-                    <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
-                        矽光子與CPO
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
                     </span>
-                    <span class="pub-time">2026-10-20</span>
                 </div>
-                <h4 class="card-title">Intel宣布擴大300mm矽光子產能，CPO商業化進程加速</h4>
+                <h4 class="card-title">Infineon Technologies AG 首度完成 300mm 碳化矽晶圓功率元件製造，推進下一代先進半導體製程</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">Intel 於 OCP 2026 表示已具備業界少見的 300mm InP 矽光子量產能力，以支援 AI 與 HPC 所需的近封裝光學（NPO）及共同封裝光學（CPO）。同時，NVIDIA、Broadcom 與 TSMC 亦加速推進 CPO 產品量產，顯示矽光子技術正式邁向商業化部署。</p>
+                    <p class="card-summary clamped">Infineon Technologies AG 於 2026-11-09 宣布在奧地利 Villach 廠成功以 300mm 碳化矽（SiC）晶圓製作功能性功率元件，為業界首次於量產晶圓廠環境達成此里程碑。300mm SiC 晶圓可較 200mm 晶圓增加約 2.3 倍晶片產出，有助提升先進製程效率與降低成本。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="TrendForce">🏷️ TrendForce</span>
-                    <a href="https://www.trendforce.com/news/2026/10/20/news-intel-claims-industrys-only-high-volume-300mm-inp-silicon-photonics-capability-as-cpo-gains-momentum/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="Semiconductor Today">🏷️ Semiconductor Today</span>
+                    <a href="https://www.semiconductor-today.com/news_items/2026/nov/infineon-091126.shtml" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="New technology" data-title="CATL推進全固態電池試量產，次世代電池商業化進程加速" data-topic="次世代電池技術" data-source="CarNewsChina、CIBF 2026相關產業資訊">
+            <div class="news-card" data-category="New technology" data-title="Basquevolt 與 Battera Technologies 合作開發次世代固態鋰金屬電池，能量密度瞄準 500 Wh/kg" data-topic="次世代電池技術" data-source="Batteries News">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         次世代電池技術
                     </span>
-                    <span class="pub-time">2026-11-02（最新報導）</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-06</span>
+                    </span>
                 </div>
-                <h4 class="card-title">CATL推進全固態電池試量產，次世代電池商業化進程加速</h4>
+                <h4 class="card-title">Basquevolt 與 Battera Technologies 合作開發次世代固態鋰金屬電池，能量密度瞄準 500 Wh/kg</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">CATL 近期宣布固態電池技術取得新進展，20Ah全固態電池原型持續推進，並朝2027年試量產目標邁進。固態電池具備更高能量密度、更佳安全性與更長續航力，被視為次世代電動車與儲能系統的關鍵技術。</p>
+                    <p class="card-summary clamped">歐洲固態電池開發商 Basquevolt 於 2026-11-06 宣布與 Battera Technologies 展開策略合作，推進次世代鋰金屬固態電池應用於航太領域。目前電池能量密度已超過 400 Wh/kg，雙方目標在未來數月突破 500 Wh/kg。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="CarNewsChina、CIBF 2026相關產業資訊">🏷️ CarNewsChina、CIBF 2026相關產業資訊</span>
-                    <a href="https://carnewschina.com/topics/solid-state-battery/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="Batteries News">🏷️ Batteries News</span>
+                    <a href="https://batteriesnews.com/basquevolt-and-battera-technologies-announce-strategic-collaboration-to-develop-next-generation-integrated-battery-solutions-for-high-performance-aerospace-applications/" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="New technology" data-title="FCC批准SpaceX部署1.5萬顆Starlink低軌衛星，直連手機衛星通訊計畫大幅擴張" data-topic="衛星通訊與低軌衛星" data-source="Federal Communications Commission (FCC)／《AirPro News》與《TeslaNorth》報導">
+            <div class="news-card" data-category="New technology" data-title="Rakuten Group 與 AST SpaceMobile 成立合資公司，打造日本低軌衛星直連手機通訊網路 J-LEO" data-topic="衛星通訊與低軌衛星" data-source="XenoSpectrum／Business Wire／Via Satellite">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         衛星通訊與低軌衛星
                     </span>
-                    <span class="pub-time">2026-10-07（FCC核准公告）</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
                 </div>
-                <h4 class="card-title">FCC批准SpaceX部署1.5萬顆Starlink低軌衛星，直連手機衛星通訊計畫大幅擴張</h4>
+                <h4 class="card-title">Rakuten Group 與 AST SpaceMobile 成立合資公司，打造日本低軌衛星直連手機通訊網路 J-LEO</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">SpaceX 獲美國 FCC 核准部署15,000顆新一代 Starlink 低軌衛星，支援 Direct-to-Cell（D2C）手機直連衛星服務。新系統目標提供最高150Mbps連線速率，讓一般智慧手機無需特殊硬體即可直接連接衛星，被視為衛星通訊產業的重要里程碑。</p>
+                    <p class="card-summary clamped">Rakuten Group 與 AST SpaceMobile 於 2026-11-09 宣布成立 Rakuten AST，推動日本 J-LEO 低軌衛星通訊計畫，建置可讓一般智慧手機直接連接衛星的通訊網路，預計於 2029 年前啟用，並獲最高 1,480 億日圓政府支持。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="Federal Communications Commission (FCC)／《AirPro News》與《TeslaNorth》報導">🏷️ Federal Communications Commission (FCC)／《AirPro News》與《TeslaNorth》報導</span>
-                    <a href="https://airpronews.com/2026/10/07/fcc-authorizes-spacex-15000-satellite-starlink-vleo-network/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="XenoSpectrum／Business Wire／Via Satellite">🏷️ XenoSpectrum／Business Wire／Via Satellite</span>
+                    <a href="https://www.bastillepost.com/global/article/6340488-rakuten-and-ast-spacemobile-establish-rakuten-ast-joint-venture-to-build-d2d-satellite-communications-network-in-japan" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="New technology" data-title="Siemens發表Digital Twin Composer，結合NVIDIA打造新世代工業數位孿生平台" data-topic="數位孿生技術" data-source="Siemens 官方部落格（Tecnomatix Blog）">
+            <div class="news-card" data-category="New technology" data-title="Etihad Water and Electricity (EtihadWE) 與 Al Ghurair PCS 導入 ETAP 數位孿生技術，推動電網智慧化營運" data-topic="數位孿生技術" data-source="Emirates News Agency（WAM）">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         數位孿生技術
                     </span>
-                    <span class="pub-time">2026-01-07</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-05</span>
+                    </span>
                 </div>
-                <h4 class="card-title">Siemens發表Digital Twin Composer，結合NVIDIA打造新世代工業數位孿生平台</h4>
+                <h4 class="card-title">Etihad Water and Electricity (EtihadWE) 與 Al Ghurair PCS 導入 ETAP 數位孿生技術，推動電網智慧化營運</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">Siemens 於 CES 2026 發表 Digital Twin Composer，整合設計、模擬、即時資料與AI技術，並結合 NVIDIA Omniverse 平台，讓企業能快速建立產品、產線與工廠的數位孿生模型，提升虛擬驗證、營運優化與決策效率。</p>
+                    <p class="card-summary clamped">Etihad Water and Electricity (EtihadWE) 於 2026-11-05 宣布與 Al Ghurair PCS Switchgear Manufacturing 合作，在 132/11kV 變電站試行 ETAP 數位孿生技術。透過建立變電站虛擬模型與即時監控能力，提升電網可視性、營運決策效率及基礎設施管理能力。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="Siemens 官方部落格（Tecnomatix Blog）">🏷️ Siemens 官方部落格（Tecnomatix Blog）</span>
-                    <a href="https://blogs.sw.siemens.com/tecnomatix/igniting-the-industrial-ai-future-roland-busch-at-ces-2026-introducing-digital-twin-composer/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="Emirates News Agency（WAM）">🏷️ Emirates News Agency（WAM）</span>
+                    <a href="https://www.wam.ae/en/article/c33pmv4-etihadwe-ghurair-pcs-sign-mou-pilot-etap-digital" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="New technology" data-title="Qualcomm發表AI原生Wi‑Fi 8平台，並加速布局6G網路發展" data-topic="Wi-Fi 8與6G通訊" data-source="Qualcomm 官方新聞稿（Network X 2026）">
+            <div class="news-card" data-category="New technology" data-title="Wi‑Fi 8預商用設備加速落地，邁向與6G協同發展的新世代通訊架構" data-topic="Wi-Fi 8與6G通訊" data-source="騰訊新聞（有連雲）">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #818cf816; color: #818cf8; border-color: #818cf840;">
                         Wi-Fi 8與6G通訊
                     </span>
-                    <span class="pub-time">2026-10-12</span>
+                    <span class="card-meta">
+                        <span class="quality-badge quality-stale">舊聞 · 11 天前</span>
+                        <span class="pub-time">2026-10-30</span>
+                    </span>
                 </div>
-                <h4 class="card-title">Qualcomm發表AI原生Wi‑Fi 8平台，並加速布局6G網路發展</h4>
+                <h4 class="card-title">Wi‑Fi 8預商用設備加速落地，邁向與6G協同發展的新世代通訊架構</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">Qualcomm 在 Network X 2026 展示新一代 AI 原生 Wi‑Fi 8 技術與寬頻平台，結合邊緣 AI、智慧網路管理及20Gbps寬頻應用。同時，公司持續推動6G產業合作，規劃於2029年啟動全球6G商用部署，強化未來通訊基礎建設。</p>
+                    <p class="card-summary clamped">2026年Wi‑Fi 8（IEEE 802.11bn）產業化進程加速，Tozed Kangwei於2026-10-30發表Wi‑Fi 8 5G CPE「ZLT X200 ULTRA」，採用Broadcom Wi‑Fi 8晶片。Wi‑Fi 8主打超高可靠性（UHR），並與6G、5G‑Advanced協同發展，支援AI、XR及高密度連網應用。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="Qualcomm 官方新聞稿（Network X 2026）">🏷️ Qualcomm 官方新聞稿（Network X 2026）</span>
-                    <a href="https://www.qualcomm.com/news/releases/2026/10/qualcomm-unveils-ai-native-broadband-innovations-across-fiber--w" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="騰訊新聞（有連雲）">🏷️ 騰訊新聞（有連雲）</span>
+                    <a href="https://news.qq.com/rain/a/20261030A0635Q00" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
@@ -1786,210 +1798,222 @@
                     <span class="toggle-arrow" id="arrow-C">▼</span>
                 </div>
             </div>
+            
             <div class="section-bottom-line-bar">
                 <span class="bottom-line-tag" style="color: #34d399;">📌 一句話結論</span>
-                <span class="bottom-line-text">宏觀資金與債市利率波動加劇，投資人高度關注聯準會決策與避險資產流向；首要動態：全球股市自科技股拋售後反彈，道瓊、標普500與那斯達克同步回穩。</span>
+                <span class="bottom-line-text">油價回落、美債殖利率走升、黃金維持強勢，市場仍在經濟韌性與地緣政治風險間拉鋸。</span>
             </div>
+        
             <div class="section-body" id="body-C">
                 <div class="news-grid">
                     
-            <div class="news-card" data-category="投資市場" data-title="全球股市自科技股拋售後反彈，道瓊、標普500與那斯達克同步回穩" data-topic="全球主要股市指數" data-source="The Motley Fool、CNBC">
+            <div class="news-card" data-category="投資市場" data-title="AI 概念股重挫引發全球股市震盪，那斯達克單日暴跌 5.5% 進入修正區間" data-topic="全球主要股市指數" data-source="The Wall Street Journal">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         全球主要股市指數
                     </span>
-                    <span class="pub-time">2026-11-02（美東時間）</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-05</span>
+                    </span>
                 </div>
-                <h4 class="card-title">全球股市自科技股拋售後反彈，道瓊、標普500與那斯達克同步回穩</h4>
+                <h4 class="card-title">AI 概念股重挫引發全球股市震盪，那斯達克單日暴跌 5.5% 進入修正區間</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">受市場預期中東局勢可能緩和、油價大跌逾7%激勵，全球主要股市自先前科技股賣壓中回穩。美國三大指數出現反彈，Dow Jones Industrial Average、S&P 500 及 Nasdaq Composite 均走強，投資人風險偏好回升。</p>
+                    <p class="card-summary clamped">美國 AI 與半導體類股於 2026-11-05 遭遇大幅拋售，拖累全球主要股市表現。Nasdaq Composite 單日重挫 5.5%，S&P 500 下跌 4.4%，Dow Jones Industrial Average 大跌逾 1,800 點，市場憂慮 AI 基礎建設投資放緩，連帶衝擊全球風險資產。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="The Motley Fool、CNBC">🏷️ The Motley Fool、CNBC</span>
-                    <a href="https://www.fool.com/coverage/stock-market-today/2026/11/02/stock-market-midday-nov-2-stocks-rally-as-oil-prices-tumble-on-diplomatic-hopes/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="The Wall Street Journal">🏷️ The Wall Street Journal</span>
+                    <a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-05-2026" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="投資市場" data-title="全球主要央行政策分化加劇，Fed與日銀偏鷹、ECB轉向寬鬆" data-topic="全球央行利率政策" data-source="Finobird 全球央行政策分析">
+            <div class="news-card" data-category="投資市場" data-title="英格蘭銀行升息至 4%，主要央行政策分歧加劇全球利率走勢" data-topic="全球央行利率政策" data-source="Bank of England（英格蘭銀行官方）">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         全球央行利率政策
                     </span>
-                    <span class="pub-time">2026-11-02</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-05</span>
+                    </span>
                 </div>
-                <h4 class="card-title">全球主要央行政策分化加劇，Fed與日銀偏鷹、ECB轉向寬鬆</h4>
+                <h4 class="card-title">英格蘭銀行升息至 4%，主要央行政策分歧加劇全球利率走勢</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">全球央行利率政策持續分化。Federal Reserve與Bank of Japan近期維持偏鷹立場並曾升息，而European Central Bank則已將存款利率降至2.5%。市場關注未來數月各央行是否進一步調整利率，以應對通膨與經濟成長壓力。</p>
+                    <p class="card-summary clamped">英格蘭銀行於 2026-11-05 將基準利率調升 1 碼至 4%，為 2023 年以來首次升息。面對能源價格上漲與通膨壓力，英國轉向緊縮政策；同時間，歐洲央行與部分國家則維持或傾向寬鬆路線，凸顯全球央行政策分歧擴大。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="Finobird 全球央行政策分析">🏷️ Finobird 全球央行政策分析</span>
-                    <a href="https://finobird.com/central-banks/policy-outlook/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="Bank of England（英格蘭銀行官方）">🏷️ Bank of England（英格蘭銀行官方）</span>
+                    <a href="https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="投資市場" data-title="美元指數 最新產業趨勢與市場進展" data-topic="美元指數" data-source="科技產業觀察">
+            <div class="news-card" data-category="投資市場" data-title="美元指數跌至一個月低點，美國期中選舉結果衝擊市場預期" data-topic="美元指數" data-source="EBC Financial Group">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         美元指數
                     </span>
-                    <span class="pub-time">2026-11-04</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-05</span>
+                    </span>
                 </div>
-                <h4 class="card-title">美元指數 最新產業趨勢與市場進展</h4>
+                <h4 class="card-title">美元指數跌至一個月低點，美國期中選舉結果衝擊市場預期</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">市場持續聚焦 美元指數 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。</p>
+                    <p class="card-summary clamped">US Dollar Index (DXY) 於 2026-11-04 一度跌至 101.21，創 9 月底以來新低。市場因美國期中選舉後國會版圖變化，重新評估財政支出與經濟成長前景，導致美債殖利率下滑並拖累美元走弱，儘管市場仍預期 Federal Reserve 可能於 12 月升息。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="科技產業觀察">🏷️ 科技產業觀察</span>
-                    <a href="https://www.bing.com/news/search?q=美元指數" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="EBC Financial Group">🏷️ EBC Financial Group</span>
+                    <a href="https://www.ebc.com/forex/us-dollar-index-falls-after-2026-midterms" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="投資市場" data-title="美元走弱、日圓與瑞郎走強，市場聚焦全球央行利率決策與美國期中選舉" data-topic="主要貨幣匯率" data-source="Bloomberg FX Center、FX Blue 市場分析">
+            <div class="news-card" data-category="投資市場" data-title="油價高漲與央行政策分歧帶動匯市波動，加幣與挪威克朗領漲主要貨幣" data-topic="主要貨幣匯率" data-source="FinanceFeeds">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         主要貨幣匯率
                     </span>
-                    <span class="pub-time">2026-11-02至2026-11-04（最新市場動態）</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-07</span>
+                    </span>
                 </div>
-                <h4 class="card-title">美元走弱、日圓與瑞郎走強，市場聚焦全球央行利率決策與美國期中選舉</h4>
+                <h4 class="card-title">油價高漲與央行政策分歧帶動匯市波動，加幣與挪威克朗領漲主要貨幣</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">近期外匯市場受全球央行政策分歧與美國期中選舉影響，美元避險需求降溫，日圓與瑞士法郎走強。市場密切關注美國聯準會、英國央行及澳洲央行最新政策訊號，匯率波動明顯升溫。</p>
+                    <p class="card-summary clamped">2026 年 11 月最新外匯市場報告指出，受國際油價維持高檔及各國央行利率政策分化影響，Canadian Dollar (CAD)、Norwegian Krone (NOK) 表現領先主要貨幣；而 Euro (EUR) 則受歐洲經濟與財政疑慮拖累承壓，美元維持相對強勢。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="Bloomberg FX Center、FX Blue 市場分析">🏷️ Bloomberg FX Center、FX Blue 市場分析</span>
-                    <a href="https://www.bloomberg.com/fx-center" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="FinanceFeeds">🏷️ FinanceFeeds</span>
+                    <a href="https://financefeeds.com/elev8-brokers-forex-market-report-currency-movements-and-november-risks/" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="投資市場" data-title="美元走強與殖利率攀升壓抑金價，市場聚焦美國期中選舉與Fed動向" data-topic="黃金與貴金屬" data-source="CNBC（引用 Reuters 報導）">
+            <div class="news-card" data-category="投資市場" data-title="黃金現貨價格突破每盎司 4,125 美元，避險需求推升貴金屬走勢" data-topic="黃金與貴金屬" data-source="CNBC">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         黃金與貴金屬
                     </span>
-                    <span class="pub-time">2026-11-03</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
                 </div>
-                <h4 class="card-title">美元走強與殖利率攀升壓抑金價，市場聚焦美國期中選舉與Fed動向</h4>
+                <h4 class="card-title">黃金現貨價格突破每盎司 4,125 美元，避險需求推升貴金屬走勢</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">國際金價於11月初回落，現貨黃金跌至每盎司約3,927美元，主因美元走強及美債殖利率上升削弱黃金吸引力。投資人正關注美國期中選舉結果及聯準會後續利率政策，相關因素料將持續影響黃金與貴金屬走勢。</p>
+                    <p class="card-summary clamped">受到美元走弱及市場避險需求升溫影響，黃金現貨價格於 2026-11-09 一度升至每盎司 4,125.38 美元。投資人持續關注聯準會利率政策、美國經濟數據及地緣政治風險，帶動黃金等貴金屬維持高檔震盪。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="CNBC（引用 Reuters 報導）">🏷️ CNBC（引用 Reuters 報導）</span>
-                    <a href="https://www.bing.com/news/search?q=黃金與貴金屬" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="CNBC">🏷️ CNBC</span>
+                    <a href="https://www.cnbc.com/select/the-price-of-gold-today-nov-9-2026/" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="投資市場" data-title="美伊和談露曙光，國際油價單日重挫逾7%創數月來最大跌幅" data-topic="原油與能源價格" data-source="《Economic Times》、Reuters相關報導">
+            <div class="news-card" data-category="投資市場" data-title="原油價格大跌，市場押注美伊外交進展緩解中東供應風險" data-topic="原油與能源價格" data-source="Philstar.com（引述能源市場與官方能源部門資訊）">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         原油與能源價格
                     </span>
-                    <span class="pub-time">2026-11-02</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-10</span>
+                    </span>
                 </div>
-                <h4 class="card-title">美伊和談露曙光，國際油價單日重挫逾7%創數月來最大跌幅</h4>
+                <h4 class="card-title">原油價格大跌，市場押注美伊外交進展緩解中東供應風險</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">市場預期美國與伊朗衝突可能透過外交談判降溫，導致原先反映地緣政治風險的油價溢價快速消退。11月2日國際原油價格大跌逾7%，WTI跌破每桶100美元，Brent原油同步重挫，成為近期能源市場最受關注動態。</p>
+                    <p class="card-summary clamped">受美伊外交談判進展預期帶動，國際油價於 11 月初大幅回落。市場認為中東原油供應中斷風險下降，帶動能源價格走跌，多地燃油價格同步下調，反映原油市場風險溢價快速消退。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="《Economic Times》、Reuters相關報導">🏷️ 《Economic Times》、Reuters相關報導</span>
-                    <a href="https://auto.economictimes.indiatimes.com/news/oil-and-lubes/crude-oil-futures-tumble-over-7-as-us-iran-diplomatic-thaw-raises-hopes-of-peace-deal/135469833" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="Philstar.com（引述能源市場與官方能源部門資訊）">🏷️ Philstar.com（引述能源市場與官方能源部門資訊）</span>
+                    <a href="https://www.philstar.com/business/2026/11/10/2568976/price-tracker-oil-fuel-monitor-nov-1016" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="投資市場" data-title="美國10年期公債殖利率逼近5%，市場聚焦期中選舉與聯準會政策走向" data-topic="美國公債殖利率" data-source="CNBC、《Economic Times》引述 Reuters 報導">
+            <div class="news-card" data-category="投資市場" data-title="美國公債殖利率走升，市場聚焦通膨數據與聯準會升息路徑" data-topic="美國公債殖利率" data-source="CNBC">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         美國公債殖利率
                     </span>
-                    <span class="pub-time">2026-11-03 至 2026-11-04</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
                 </div>
-                <h4 class="card-title">美國10年期公債殖利率逼近5%，市場聚焦期中選舉與聯準會政策走向</h4>
+                <h4 class="card-title">美國公債殖利率走升，市場聚焦通膨數據與聯準會升息路徑</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">美國公債殖利率近期維持高檔震盪，10年期公債殖利率升至約4.95%，30年期公債殖利率突破5.3%。投資人關注美國期中選舉結果、就業數據與聯準會利率政策前景，市場預期未來殖利率波動仍將加劇。</p>
+                    <p class="card-summary clamped">美國 2 年期與 10 年期公債殖利率於 2026-11-09 分別升至 4.561% 與 4.876%，主因強勁就業數據提高市場對聯準會 12 月升息預期。投資人正關注即將公布的 CPI 與 PPI 數據，以評估後續利率政策方向。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="CNBC、《Economic Times》引述 Reuters 報導">🏷️ CNBC、《Economic Times》引述 Reuters 報導</span>
-                    <a href="https://www.cnbc.com/2026/11/03/us-treasury-yields-bonds.html" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="CNBC">🏷️ CNBC</span>
+                    <a href="https://www.cnbc.com/2026/11/09/us-treasurys-bonds-yields.html" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="投資市場" data-title="IMF上調2026年全球通膨預測至4.7%，示警物價壓力再度升溫" data-topic="全球通膨數據" data-source="International Monetary Fund（IMF）《World Economic Outlook》">
+            <div class="news-card" data-category="投資市場" data-title="全球通膨降溫趨勢受能源價格干擾，IMF 指出 2026 年世界通膨率仍維持 4.7%" data-topic="全球通膨數據" data-source="International Monetary Fund (IMF)">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         全球通膨數據
                     </span>
-                    <span class="pub-time">2026-10-13</span>
+                    <span class="card-meta">
+                        <span class="quality-badge quality-stale">舊聞 · 77 天前</span>
+                        <span class="pub-time">2026-08-25</span>
+                    </span>
                 </div>
-                <h4 class="card-title">IMF上調2026年全球通膨預測至4.7%，示警物價壓力再度升溫</h4>
+                <h4 class="card-title">全球通膨降溫趨勢受能源價格干擾，IMF 指出 2026 年世界通膨率仍維持 4.7%</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">International Monetary Fund（IMF）於最新《World Economic Outlook》指出，2026年全球通膨率預估升至4.7%，高於先前預期，主要受地緣政治衝突、能源價格波動及供應鏈壓力影響。不過IMF預期2027年全球通膨將回落至4.1%。</p>
+                    <p class="card-summary clamped">國際貨幣基金組織（IMF） 最新資料顯示，全球通膨率於 2026 年 6 月為 4.7%，雖較 5 月的 4.9% 略為回落，但仍高於年初水準。能源價格上漲及中東地緣政治緊張持續推升物價壓力，顯示全球通膨降溫進程仍不穩定。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="International Monetary Fund（IMF）《World Economic Outlook》">🏷️ International Monetary Fund（IMF）《World Economic Outlook》</span>
-                    <a href="https://www.imf.org/en/publications/weo/issues/2026/10/13/world-economic-outlook-october-2026" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="International Monetary Fund (IMF)">🏷️ International Monetary Fund (IMF)</span>
+                    <a href="https://data.imf.org/en/news/imf%20data%20brief%20august%2026" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="投資市場" data-title="幣安遭遇63億美元史上最大加密貨幣竊案，市場聚焦交易所安全與投資人信心" data-topic="加密貨幣市場" data-source="CNBC、Reuters、Binance官方說明">
+            <div class="news-card" data-category="投資市場" data-title="Bitcoin 現貨 ETF 單週流出 12.8 億美元，加密貨幣市場承壓走弱" data-topic="加密貨幣市場" data-source="Blockchain News（引述 Wintermute Trading Ltd. 市場報告）">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         加密貨幣市場
                     </span>
-                    <span class="pub-time">2026-10-29 至 2026-11-03</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-10</span>
+                    </span>
                 </div>
-                <h4 class="card-title">幣安遭遇63億美元史上最大加密貨幣竊案，市場聚焦交易所安全與投資人信心</h4>
+                <h4 class="card-title">Bitcoin 現貨 ETF 單週流出 12.8 億美元，加密貨幣市場承壓走弱</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">全球最大加密貨幣交易所 Binance 於10月底遭受約63億美元資產竊取，被視為加密貨幣史上最大規模駭客事件。事件導致比特幣等主流加密貨幣價格承壓，市場重新檢視交易所託管安全與風險管理機制。</p>
+                    <p class="card-summary clamped">Wintermute Trading Ltd. 最新市場報告指出，美國 Bitcoin 現貨 ETF 上週淨流出約 12.8 億美元，創 2026 年 6 月以來最大單週資金撤出紀錄。市場避險情緒升溫下，比特幣跌至兩個月低點附近，顯示機構投資人轉趨保守。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="CNBC、Reuters、Binance官方說明">🏷️ CNBC、Reuters、Binance官方說明</span>
-                    <a href="https://www.cnbc.com/2026/10/29/circle-tether-freeze-funds-impacted-by-potential-binance-security-issue.html" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="Blockchain News（引述 Wintermute Trading Ltd. 市場報告）">🏷️ Blockchain News（引述 Wintermute Trading Ltd. 市場報告）</span>
+                    <a href="https://blockchain.news/news/wintermute-crypto-market-trends-november-2026" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="投資市場" data-title="美伊和談與軍事升級風險並存，全球市場緊盯荷姆茲海峽與能源供應局勢" data-topic="地緣政治與市場風險" data-source="Al Jazeera、ZeroFox Intelligence">
+            <div class="news-card" data-category="投資市場" data-title="中東局勢與歐洲通膨升溫加劇市場風險，全球投資人關注地緣政治衝擊" data-topic="地緣政治與市場風險" data-source="FXCM">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #34d39916; color: #34d399; border-color: #34d39940;">
                         地緣政治與市場風險
                     </span>
-                    <span class="pub-time">2026-11-01 至 2026-11-02</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
                 </div>
-                <h4 class="card-title">美伊和談與軍事升級風險並存，全球市場緊盯荷姆茲海峽與能源供應局勢</h4>
+                <h4 class="card-title">中東局勢與歐洲通膨升溫加劇市場風險，全球投資人關注地緣政治衝擊</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">美國與伊朗近期透過卡達斡旋持續進行談判，但雙方仍保留軍事升級可能性。市場關注荷姆茲海峽航運與中東能源供應風險，相關發展恐影響原油價格、通膨預期及全球金融市場波動。</p>
+                    <p class="card-summary clamped">FXCM 於 2026-11-09 發布市場簡報指出，中東衝突持續及能源價格波動仍是全球市場主要風險來源。同時，歐元區通膨升至 4.0%，經濟成長放緩與地緣政治不確定性增加，持續影響全球股市、債市及能源市場表現。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="Al Jazeera、ZeroFox Intelligence">🏷️ Al Jazeera、ZeroFox Intelligence</span>
-                    <a href="https://www.aljazeera.com/news/2026/11/1/iran-and-us-explore-diplomacy-amid-rising-threats-of-war" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="FXCM">🏷️ FXCM</span>
+                    <a href="https://www.fxcm.com/markets/insights/global-macro-and-markets-briefing-9-november-2026/" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
@@ -2008,197 +2032,166 @@
                         <span class="section-subtitle">SECTOR INTELLIGENCE · 深度即時追蹤</span>
                     </div>
                     <span class="section-count-badge" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
-                        9 則焦點
+                        7 則焦點
                     </span>
                 </div>
                 <div class="section-header-right">
                     <span class="toggle-arrow" id="arrow-D">▼</span>
                 </div>
             </div>
+            
             <div class="section-bottom-line-bar">
                 <span class="bottom-line-tag" style="color: #f472b6;">📌 一句話結論</span>
-                <span class="bottom-line-text">焦點動態：台股加權指數 最新產業趨勢與市場進展，牽動後續市場預期。</span>
+                <span class="bottom-line-text">台股強彈4.94%，但外資大幅賣超；AI伺服器、HBM與半導體仍是產業主軸。</span>
             </div>
+        
             <div class="section-body" id="body-D">
                 <div class="news-grid">
                     
-            <div class="news-card" data-category="台灣股市" data-title="台股加權指數 最新產業趨勢與市場進展" data-topic="台股加權指數" data-source="科技產業觀察">
+            <div class="news-card" data-category="台灣股市" data-title="台股加權指數單日反彈 4.94%，收復部分失土並站回 41,661 點" data-topic="台股加權指數" data-source="Investing.com">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         台股加權指數
                     </span>
-                    <span class="pub-time">2026-11-04</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
                 </div>
-                <h4 class="card-title">台股加權指數 最新產業趨勢與市場進展</h4>
+                <h4 class="card-title">台股加權指數單日反彈 4.94%，收復部分失土並站回 41,661 點</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">市場持續聚焦 台股加權指數 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。</p>
+                    <p class="card-summary clamped">台灣加權股價指數（TAIEX） 於 2026-11-09 大漲 1,960 點、漲幅 4.94%，收在 41,661.70 點。此前台股連續數個交易日受全球科技股與 AI 類股修正拖累，本次強勁反彈反映市場風險偏好回升及資金重新流入大型權值股。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="科技產業觀察">🏷️ 科技產業觀察</span>
-                    <a href="https://www.bing.com/news/search?q=台股加權指數" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="Investing.com">🏷️ Investing.com</span>
+                    <a href="https://www.investing.com/indices/taiwan-weighted-historical-data" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="台灣股市" data-title="三大法人11月3日合計賣超1,479億元，外資單日提款逾千億元創市場焦點" data-topic="三大法人買賣超" data-source="Yahoo股市、台灣證券交易所公開資料彙整">
+            <div class="news-card" data-category="台灣股市" data-title="三大法人合計賣超 945 億元，外資連續第 8 個交易日大幅調節台股" data-topic="三大法人買賣超" data-source="風傳媒、Yahoo奇摩股市">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         三大法人買賣超
                     </span>
-                    <span class="pub-time">2026-11-03（盤後資料）</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
                 </div>
-                <h4 class="card-title">三大法人11月3日合計賣超1,479億元，外資單日提款逾千億元創市場焦點</h4>
+                <h4 class="card-title">三大法人合計賣超 945 億元，外資連續第 8 個交易日大幅調節台股</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">台股2026年11月3日遭三大法人合計賣超1,479.01億元，其中外資賣超1,073.07億元、自營商賣超590.54億元，僅投信買超184.6億元。外資大幅減碼權值股與ETF，引發市場對後續資金動向高度關注。</p>
+                    <p class="card-summary clamped">2026-11-09 台股大漲 1,960 點，但三大法人合計仍賣超約 945 億元。外資及陸資賣超 900.56 億元，連續第 8 個交易日站在賣方；投信則買超 313.12 億元、連續第 20 買，自營商賣超 312.19 億元，呈現明顯土洋對作格局。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="Yahoo股市、台灣證券交易所公開資料彙整">🏷️ Yahoo股市、台灣證券交易所公開資料彙整</span>
-                    <a href="https://tw.stock.yahoo.com/institutional-trading/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="風傳媒、Yahoo奇摩股市">🏷️ 風傳媒、Yahoo奇摩股市</span>
+                    <a href="https://www.storm.mg/article/11179883" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="台灣股市" data-title="外資買賣超 最新產業趨勢與市場進展" data-topic="外資買賣超" data-source="科技產業觀察">
+            <div class="news-card" data-category="台灣股市" data-title="台積電傳研擬跨足 AI 先進記憶體製造，擴大人工智慧晶片供應鏈布局" data-topic="台積電與半導體權值股" data-source="Taipei Times（引述 Bloomberg 與 The Information 報導）">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
-                        外資買賣超
+                        台積電與半導體權值股
                     </span>
-                    <span class="pub-time">2026-11-04</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
                 </div>
-                <h4 class="card-title">外資買賣超 最新產業趨勢與市場進展</h4>
+                <h4 class="card-title">台積電傳研擬跨足 AI 先進記憶體製造，擴大人工智慧晶片供應鏈布局</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">市場持續聚焦 外資買賣超 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。</p>
+                    <p class="card-summary clamped">台積電正評估生產新型 3D DRAM 先進記憶體，據悉此規劃與主要客戶 Nvidia Corp 的 AI 硬體需求有關。若計畫成形，台積電將進一步擴大在 AI 晶片供應鏈的影響力，並強化其在高階半導體製造市場的領導地位。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="科技產業觀察">🏷️ 科技產業觀察</span>
-                    <a href="https://www.bing.com/news/search?q=外資買賣超" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="Taipei Times（引述 Bloomberg 與 The Information 報導）">🏷️ Taipei Times（引述 Bloomberg 與 The Information 報導）</span>
+                    <a href="https://www.taipeitimes.com/News/biz/archives/2026/11/09/2003867384" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="台灣股市" data-title="NVIDIA擴大全球AI基礎設施產能，台灣AI伺服器供應鏈迎來新一波擴產潮" data-topic="AI伺服器供應鏈" data-source="NVIDIA 官方新聞稿（GTC Berlin 2026）">
+            <div class="news-card" data-category="台灣股市" data-title="TrendForce Corp：全球 AI 伺服器出貨量明年將成長 36%，供應鏈需求持續強勁" data-topic="AI伺服器供應鏈" data-source="Taipei Times（引述 TrendForce Corp 論壇發言）">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         AI伺服器供應鏈
                     </span>
-                    <span class="pub-time">2026-10-21</span>
-                </div>
-                <h4 class="card-title">NVIDIA擴大全球AI基礎設施產能，台灣AI伺服器供應鏈迎來新一波擴產潮</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">NVIDIA宣布攜手多家供應鏈夥伴擴充AI基礎設施產能，以因應全球AI伺服器需求暴增。其中台廠包括欣興電子（Unimicron）、矽品（SPIL）及京元電子（KYEC）等均參與擴產計畫，帶動台灣AI伺服器與先進封裝供應鏈持續受惠。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="card-footer">
-                    <span class="source-tag" title="NVIDIA 官方新聞稿（GTC Berlin 2026）">🏷️ NVIDIA 官方新聞稿（GTC Berlin 2026）</span>
-                    <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-Supply-Chain-Partners-Expand-Capacity-to-Accelerate-AI-Infrastructure-Buildout/default.aspx" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card" data-category="台灣股市" data-title="AI伺服器需求排擠筆電產能，廣達、仁寶、緯創等ODM大廠加速轉向資料中心業務" data-topic="Notebook與ODM產業" data-source="BriefAsia、Omdia供應鏈研究報告">
-                <div class="card-header">
-                    <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
-                        Notebook與ODM產業
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-06</span>
                     </span>
-                    <span class="pub-time">2026-10-07</span>
                 </div>
-                <h4 class="card-title">AI伺服器需求排擠筆電產能，廣達、仁寶、緯創等ODM大廠加速轉向資料中心業務</h4>
+                <h4 class="card-title">TrendForce Corp：全球 AI 伺服器出貨量明年將成長 36%，供應鏈需求持續強勁</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">受AI伺服器與資料中心需求強勁帶動，全球筆電市場2026年出貨動能轉弱。廣達、仁寶、緯創等台灣ODM大廠正將部分Notebook產能與資源轉向高毛利AI伺服器業務，以因應企業客戶需求成長並提升獲利能力。</p>
+                    <p class="card-summary clamped">TrendForce Corp 於 2026-11-06 表示，受美中九大雲端服務商持續擴大 AI 基礎建設投資帶動，全球 AI 伺服器出貨量預估 2027 年將年增 36% 至 383 萬台。AI 記憶體、GPU 與伺服器系統需求同步攀升，有利台灣 AI 伺服器供應鏈持續受惠。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="BriefAsia、Omdia供應鏈研究報告">🏷️ BriefAsia、Omdia供應鏈研究報告</span>
-                    <a href="https://www.briefasia.com/en/article/notebook-slump-forces-asian-supply-chain-pivot-servers" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="Taipei Times（引述 TrendForce Corp 論壇發言）">🏷️ Taipei Times（引述 TrendForce Corp 論壇發言）</span>
+                    <a href="https://www.taipeitimes.com/News/biz/archives/2026/11/06/2003867228" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="台灣股市" data-title="AI需求推升HBM供不應求，DRAM大廠全面轉向高頻寬記憶體擴產" data-topic="記憶體產業" data-source="Silicon Analysts、產業研究機構與記憶體市場分析報告">
+            <div class="news-card" data-category="台灣股市" data-title="AI需求重塑記憶體市場，高頻寬記憶體（HBM）短缺恐延續至 2028 年" data-topic="記憶體產業" data-source="BizTech Magazine">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         記憶體產業
                     </span>
-                    <span class="pub-time">2026-09-05（最新產業分析）</span>
-                </div>
-                <h4 class="card-title">AI需求推升HBM供不應求，DRAM大廠全面轉向高頻寬記憶體擴產</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">受AI伺服器與加速器需求強勁帶動，HBM（高頻寬記憶體）供給持續吃緊。Samsung、SK Hynix及Micron積極將產能轉向HBM3E與HBM4，導致一般DRAM供應趨緊與價格上漲，記憶體產業進入新一波成長循環。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="card-footer">
-                    <span class="source-tag" title="Silicon Analysts、產業研究機構與記憶體市場分析報告">🏷️ Silicon Analysts、產業研究機構與記憶體市場分析報告</span>
-                    <a href="https://intuitionlabs.ai/articles/hbm-dram-ai-memory-demand" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card" data-category="台灣股市" data-title="欣興大舉擴充AI載板產能，聚焦台灣高階ABF載板與AI供應鏈布局" data-topic="PCB與載板產業" data-source="DIGITIMES、TPCA Show Taipei 2026相關報導">
-                <div class="card-header">
-                    <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
-                        PCB與載板產業
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
                     </span>
-                    <span class="pub-time">2026-10-28</span>
                 </div>
-                <h4 class="card-title">欣興大舉擴充AI載板產能，聚焦台灣高階ABF載板與AI供應鏈布局</h4>
+                <h4 class="card-title">AI需求重塑記憶體市場，高頻寬記憶體（HBM）短缺恐延續至 2028 年</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">受AI伺服器與高效能運算需求帶動，欣興電子（Unimicron）持續強化高階ABF載板布局，除投入逾百億元擴產外，並調整全球產能配置，將資源集中於台灣AI供應鏈。市場看好AI載板需求續強，帶動PCB與載板產業景氣升溫。</p>
+                    <p class="card-summary clamped">受 AI 資料中心與大型雲端業者需求激增影響，記憶體廠商持續將產能轉向高頻寬記憶體（HBM），導致 DRAM 與 NAND 供給趨緊。產業研究指出，目前供應瓶頸已非短期循環，而是結構性短缺，市場緊張狀況可能延續至 2027 至 2028 年。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="DIGITIMES、TPCA Show Taipei 2026相關報導">🏷️ DIGITIMES、TPCA Show Taipei 2026相關報導</span>
-                    <a href="https://www.digitimes.com/tags.asp?id=1515&page=001" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="BizTech Magazine">🏷️ BizTech Magazine</span>
+                    <a href="https://biztechmagazine.com/article/2026/11/ai-reshapes-memory-market-pc-makers-adapt-new-landscape" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="台灣股市" data-title="高股息ETF 00878預估配息1.25元再創新高，0050受益人數突破372萬續居市值型ETF人氣王" data-topic="高股息與市值型ETF" data-source="中央社、台灣證券交易所、Yahoo股市">
+            <div class="news-card" data-category="台灣股市" data-title="國泰永續高股息（00878）預估配息 1.25 元創新高，高股息與市值型 ETF 再成市場焦點" data-topic="高股息與市值型ETF" data-source="數位時代 BusinessNext">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         高股息與市值型ETF
                     </span>
-                    <span class="pub-time">2026-11-02 至 2026-11-04</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
                 </div>
-                <h4 class="card-title">高股息ETF 00878預估配息1.25元再創新高，0050受益人數突破372萬續居市值型ETF人氣王</h4>
+                <h4 class="card-title">國泰永續高股息（00878）預估配息 1.25 元創新高，高股息與市值型 ETF 再成市場焦點</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">熱門高股息ETF「國泰永續高股息（00878）」公告第4季預估配息1.25元，連續4季調高並創歷史新高；市值型ETF方面，「元大台灣50（0050）」受益人數已達約372萬人，持續穩居台灣ETF市場人氣與資產規模領先地位。</p>
+                    <p class="card-summary clamped">11 月 ETF 除息潮展開，國泰永續高股息（00878）公告第 4 季預估配息 1.25 元，創成立以來新高；同時市值型 ETF 代表富邦台50（006208）也公布配息資訊。顯示高股息與市值型 ETF 仍是台股投資人資金配置重心。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="中央社、台灣證券交易所、Yahoo股市">🏷️ 中央社、台灣證券交易所、Yahoo股市</span>
-                    <a href="https://tw.stock.yahoo.com/quote/0050.TW" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="數位時代 BusinessNext">🏷️ 數位時代 BusinessNext</span>
+                    <a href="https://www.bnext.com.tw/article/92874/2026-november-etf-dividend-list" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
-            <div class="news-card" data-category="台灣股市" data-title="台積電第三季EPS達29.43元創高，第四季營收展望續創新高" data-topic="上市櫃公司營收與財報" data-source="台灣積體電路製造股份有限公司（TSMC）第三季財報暨法說會">
+            <div class="news-card" data-category="台灣股市" data-title="10月上市櫃公司營收年增 58.4%，AI族群營收暴增 70.2% 成財報亮點" data-topic="上市櫃公司營收與財報" data-source="ToAlpha（彙整上市櫃公司最新營收公告）">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #f472b616; color: #f472b6; border-color: #f472b640;">
                         上市櫃公司營收與財報
                     </span>
-                    <span class="pub-time">2026-10-15</span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-10</span>
+                    </span>
                 </div>
-                <h4 class="card-title">台積電第三季EPS達29.43元創高，第四季營收展望續創新高</h4>
+                <h4 class="card-title">10月上市櫃公司營收年增 58.4%，AI族群營收暴增 70.2% 成財報亮點</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">台積電公布2026年第三季財報，單季合併營收達1.49兆元、年增50.9%，稅後純益7,630億元、年增68.7%，EPS達29.43元。公司預估第四季美元營收將達523億至543億美元，受惠2奈米與AI需求持續強勁。</p>
+                    <p class="card-summary clamped">截至 2026-11-10，已有 1,439 家上市櫃公司公布 10 月營收，整體營收達 4.73 兆元、年增 58.4%。其中 AI 族群營收年增高達 70.2%，明顯優於非 AI 企業的 32.0%，顯示 AI 伺服器、半導體、記憶體及 ODM 供應鏈仍是本波財報成長主力。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
-                    <span class="source-tag" title="台灣積體電路製造股份有限公司（TSMC）第三季財報暨法說會">🏷️ 台灣積體電路製造股份有限公司（TSMC）第三季財報暨法說會</span>
-                    <a href="https://pr.tsmc.com/english/news/3346" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <span class="source-tag" title="ToAlpha（彙整上市櫃公司最新營收公告）">🏷️ ToAlpha（彙整上市櫃公司最新營收公告）</span>
+                    <a href="https://toalpha.tw/revenue" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
@@ -2217,177 +2210,145 @@
                         <span class="section-subtitle">SECTOR INTELLIGENCE · 深度即時追蹤</span>
                     </div>
                     <span class="section-count-badge" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
-                        8 則焦點
+                        6 則焦點
                     </span>
                 </div>
                 <div class="section-header-right">
                     <span class="toggle-arrow" id="arrow-E">▼</span>
                 </div>
             </div>
+            
             <div class="section-bottom-line-bar">
                 <span class="bottom-line-tag" style="color: #fbbf24;">📌 一句話結論</span>
-                <span class="bottom-line-text">焦點動態：晶片股反彈帶動科技股回穩，標普500與那斯達克終止連三跌，牽動後續市場預期。</span>
+                <span class="bottom-line-text">科技與半導體股領軍反彈，AI基礎設施、Robotaxi及企業獲利成長仍為市場核心敘事。</span>
             </div>
+        
             <div class="section-body" id="body-E">
                 <div class="news-grid">
                     
-            <div class="news-card" data-category="美國股市" data-title="晶片股反彈帶動科技股回穩，標普500與那斯達克終止連三跌" data-topic="美股四大指數" data-source="CNBC、Yahoo Finance">
+            <div class="news-card" data-category="美國股市" data-title="美股強勁反彈，道瓊飆升逾 1,100 點、那斯達克與羅素 2000 指數大漲逾 2%" data-topic="美股四大指數" data-source="CNBC">
                 <div class="card-header">
                     <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
                         美股四大指數
                     </span>
-                    <span class="pub-time">2026-11-03（美東時間）</span>
-                </div>
-                <h4 class="card-title">晶片股反彈帶動科技股回穩，標普500與那斯達克終止連三跌</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">美股11月3日震盪收盤，受半導體族群反彈激勵，Nasdaq Composite上漲0.83%、S&P 500上漲0.36%，終止連三日跌勢；Dow Jones Industrial Average下跌0.38%，Russell 2000上漲0.2%。市場聚焦美國期中選舉結果及AI產業後續展望。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="card-footer">
-                    <span class="source-tag" title="CNBC、Yahoo Finance">🏷️ CNBC、Yahoo Finance</span>
-                    <a href="https://www.cnbc.com/2026/11/02/stock-market-today-live-updates.html" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card" data-category="美國股市" data-title="蘋果成為2026年唯一跑贏標普500的科技七巨頭，市場資金轉向現金流與獲利能力" data-topic="美國科技七巨頭" data-source="AInvest、The Motley Fool">
-                <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
-                        美國科技七巨頭
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
                     </span>
-                    <span class="pub-time">2026-11-01 至 2026-11-02</span>
                 </div>
-                <h4 class="card-title">蘋果成為2026年唯一跑贏標普500的科技七巨頭，市場資金轉向現金流與獲利能力</h4>
+                <h4 class="card-title">美股強勁反彈，道瓊飆升逾 1,100 點、那斯達克與羅素 2000 指數大漲逾 2%</h4>
                 <div class="summary-wrapper">
-                    <p class="card-summary clamped">美國科技七巨頭（Apple、Microsoft、NVIDIA、Amazon、Alphabet、Meta、Tesla）今年表現明顯分化。Apple年初至今漲幅約27%，成為唯一明顯跑贏標普500的成員；投資人近期更重視自由現金流與獲利能力，而非單純AI資本支出規模。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="card-footer">
-                    <span class="source-tag" title="AInvest、The Motley Fool">🏷️ AInvest、The Motley Fool</span>
-                    <a href="https://www.ainvest.com/news/apple-beat-market-2026-rest-magnificent-didn-2611/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card" data-category="美國股市" data-title="費城半導體指數 最新產業趨勢與市場進展" data-topic="費城半導體指數" data-source="科技產業觀察">
-                <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
-                        費城半導體指數
-                    </span>
-                    <span class="pub-time">2026-11-04</span>
-                </div>
-                <h4 class="card-title">費城半導體指數 最新產業趨勢與市場進展</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">市場持續聚焦 費城半導體指數 在技術創新與商業佈局上的最新進展，未來發展潛力備受關注。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="card-footer">
-                    <span class="source-tag" title="科技產業觀察">🏷️ 科技產業觀察</span>
-                    <a href="https://www.bing.com/news/search?q=費城半導體指數" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card" data-category="美國股市" data-title="Google Cloud第三季營收年增103%創新高，AWS與Azure雲端三強競爭白熱化" data-topic="雲端運算公司" data-source="CRN、Synergy Research Group市場資料彙整">
-                <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
-                        雲端運算公司
-                    </span>
-                    <span class="pub-time">2026-11-02</span>
-                </div>
-                <h4 class="card-title">Google Cloud第三季營收年增103%創新高，AWS與Azure雲端三強競爭白熱化</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">全球雲端市場受AI需求帶動持續高速成長。第三季Google Cloud營收年增103%至307億美元，創歷來最快增速；Microsoft Azure營收達332億美元，AWS則以460億美元維持市場龍頭地位。AI雲端服務已成三大業者競爭核心。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="card-footer">
-                    <span class="source-tag" title="CRN、Synergy Research Group市場資料彙整">🏷️ CRN、Synergy Research Group市場資料彙整</span>
-                    <a href="https://www.crn.com/news/cloud/2026/aws-vs-microsoft-azure-vs-google-cloud-q3-earnings-faceoff" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card" data-category="美國股市" data-title="Palantir第三季營收年增96%創新高，美國商業業務首度超越政府業務" data-topic="AI軟體與資料分析公司" data-source="CNBC、Palantir Technologies財報公告">
-                <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
-                        AI軟體與資料分析公司
-                    </span>
-                    <span class="pub-time">2026-11-02</span>
-                </div>
-                <h4 class="card-title">Palantir第三季營收年增96%創新高，美國商業業務首度超越政府業務</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">Palantir Technologies公布2026年第三季財報，營收達23.1億美元、年增96%，優於市場預期；其中美國商業營收大增148%，首次超越政府業務。公司同步上調全年財測，顯示企業導入AI分析平台需求持續強勁。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="card-footer">
-                    <span class="source-tag" title="CNBC、Palantir Technologies財報公告">🏷️ CNBC、Palantir Technologies財報公告</span>
-                    <a href="https://www.cnbc.com/2026/11/02/palantir-pltr-earnings-q3-2026.html" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card" data-category="美國股市" data-title="特斯拉攜Robotaxi加速擴張，自駕車商業化進入關鍵成長階段" data-topic="電動車與自駕車產業" data-source="Tesla相關產業追蹤報導、AutoEdgeView">
-                <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
-                        電動車與自駕車產業
-                    </span>
-                    <span class="pub-time">2026-09-11（最新更新資訊）</span>
-                </div>
-                <h4 class="card-title">特斯拉攜Robotaxi加速擴張，自駕車商業化進入關鍵成長階段</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">Tesla持續推進Robotaxi布局，旗下Cybercab已於奧斯汀展開有限度公開營運，並規劃擴大全球自駕車服務版圖。市場認為Robotaxi商業模式與全自動駕駛（FSD）技術進展，將成為電動車與自駕車產業下一階段成長的重要動能。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="card-footer">
-                    <span class="source-tag" title="Tesla相關產業追蹤報導、AutoEdgeView">🏷️ Tesla相關產業追蹤報導、AutoEdgeView</span>
-                    <a href="https://optimusk.blog/blog/tesla-optimus-robotaxi-2026-strategy/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card" data-category="美國股市" data-title="華爾街分析師一致看多NVIDIA，Melius下調目標價仍維持「買進」評級" data-topic="華爾街分析師評級" data-source="Finbold（彙整TipRanks與華爾街分析師資料）">
-                <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
-                        華爾街分析師評級
-                    </span>
-                    <span class="pub-time">2026-11-02</span>
-                </div>
-                <h4 class="card-title">華爾街分析師一致看多NVIDIA，Melius下調目標價仍維持「買進」評級</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">隨著AI基礎設施需求持續強勁，華爾街分析師對NVIDIA維持高度樂觀。最新統計顯示，近三個月追蹤該股的分析師全數給予「買進」評級，即使Melius Research將目標價由420美元下調至315美元，仍維持買進建議，反映市場對AI晶片龍頭前景持續看好。</p>
-                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
-                </div>
-                <div class="card-footer">
-                    <span class="source-tag" title="Finbold（彙整TipRanks與華爾街分析師資料）">🏷️ Finbold（彙整TipRanks與華爾街分析師資料）</span>
-                    <a href="https://www.bing.com/news/search?q=華爾街分析師評級" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card" data-category="美國股市" data-title="Marvell Technology宣布以全股票交易收購Lumentum，擴大AI與高速光通訊布局" data-topic="美股IPO與併購動態" data-source="CNBC">
-                <div class="card-header">
-                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
-                        美股IPO與併購動態
-                    </span>
-                    <span class="pub-time">2026-11-02</span>
-                </div>
-                <h4 class="card-title">Marvell Technology宣布以全股票交易收購Lumentum，擴大AI與高速光通訊布局</h4>
-                <div class="summary-wrapper">
-                    <p class="card-summary clamped">Marvell Technology宣布將以全股票方式收購Lumentum，藉此強化AI資料中心、高速光通訊及網路基礎設施產品布局。市場認為此併購案反映AI浪潮持續推動半導體與光通訊產業整合，有助提升未來競爭力。</p>
+                    <p class="card-summary clamped">美股四大指數於 2026-11-09 全面走強，受惠於油價回落及科技股反彈。Dow Jones Industrial Average 大漲 1,104 點（+2.15%）、S&P 500 上漲 2.35%、Nasdaq Composite 勁揚 2.74%，Russell 2000 亦上漲逾 3%，市場風險偏好明顯回升。</p>
                     <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
                 </div>
                 <div class="card-footer">
                     <span class="source-tag" title="CNBC">🏷️ CNBC</span>
-                    <a href="https://www.bing.com/news/search?q=美股IPO與併購動態" target="_blank" rel="noopener noreferrer" class="link-btn">
-                        開啟原文 <span class="arrow-icon">↗</span>
-                    </a>
+                    <a href="https://www.cnbc.com/2026/11/08/stock-market-today-live-updates.html" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
+                </div>
+            </div>
+            
+            <div class="news-card" data-category="美國股市" data-title="Snowflake Inc. 擴大代理式 AI 平台，推出企業治理與商業語意框架新功能" data-topic="AI軟體與資料分析公司" data-source="SiliconANGLE">
+                <div class="card-header">
+                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
+                        AI軟體與資料分析公司
+                    </span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-03</span>
+                    </span>
+                </div>
+                <h4 class="card-title">Snowflake Inc. 擴大代理式 AI 平台，推出企業治理與商業語意框架新功能</h4>
+                <div class="summary-wrapper">
+                    <p class="card-summary clamped">Snowflake Inc. 於 2026-11-03 發表多項 AI 平台升級，包括 Business Ontology、Cortex AI Gateway 及自主資料工程功能，使 AI Agent 能在具備企業治理與商業語境下執行資料分析、軟體開發與營運工作，加速企業 AI 導入。</p>
+                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
+                </div>
+                <div class="card-footer">
+                    <span class="source-tag" title="SiliconANGLE">🏷️ SiliconANGLE</span>
+                    <a href="https://siliconangle.com/2026/11/03/snowflake-expands-agentic-ai-platform-with-business-context-and-governance-tools/" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
+                </div>
+            </div>
+            
+            <div class="news-card" data-category="美國股市" data-title="Tesla Robotaxi 擴展至美國第 8 個城市，自駕車商業化版圖再擴大" data-topic="電動車與自駕車產業" data-source="BASENOR Robotaxi Tracker">
+                <div class="card-header">
+                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
+                        電動車與自駕車產業
+                    </span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
+                </div>
+                <h4 class="card-title">Tesla Robotaxi 擴展至美國第 8 個城市，自駕車商業化版圖再擴大</h4>
+                <div class="summary-wrapper">
+                    <p class="card-summary clamped">Tesla 於 2026-11-09 將 Robotaxi 服務擴展至美國德州聖安東尼奧，成為最新營運城市。隨著自駕計程車服務版圖持續擴張，市場關注 Tesla 在自動駕駛商業化進程上的進展，以及與 Waymo 等競爭對手的市場競逐。</p>
+                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
+                </div>
+                <div class="card-footer">
+                    <span class="source-tag" title="BASENOR Robotaxi Tracker">🏷️ BASENOR Robotaxi Tracker</span>
+                    <a href="https://www.basenor.com/pages/tesla-robotaxi-tracker" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
+                </div>
+            </div>
+            
+            <div class="news-card" data-category="美國股市" data-title="Constellation Energy Corporation 財報優於預期，受電力需求與 AI 基礎設施帶動獲利成長" data-topic="美國企業財報" data-source="Earnings Today、TipRanks">
+                <div class="card-header">
+                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
+                        美國企業財報
+                    </span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
+                </div>
+                <h4 class="card-title">Constellation Energy Corporation 財報優於預期，受電力需求與 AI 基礎設施帶動獲利成長</h4>
+                <div class="summary-wrapper">
+                    <p class="card-summary clamped">Constellation Energy Corporation 於 2026-11-09 公布最新財報，調整後每股盈餘（EPS）達 5.06 美元，較市場預期 3.85 美元高出約 31%，營收 95.5 億美元亦優於預期。市場關注其受 AI 資料中心與電力需求成長帶動，以及與 Microsoft 相關核能供電計畫進展。</p>
+                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
+                </div>
+                <div class="card-footer">
+                    <span class="source-tag" title="Earnings Today、TipRanks">🏷️ Earnings Today、TipRanks</span>
+                    <a href="https://www.tipranks.com/news/these-are-the-stocks-reporting-earnings-today-november-9-2026" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
+                </div>
+            </div>
+            
+            <div class="news-card" data-category="美國股市" data-title="Oppenheimer 升評 Advanced Micro Devices 至「Outperform」，AI 晶片前景獲華爾街看好" data-topic="華爾街分析師評級" data-source="Trendonify（彙整華爾街券商評級變動）">
+                <div class="card-header">
+                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
+                        華爾街分析師評級
+                    </span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
+                </div>
+                <h4 class="card-title">Oppenheimer 升評 Advanced Micro Devices 至「Outperform」，AI 晶片前景獲華爾街看好</h4>
+                <div class="summary-wrapper">
+                    <p class="card-summary clamped">2026-11-09，Oppenheimer 將 Advanced Micro Devices (AMD) 評級由「Perform」上調至「Outperform」，目標價訂為 600 美元。分析師認為 AI 晶片與資料中心需求持續增長，有助 AMD 強化市場競爭力，帶動市場對其後市展望轉趨樂觀。</p>
+                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
+                </div>
+                <div class="card-footer">
+                    <span class="source-tag" title="Trendonify（彙整華爾街券商評級變動）">🏷️ Trendonify（彙整華爾街券商評級變動）</span>
+                    <a href="https://trendonify.com/news/ratings/analyst-upgrades-and-downgrades-for-november-9-302511" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
+                </div>
+            </div>
+            
+            <div class="news-card" data-category="美國股市" data-title="Morgan Stanley 宣布收購股東管理平台 Vinyl Equity，擴大數位金融服務版圖" data-topic="美股IPO與併購動態" data-source="RTTNews">
+                <div class="card-header">
+                    <span class="topic-tag" style="background: #fbbf2416; color: #fbbf24; border-color: #fbbf2440;">
+                        美股IPO與併購動態
+                    </span>
+                    <span class="card-meta">
+                        
+                        <span class="pub-time">2026-11-09</span>
+                    </span>
+                </div>
+                <h4 class="card-title">Morgan Stanley 宣布收購股東管理平台 Vinyl Equity，擴大數位金融服務版圖</h4>
+                <div class="summary-wrapper">
+                    <p class="card-summary clamped">Morgan Stanley 於 2026-11-09 宣布收購數位化股東名冊與股權管理平台 Vinyl Equity，交易金額未公開。該併購有助於強化其企業股權管理與股東服務能力，進一步擴展數位金融基礎設施布局，成為近期美股市場重要併購案之一。</p>
+                    <button class="expand-btn" onclick="toggleCardExpand(this)" title="展開閱讀完整重點">展開閱讀 ▾</button>
+                </div>
+                <div class="card-footer">
+                    <span class="source-tag" title="RTTNews">🏷️ RTTNews</span>
+                    <a href="https://www.rttnews.com/list/mergers.aspx" target="_blank" rel="noopener noreferrer" class="link-btn">開啟原文 <span class="arrow-icon">↗</span></a>
                 </div>
             </div>
             
@@ -2397,8 +2358,10 @@
         
         </div>
 
+        
         <!-- 模組 8 & 9: 雜訊速讀 & 明日關鍵觀察指標 -->
         <div class="bottom-intel-grid">
+            
             <div class="bottom-intel-card">
                 <div class="bottom-intel-header" style="color: var(--accent-purple);">
                     <span>📡 今日市場雜訊與速報 (MARKET NOISE & QUICK HITS)</span>
@@ -2406,31 +2369,20 @@
                 <div class="noise-list">
                     
             <div class="noise-item">
-                <span class="noise-cat">[美國股市]</span>
-                <a href="https://www.cnbc.com/2026/11/02/palantir-pltr-earnings-q3-2026.html" target="_blank" class="noise-title">Palantir第三季營收年增96%創新高，美國商業業務首度超越政府業務</a>
-                <span class="noise-source">(CNBC、Palantir Technologies財報公告)</span>
+                <span class="noise-cat">[AI]</span>
+                <a href="https://uk.finance.yahoo.com/news/ambiq-launches-heliaaot-1-0-133000071.html" target="_blank" class="noise-title">Ambiq 推出 heliaAOT 1.0，大幅降低邊緣 AI 推論延遲最高達 76%</a>
+                <span class="noise-source">(Business Wire（由 Yahoo Finance UK 轉載）)</span>
             </div>
             
             <div class="noise-item">
-                <span class="noise-cat">[美國股市]</span>
-                <a href="https://optimusk.blog/blog/tesla-optimus-robotaxi-2026-strategy/" target="_blank" class="noise-title">特斯拉攜Robotaxi加速擴張，自駕車商業化進入關鍵成長階段</a>
-                <span class="noise-source">(Tesla相關產業追蹤報導、AutoEdgeView)</span>
-            </div>
-            
-            <div class="noise-item">
-                <span class="noise-cat">[美國股市]</span>
-                <a href="https://www.bing.com/news/search?q=華爾街分析師評級" target="_blank" class="noise-title">華爾街分析師一致看多NVIDIA，Melius下調目標價仍維持「買進」評級</a>
-                <span class="noise-source">(Finbold（彙整TipRanks與華爾街分析師資料）)</span>
-            </div>
-            
-            <div class="noise-item">
-                <span class="noise-cat">[美國股市]</span>
-                <a href="https://www.bing.com/news/search?q=美股IPO與併購動態" target="_blank" class="noise-title">Marvell Technology宣布以全股票交易收購Lumentum，擴大AI與高速光通訊布局</a>
-                <span class="noise-source">(CNBC)</span>
+                <span class="noise-cat">[AI]</span>
+                <a href="https://www.securities.io/factory-built-ai-data-center-startup-mavria-raises-100-million-seed-at-1-billion-valuation/" target="_blank" class="noise-title">Mavria 獲 1 億美元種子輪融資，推出工廠化 AI 資料中心平台 Terrain</a>
+                <span class="noise-source">(Securities.io)</span>
             </div>
             
                 </div>
             </div>
+    
             
             <div class="bottom-intel-card">
                 <div class="bottom-intel-header" style="color: var(--accent-cyan);">
@@ -2440,32 +2392,34 @@
                     
         <li class="watchlist-item">
             <span class="watchlist-bullet">01</span>
-            <span class="watchlist-text">美股科技指標企業（如 Oracle、Broadcom）財報與資本支出展望</span>
+            <span class="watchlist-text">Samsung Android XR智慧眼鏡將於2026-11-12開放預購</span>
         </li>
         
         <li class="watchlist-item">
             <span class="watchlist-bullet">02</span>
-            <span class="watchlist-text">美國勞工部公布最新通膨 CPI / PPI 數據與利率期貨定價變化</span>
+            <span class="watchlist-text">市場持續關注聯準會後續升息路徑與通膨數據</span>
         </li>
         
         <li class="watchlist-item">
             <span class="watchlist-bullet">03</span>
-            <span class="watchlist-text">三大法人於台股期現貨未平倉部位變動與台積電營收公布動態</span>
+            <span class="watchlist-text">台積電3D DRAM規劃後續進展</span>
         </li>
         
         <li class="watchlist-item">
             <span class="watchlist-bullet">04</span>
-            <span class="watchlist-text">國際晶片巨頭（NVIDIA / AMD / Intel）最新產品發表會技術指引</span>
+            <span class="watchlist-text">AI伺服器與HBM供應鏈需求變化</span>
         </li>
         
                 </ul>
             </div>
+    
         </div>
+    
 
         <!-- 模組 10: 資料來源與金融合規免責聲明 -->
         <footer class="footer-compliance">
             <div class="footer-sources">
-                🌐 情報來源：彭博 (Bloomberg)、路透 (Reuters)、CNBC、工商時報、經濟日報、中央社、各大科技官方新聞稿與全球監管機構公告
+                🌐 情報來源：各則來源與發布日期標示於卡片；AI 分析可能有誤，請以原文為準
             </div>
             <div class="footer-disclaimer">
                 免責聲明 (Disclaimer)：本網站與日報所提供之所有資訊僅供科技產業動態研究與個人學術參考，不構成任何形式之投資邀約、推薦、買賣建議或金融顧問意見。投資涉及風險，證券價格可升可跌，請獨立評估或諮詢專業財務顧問。
@@ -2479,10 +2433,12 @@
             <span class="bottom-nav-icon">🔥</span>
             <span>必看Top3</span>
         </button>
+        
         <button class="bottom-nav-item" onclick="scrollToElement('impactSection')">
             <span class="bottom-nav-icon">🔗</span>
             <span>影響鏈</span>
         </button>
+    
         <button class="bottom-nav-item" onclick="scrollToElement('filterToolbar')">
             <span class="bottom-nav-icon">📂</span>
             <span>分類篩選</span>
