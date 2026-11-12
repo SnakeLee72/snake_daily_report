@@ -1,0 +1,503 @@
+[
+  {
+    "id": 1,
+    "title": "【2026-11-09】《商傳媒｜AI產業一週大事》AI Agent成產業主線：效率、監管與基礎設施齊步",
+    "summary": "",
+    "source": "Yahoo股市",
+    "publish_time": "2026-11-09",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNTVYtS2huRzdjZTJDVHpVM1gzOFBPVFFDM3pEV1AxSFo5MkFOSmFOLW9zQUNoVGZDUTNIOEdJNnlFYWdNYmJHcGllSU81b3UwX0VCSDhER3hHME0tWE9CQUE0MDBleVM0YWdrZEo3QmdBZXVXdzhsLVRRczYwMDZNaG5lTE5LakdwWUx0VnRBNHlFVS1oaU1LZUNaaWZ3TGpRdF9OdzhuQlFzdw?oc=5",
+    "category": "AI",
+    "topic": "AI Agent"
+  },
+  {
+    "id": 2,
+    "title": "國網中心布局主權AI，TAIWAN AI RAP擴充模型微調能力，加速AI應用落地",
+    "summary": "",
+    "source": "iThome",
+    "publish_time": "2026-11-11",
+    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE55UGZSc3NFZWlwcTZZTTVsWGdTeC0wV1B2TG5mOE11eWpYVjVTZDNaSGxlUUluajVWZEd4djd1UTlXYWZpTXIxZEpwQ3ZfZw?oc=5",
+    "category": "AI",
+    "topic": "生成式AI模型"
+  },
+  {
+    "id": 3,
+    "title": "國網中心布局主權AI，TAIWAN AI RAP擴充模型微調能力，加速AI應用落地",
+    "summary": "",
+    "source": "iThome",
+    "publish_time": "2026-11-11",
+    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE55UGZSc3NFZWlwcTZZTTVsWGdTeC0wV1B2TG5mOE11eWpYVjVTZDNaSGxlUUluajVWZEd4djd1UTlXYWZpTXIxZEpwQ3ZfZw?oc=5",
+    "category": "AI",
+    "topic": "多模態AI"
+  },
+  {
+    "id": 4,
+    "title": "英特爾在臺揭露主流PC、邊緣運算到資料中心最新運算架構，加速布局Agent AI",
+    "summary": "",
+    "source": "iThome",
+    "publish_time": "2026-11-10",
+    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5vSnZieWNweVNDQnFxRHFHSVFVR1RMTlRJcnhWdGtBZDlFazV1UHhmaUlYMlNrNWVHLTB6SmpQbjF0NzdHdmVJbjFFaC1Odw?oc=5",
+    "category": "AI",
+    "topic": "AI推論技術"
+  },
+  {
+    "id": 5,
+    "title": "美國掀起反AI資料中心浪潮，一面倒支持限制開發",
+    "summary": "",
+    "source": "iThome",
+    "publish_time": "2026-11-05",
+    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1JUXVqNW9VMTkwRkZfb0NmdkltUWtWa0J4am9SUHdnM1ZKNDdwVlZmMGRjNFFQV1YtWklOVkh0X01YTVBDa3hqMVFqcEZJUQ?oc=5",
+    "category": "AI",
+    "topic": "AI資料中心"
+  },
+  {
+    "id": 6,
+    "title": "思邁智能推 MaiAgent 打造企業 AI 核心",
+    "summary": "",
+    "source": "CIO Taiwan",
+    "publish_time": "2026-11-11",
+    "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE5GamRvM1oxd3BmcEFRWVc1SDVtYUg5T3IyOFpGbjJzVEE5YjUzcXFfQnhfaWF5Mk8tYXc1U3ZZOWhUUHdn?oc=5",
+    "category": "AI",
+    "topic": "企業AI應用"
+  },
+  {
+    "id": 7,
+    "title": "邊緣AI真的來了！炸雞店靠「輝達大腦」2人頂5人，監視器能預測闖紅燈",
+    "summary": "",
+    "source": "天下雜誌",
+    "publish_time": "2026-11-09",
+    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE53ZFB1TFo5SzVUbUdIQUhCemVrOHFINTRDQWIzOGg4ZGp5VmxsTzZRTEd1NGdZRUpFZ2ZaMXZyTGNhQlM0Y2lCY1d6cmZfUQ?oc=5",
+    "category": "AI",
+    "topic": "邊緣AI"
+  },
+  {
+    "id": 8,
+    "title": "實體AI布局再下一城！「電子零組件廠」攜手美國新創搶攻機器人市場股價卻連11跌、重挫逾15%",
+    "summary": "",
+    "source": "Yahoo股市",
+    "publish_time": "2026-11-11",
+    "url": "https://news.google.com/rss/articles/CBMi2gNBVV95cUxNdGpLcWo3cldfT242SnRxcDFGaVJ1OXB5MDljMHJfdFpJMHFUNk92QmlQTXctLW5ULTNlLVY3dUhCUDEzbHlYcktPY2xvT2Q1dlJfdUF4SnJwYWNXdHZlYVB0bHJlcmQ5a3o0RDJ4bFc1OEJjaW82NFRzQi04RzhkTnkySE5kcUd6UlRSaEZlS3ZkLUpoVjBTSkhGQWVfQkFfRC1uNGx4X2lEN21WTU1FOUlJX2o4QmVwVVFzajNLQURrNWhBSWNJcVR0OXRnNFdVOUpPNTFuRHNOQW80X0MxdDJueXpISG9IZm5mS3FwM21pU2dTYTNoUi15TmJuT05BWV93X21DeU96eERyOGlIajZUVkQ0YzRzbmZHOEg4Q2NRZ0o2SlVFMTZLMlgwcUtCNERnZHN1cWQzdXBRWXNSalEteXJ1a3NlSTdqV0d5SGVUVF93cDhteDhOYUVaMC1kRG9LQ1VsLS13bzA4TGdJSmc4VXJWNDFvQUc1elRNSE5CVG15N3Nfd08tcEZORzcyVnowVFhfTXBpQ3oydE1LOS1KX3B3OFRzaWU5ZlFjU2FVTTRvcFpKcHk1OU1OTWZHOXV4NjlyY21KOWdoVFBJRjNzcTlaQmM3TkE?oc=5",
+    "category": "AI",
+    "topic": "實體AI與機器人"
+  },
+  {
+    "id": 9,
+    "title": "【專訪】第一銀行副總經理兼資安長劉培文：資安治理 邁向韌性銀行",
+    "summary": "",
+    "source": "CIO Taiwan",
+    "publish_time": "2026-11-09",
+    "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTFBBZGFZTG9pYmFqQ0pxWWkyNG9na0ZGem1zVmJvY3BwQ2RibnlOa3RkU3pGcmdEbXBYNTU2LUVvS0pZUWZP?oc=5",
+    "category": "AI",
+    "topic": "AI資安與治理"
+  },
+  {
+    "id": 10,
+    "title": "3.5萬個外掛助攻！DeepSeek AI代理不到3個月衝上154萬日活躍用戶",
+    "summary": "",
+    "source": "鉅亨網",
+    "publish_time": "2026-11-09",
+    "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9VR2hzSXEzQmV5T2V2TEx3c3oxV1JYbkM5LS05aGo0NnpfS0ZlcmtvZmFTd2M5RTZxZEhmZG5MT2tzZ2Z0VE1scGhTZw?oc=5",
+    "category": "AI",
+    "topic": "開源AI生態"
+  },
+  {
+    "id": 11,
+    "title": "IonQ劍指成為「量子運算界輝達」！第三季營收暴增逾4倍、上調2026年財測",
+    "summary": "",
+    "source": "鉅亨網",
+    "publish_time": "2026-11-09",
+    "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE52VWhfLTJYdnRadFljcUpTdUMxUUNiLU5LRDZ4bnFXVThLakkxT25kRll0YU1rc19KQmNQek5mNzVDT213LTEtTzJuQQ?oc=5",
+    "category": "New technology",
+    "topic": "量子運算"
+  },
+  {
+    "id": 12,
+    "title": "蘋果公開人形機器人「大腦」HALO！搭載宇樹G1測試 陌生環境任務成功率達91%",
+    "summary": "",
+    "source": "鉅亨網",
+    "publish_time": "2026-11-08",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5TZ3lDOS1rSktTajBQMVQybHJGT05lRjl2bVFva1VJb18wWTBYXzUzOWtFLUNuUHh0Mi1OSlByckpTWWd6X3NJcTRyUUNtQVk?oc=5",
+    "category": "New technology",
+    "topic": "人形機器人"
+  },
+  {
+    "id": 13,
+    "title": "AI輔助自駕與車電產業升級",
+    "summary": "",
+    "source": "CTIMES",
+    "publish_time": "2026-11-11",
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1wcHUzdGZ2SkRsNEs1NUZRbEVpLTlwdEpNYWJKUFI4bXE4UzNsODEtaWRrTVVpdFE4NjRhdTlyZ1Q1UUpHclo1V2NpN19HM2ZsNnhHQkhB?oc=5",
+    "category": "New technology",
+    "topic": "自動駕駛技術"
+  },
+  {
+    "id": 14,
+    "title": "Warby Parker財報揭露Google Android XR智慧眼鏡11月12日開放預購",
+    "summary": "",
+    "source": "BigGo 財經",
+    "publish_time": "2026-11-05",
+    "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE0wM2R2MmEzT0tBR084d0NvYUxWZm9wWmJtTnJ2YndQSmFnVWRfSkFieng0WGt6alhpWjdMS3BWNGg5Mkw3aHcyeFBzTzk3aVpWOEJDYk8ydnFYbU5YMFFHbnZWa2ZvcnpkcnpSbHlZbmw1MGZsMW9LNmNB?oc=5",
+    "category": "New technology",
+    "topic": "智慧眼鏡與XR"
+  },
+  {
+    "id": 15,
+    "title": "iKnow",
+    "summary": "",
+    "source": "科技產業資訊室",
+    "publish_time": "2026-11-09",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1vOEhlRHMzOG5mZERicHNPdzh4YW5OeVNGQXB5NGR6T2drV2tVb1hkN1kyMTVsSXNQNW1VVElNQm1KaWhSUWlCNmNUQ0M4R3FwdW5mZXU3Y05RZw?oc=5",
+    "category": "New technology",
+    "topic": "先進半導體製程"
+  },
+  {
+    "id": 16,
+    "title": "汎銓搶進矽光子檢測設備後年出貨20台以上| 科技",
+    "summary": "",
+    "source": "非凡新聞台",
+    "publish_time": "2026-11-11",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1hTUdONWxRSk5tRVNJYjlyeGFzcjJ2aEpuLTMxdENXNWg2azktSlM0MW1tbE5QcGk3ekVXa090cmxWQkFQWl95dVZDMFBCZXVTWEhUQk8wbGQ3VWM?oc=5",
+    "category": "New technology",
+    "topic": "矽光子與CPO"
+  },
+  {
+    "id": 17,
+    "title": "iKnow",
+    "summary": "",
+    "source": "科技產業資訊室",
+    "publish_time": "2026-11-08",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5iZ1VvSnktN1pSWXJqWHp4REpEeWx4RWNETWhUZV9nanA3ZUtJNkktWmd3SS1jYjdoZ3F5VGRpWkVYOFhleUg5RU5KN2FteWJxSUloUVhiUDJtZw?oc=5",
+    "category": "New technology",
+    "topic": "次世代電池技術"
+  },
+  {
+    "id": 18,
+    "title": "鴻海參展TASTI 2026 攜集團夥伴展現低軌衛星端到端布局",
+    "summary": "",
+    "source": "鉅亨網",
+    "publish_time": "2026-11-08",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFB5dzdZUkxJRnlIcVhrU3FPZlUxakQwQ2U5djFIT0syZTNMU1hMOHZZVEEzRVFCRXY2SzVrTHh2MFItZUtYSURrclhuUVhWbWM?oc=5",
+    "category": "New technology",
+    "topic": "衛星通訊與低軌衛星"
+  },
+  {
+    "id": 19,
+    "title": "【AI 機器人仍難預測】卡內基美隆教授共創SafeWorld，以數位孿生驗證機器人能否安全與人共事| TechOrange 科技報橘",
+    "summary": "",
+    "source": "LINE TODAY",
+    "publish_time": "2026-11-10",
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MTnFCVThxcVg5WWlZVEVOOEl6enFFMVluNnFMX05XVWVfTVdFWVU1cTRiSXpvYnFXZVBfR0JXbThSTW1JLUphRUlyblVxYmpqc3hBX0pB?oc=5",
+    "category": "New technology",
+    "topic": "數位孿生技術"
+  },
+  {
+    "id": 20,
+    "title": "FCC 新制引爆轉單潮！耕興今年前三季大賺 9.12 元急擴新廠投產",
+    "summary": "",
+    "source": "TechNews 科技新報",
+    "publish_time": "2026-11-05",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5jRThfS2tqemZObVhHN0hPbEFKQ05aa0QxREQ4M3ZpRmJydDVSSGl5VkhkaHN6TTFOZEl0OGJ0QWtMQksxMFVpTmNnYzdHaFRlalhqQ1Y0ZHgtcUZqR2I3ZQ?oc=5",
+    "category": "New technology",
+    "topic": "Wi-Fi 8與6G通訊"
+  },
+  {
+    "id": 21,
+    "title": "AI泡沫疑慮引爆全球賣壓 日韓股市同步重挫",
+    "summary": "",
+    "source": "Rti 中央廣播電臺",
+    "publish_time": "2026-11-06",
+    "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE0tMTlYRXBXSkJtWkxHcXpBLXlIRjd5SzFKakhUaHZuT1RwN3ZuNXN2dFV0QnNubVBUUk05UzVodldVTXNfX2d5NVBKM3UzOUZYTlo3RF9kUQ?oc=5",
+    "category": "投資市場",
+    "topic": "全球主要股市指數"
+  },
+  {
+    "id": 22,
+    "title": "金融觀察/AI產業成央行幣策新考量\\鄧宇- 經濟",
+    "summary": "",
+    "source": "大公文匯網",
+    "publish_time": "2026-11-09",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE10ZEF2VFZGQm12V0FTMWlCM3NBQ0RZRUJyeGtpSGFCZG9pRm1fNk8yZjdaWkI4aksyRmlzaWFEXzg4a2JDdkEzbU9sMUwzX1FzMlR1TWtyYUVDb3JzUTU0VlFHVGt3WjFQaDJGc2VHckx2c3hJ?oc=5",
+    "category": "投資市場",
+    "topic": "全球央行利率政策"
+  },
+  {
+    "id": 23,
+    "title": "《貴金屬》美元指數上漲 COMEX黃金下跌0.9%",
+    "summary": "",
+    "source": "MoneyDJ",
+    "publish_time": "2026-11-08",
+    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNdTVVeHAtcEFCVVE0OVZzekFIN3hTSVlxSlBRWE83NlQyOFFkX3A1Ujh3c2hXZHkzd1FEOTlGUWRxSXRJLVNqOWZ5d0xoX0ZZaVhZaDdPajFUMl9pM2JtQlZFMTFYa1ZyaHlhSGxKNjFSYlV1akhWZmMxZW9TTkdLWUx3YkVxRXBDSlB6c3Ruc2RZZw?oc=5",
+    "category": "投資市場",
+    "topic": "美元指數"
+  },
+  {
+    "id": 24,
+    "title": "台幣貶值的連串骨牌效應| 民意論壇| 評論",
+    "summary": "",
+    "source": "UDN",
+    "publish_time": "2026-11-07",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5zOTR0TnBzSVVWb0FfT1k0Z3dILVg2M0ZLbXVpSjdscXI1OTBBLWVXMnpQTG13WVhBZUo3a2EtelRMUGN1WVJuaFdDWC01MUUx?oc=5",
+    "category": "投資市場",
+    "topic": "主要貨幣匯率"
+  },
+  {
+    "id": 25,
+    "title": "《貴金屬》美元指數上漲 COMEX黃金下跌0.9%",
+    "summary": "",
+    "source": "MoneyDJ",
+    "publish_time": "2026-11-08",
+    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNdTVVeHAtcEFCVVE0OVZzekFIN3hTSVlxSlBRWE83NlQyOFFkX3A1Ujh3c2hXZHkzd1FEOTlGUWRxSXRJLVNqOWZ5d0xoX0ZZaVhZaDdPajFUMl9pM2JtQlZFMTFYa1ZyaHlhSGxKNjFSYlV1akhWZmMxZW9TTkdLWUx3YkVxRXBDSlB6c3Ruc2RZZw?oc=5",
+    "category": "投資市場",
+    "topic": "黃金與貴金屬"
+  },
+  {
+    "id": 26,
+    "title": "〈能源盤後〉川普稱不太可能再攻擊伊朗 Brent盤後跌逾7美元 創8月底來新低",
+    "summary": "",
+    "source": "鉅亨網",
+    "publish_time": "2026-11-09",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBZZHNVSldqT2dNQ0VsWU5jSjZCZVFwM0lzaEJPQmtQRzJwY3lYUHhHclhlbUtsSFpkRGRnb1BGVVg4WlEyNXRucDBQRG82cU0?oc=5",
+    "category": "投資市場",
+    "topic": "原油與能源價格"
+  },
+  {
+    "id": 27,
+    "title": "《美債》避險買盤湧現 美債殖利率全面下滑-新聞內容-基金",
+    "summary": "",
+    "source": "MoneyDJ",
+    "publish_time": "2026-11-05",
+    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPLTE4REItWkpvSTNTcWdDbmxmbnRHcTlHR3B5dDlmQmNscHVxd1VLd282N0IxUkJIeUVCUWxMUGFsdy1aMldnX0NNMEtqN0pLTjBqR0dUR3l1ZjJIdFpoT3dSNkFwYWpsQzFkS2c4YVhfbjBIdVhOUDZsNFI0SS1vd1B0cEpualdVLVdIbnp2NG4?oc=5",
+    "category": "投資市場",
+    "topic": "美國公債殖利率"
+  },
+  {
+    "id": 28,
+    "title": "1.1100：美國 CPI 數據公布倒數，EUR/USD 的關鍵支撐位",
+    "summary": "",
+    "source": "www.tmgm.com",
+    "publish_time": "2026-11-10",
+    "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNUkxodG1TN051MDZIVzFJWW80WWxKYmx5cHh3bGtCMXg5aGRrbWd2dGtVODg3YVpJUzdDVWhUOGRhRXJCVjhGd0FtN3BXeDdrbFJDRHRrUldMSFJNYUpQcDJRcXJHVW1pZ3hjci1ibzJ4TmdHMmJXdld3aUVuX3JCVnBkX1ZWV25kSjIxRTM0XzNDLXFtZ0wyYXFNWWdrbkxLMnFWZVVBcWF4bXVRV0ZCSkFQbmk2dWRLSEFZb2t1WVlobFZoeXdra3VR?oc=5",
+    "category": "投資市場",
+    "topic": "全球通膨數據"
+  },
+  {
+    "id": 29,
+    "title": "比特幣跌破7.4萬美元，加密貨幣市場單日蒸發800億美元",
+    "summary": "",
+    "source": "BigGo 財經",
+    "publish_time": "2026-11-09",
+    "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE96Z1hDNkdnckZSS3VKUE45MmpDZ1hRUHFaTV9NQW9WSzhQRF9yVmFfYWpRVWJ5MTkwdVZEdnpxei1lY1ZnSkMxNUVEa05tS1VVUXZ2Q21URmExY1NZTFhRWjluQm9POVpneEVVbGNrNWxMQVV0RUtGZlBn?oc=5",
+    "category": "投資市場",
+    "topic": "加密貨幣市場"
+  },
+  {
+    "id": 30,
+    "title": "富邦金估2027年全球經濟溫和擴張 點出地緣政治、AI投資及美國債務三大風險",
+    "summary": "",
+    "source": "鉅亨網",
+    "publish_time": "2026-11-05",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBoWklpWlpuSFF4aDk3bkNyc1pIMUFNdHNuRnR4VXR2SkRlZ2daaVVDRHJfWkFKUUFuZmhjbURNX3NWZklsRjRKSzVwMjJEeXc?oc=5",
+    "category": "投資市場",
+    "topic": "地緣政治與市場風險"
+  },
+  {
+    "id": 31,
+    "title": "加權指數連六跌不休！證交所信心喊話：台股今年贏過亞股與費半",
+    "summary": "",
+    "source": "經濟日報",
+    "publish_time": "2026-11-05",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB3eFNtUDdyZ3ItZUtWSEJnNEJYaWVPVVpBbkpHaGZtR0ZES1NtclZoY3NjNGg4Z2s1Rmh3V2RQUEVnMVZmV0I1cHc4VUlMTHg5NkdUZlVrNDNId9IBX0FVX3lxTE1NLTY0V2wzS3J5VzRRNm5VLWtkWnVkVndUNkUyNHh2YkMzTl9kTnk0UW96X29JNHdzdWgyLVltdXczMkdLbWNDVkJfRW1qZzVjVWFXaTZHRURVVnZlVUY0?oc=5",
+    "category": "台灣股市",
+    "topic": "台股加權指數"
+  },
+  {
+    "id": 32,
+    "title": "三大法人買賣超 – 外資買超(1802)台玻、(1815)富喬，投信買超(2330)台積電、(3443)創意，法人合計賣超945.26億元",
+    "summary": "",
+    "source": "永豐金證券",
+    "publish_time": "2026-11-09",
+    "url": "https://news.google.com/rss/articles/CBMixwRBVV95cUxPbnh2dzJRTXJRSUJ6NkRJaVdPc0Z5dlZxREpKM3V2Z0VrX09VLTRlZ2JGYXhZT1RjQ3NZeFpGaGExVXM0S2ZLMTB1dG1xeU5jMWw4eVR0S0RaSTVaSFFibnBvVGxuakRBWVI0WFJsNmhEeGMycmpFWW5wUk5RV0ZwSFI2cHJtb2tYU28zMy01X0Y2Q2pFS3RGQmxKUU13b1ltNk5FZnFVWjVFaV9ibzZaR3dRVTFjdVdGSFdRR09qaHNrT3c0RHY1dThaZDdmeWYxVVBrN284SWZORl9DMHNuVnhMOURab0M1ZkFiUDBHU3NsbkQwSU1SY3F4OWZZYXRuZ3d4TWVJdHZpS2E0NUhYT1ZkcXNSNEg0S0Job09oZGpnUTNZbEdiYlBOVUVhQ1hXckRtYzJCZG1jc25fMHM0ek1uazB0YzZFeHhHV3lRS1BqTDgzUl9JcElrVFN6SUY2elhxd1R5V3Jkb2xaMVJMS0szZ0hKbWdDQTZzN3Bsa29pVXlEdkRiZnVfWnI2VTN4SWNXVzgteDZYREpzMDM2Y3pPUjlOdGpzMGI0V2tpT1dTLWg3cm5UNXNVSVpsVEJtODAxNy1HNzlqYVNNUFh5cjBmQUpNbU5XT1AzVXdFTWNMNVFHSnlmZVJNeXcyNkhoeXowUTJJY1ZnMnlRMW9KLXQtb0ZiOTFSejU5OV9RU1l3WXpMdXVJblY2NS1nSWVPZExrcjU2R2oycmRvclc3RnhIb3RXTU5LaXhCVl9TOURYd0NpVndr?oc=5",
+    "category": "台灣股市",
+    "topic": "三大法人買賣超"
+  },
+  {
+    "id": 33,
+    "title": "三大法人買賣超 – 外資買超(1802)台玻、(1815)富喬，投信買超(2330)台積電、(3443)創意，法人合計賣超945.26億元",
+    "summary": "",
+    "source": "永豐金證券",
+    "publish_time": "2026-11-09",
+    "url": "https://news.google.com/rss/articles/CBMixwRBVV95cUxPbnh2dzJRTXJRSUJ6NkRJaVdPc0Z5dlZxREpKM3V2Z0VrX09VLTRlZ2JGYXhZT1RjQ3NZeFpGaGExVXM0S2ZLMTB1dG1xeU5jMWw4eVR0S0RaSTVaSFFibnBvVGxuakRBWVI0WFJsNmhEeGMycmpFWW5wUk5RV0ZwSFI2cHJtb2tYU28zMy01X0Y2Q2pFS3RGQmxKUU13b1ltNk5FZnFVWjVFaV9ibzZaR3dRVTFjdVdGSFdRR09qaHNrT3c0RHY1dThaZDdmeWYxVVBrN284SWZORl9DMHNuVnhMOURab0M1ZkFiUDBHU3NsbkQwSU1SY3F4OWZZYXRuZ3d4TWVJdHZpS2E0NUhYT1ZkcXNSNEg0S0Job09oZGpnUTNZbEdiYlBOVUVhQ1hXckRtYzJCZG1jc25fMHM0ek1uazB0YzZFeHhHV3lRS1BqTDgzUl9JcElrVFN6SUY2elhxd1R5V3Jkb2xaMVJMS0szZ0hKbWdDQTZzN3Bsa29pVXlEdkRiZnVfWnI2VTN4SWNXVzgteDZYREpzMDM2Y3pPUjlOdGpzMGI0V2tpT1dTLWg3cm5UNXNVSVpsVEJtODAxNy1HNzlqYVNNUFh5cjBmQUpNbU5XT1AzVXdFTWNMNVFHSnlmZVJNeXcyNkhoeXowUTJJY1ZnMnlRMW9KLXQtb0ZiOTFSejU5OV9RU1l3WXpMdXVJblY2NS1nSWVPZExrcjU2R2oycmRvclc3RnhIb3RXTU5LaXhCVl9TOURYd0NpVndr?oc=5",
+    "category": "台灣股市",
+    "topic": "外資買賣超"
+  },
+  {
+    "id": 34,
+    "title": "台積電ADR反彈6.33%！台股失守4萬點後 權值股能否帶頭收復？",
+    "summary": "",
+    "source": "理財周刊",
+    "publish_time": "2026-11-09",
+    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1lVG16bndZZnB6QjlWczNIZXFRc2tiZjV5MDNFVTZXb1BvNkZiNjY0U2ktdVVGNkFtNE9KQVFEdWFFSkFnMWVGY1J0SHQ0cGhaZjZEbTFrLWlGeHJzMm1aNjNhTXlVNF9Yc2ZlYzdJZw?oc=5",
+    "category": "台灣股市",
+    "topic": "台積電與半導體權值股"
+  },
+  {
+    "id": 35,
+    "title": "鴻海(2317) AI伺服器市占衝50%，緯創(3231)等供應鏈受惠？機櫃、資料中心成新戰場｜股市話題｜豐雲學堂2026 年 11 月",
+    "summary": "",
+    "source": "永豐金證券",
+    "publish_time": "2026-11-11",
+    "url": "https://news.google.com/rss/articles/CBMiggRBVV95cUxOTlcyRFh6cDJJY1VsMmNzWk5pbGJPUDRnX05Bb0RHSXlYaHRPa1pyNDNuNzRDVTlvc0UyMFNVRmxqRml4aXFKa0JfLWZCMF9CM0FEVUtEOHhtRTZQXzFzLW1QNDlTRlVOYXlfNVJNS3Z1WjExOFFTVmJBZDRySG1wTzFHZUw1anpWMHVGeEhBTDlnLU03d3VwNFlUZ1FkTm5vVmtEdk00Q2pCZ25kS2t3MVpLZDJfM1MxM0VnUXB6WVhRUXdpQ1FpMVQ3UTVhaWJLXzdnaEFidHE2UEVDYVB2aThvc1BWS3JPQWJYV0RYWWtvQUpJejZaMEMyUk5BclV1UmtkNmFYelJlZ1pnOGtEMG9YVGVOWEc4VnZqdUZTaFM0dTNuOTdVQWhxX1A4a1FGRVh6UUZYVFh2dG1qZm9MTWR3U1lJRlFVZ1lxUjR5cGpTeVR4Q2U0UU1uWmpMT3dkd20wN2FJc0JFRGo5b3hVel9GZnBFanctempHa21HRC1hczdDbkRsZTYwUG8yVXhXaUJPb29pVlR5MDlvd05ld0I3WVBCR1pGd0J1ZWNORThLbzlRQmRBdXdYTkdocDBqa1E2emxDX2JHLW1PanJqdnlJV0FkRkxxcnV4Y3I3b2lLSWlIT1RCM1RkQjUzWTctYnZMNms5R0VnLXdSbS02bEFn?oc=5",
+    "category": "台灣股市",
+    "topic": "AI伺服器供應鏈"
+  },
+  {
+    "id": 36,
+    "title": "Notebook與ODM產業：本次未取得資料",
+    "summary": "RSS 檢索沒有回傳結果。",
+    "source": "系統標記",
+    "publish_time": "",
+    "url": "",
+    "category": "台灣股市",
+    "topic": "Notebook與ODM產業",
+    "is_fallback": true
+  },
+  {
+    "id": 37,
+    "title": "台積電到底要不要做記憶體？公司回應強調這句話- 產業",
+    "summary": "",
+    "source": "工商時報",
+    "publish_time": "2026-11-08",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE8yWjVrYk5YR2lXbFdRUjJ2V3o3b09VRjlxNzM5YUlLLXBlMlhfYU04b3RHbWNaZGJSamRQVGdWTzdBTkFDUzNLSXdGTGJpaDJna1p1cjhsSW13LVg4M3NV?oc=5",
+    "category": "台灣股市",
+    "topic": "記憶體產業"
+  },
+  {
+    "id": 38,
+    "title": "PCB族群慘吞16顆綠燈！載板、CCL、玻纖布全倒「這載板廠」跌出千金股華通、臻鼎、台虹等也重挫逾9%",
+    "summary": "",
+    "source": "Yahoo股市",
+    "publish_time": "2026-11-05",
+    "url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxQZUNzcElDU2laN2I5ZHRWX0gwd2NzRHJEZE9FQ2ZodFA4N3pGRVowV2gyNllzZjZUcmplS3pfYzZ3a0pQOE9ianVpdmhwMG5ZMTNGOHhMTVo0VEZnMjdKcmh2bWFzdHljLUlkWkdlTXhOLXpFYldQVTBqdHFsa1AwZmY5WHctOVl3SnRJeVJ0dEhDWE1tRm9mb3RKeXhYRkZaOEVpY3JkOU5scjg5OS1XRDNNY0dpdkxHQlItcURDUFRuRldPMWg0RW9qNkVfdy1EaWxnNzRTTUxBMG5uc0ZOV0piakxHbmU3cks4TExtTU1KZ2ZYTE1sMXpyblM3Q0dZdDdJdkZ2Yjc5aXdwVG5LZm80b21aNW9XbDV3cm1yMnoyYnBpSHl0NHBPN0s3aGF3cHRFeWdnOENnVXZtQjZhcTE2NA?oc=5",
+    "category": "台灣股市",
+    "topic": "PCB與載板產業"
+  },
+  {
+    "id": 39,
+    "title": "2027台股三大挑戰！謝富旭：市值型ETF建議減碼20%，減碼資金首選黃金！《雅筑會客室》EP68｜謝富旭、張雅筑",
+    "summary": "",
+    "source": "永豐金證券",
+    "publish_time": "2026-11-09",
+    "url": "https://news.google.com/rss/articles/CBMixwRBVV95cUxPWFdCSUZsc3pkdl9VdEl2dG5wbWE4V1ZYOEh1Z1RTWUdJQUNYSm9ZN0ltNHVuNjhUeEpsNkMwREp3cXd0NUpLZVRXU3NqeG1VNmhjUUp6WE15TU9taDgtSXhMU3RoeXZfQVJqdkpHUzZfNjEyUGQ2Tk1FaWtTNnNxWjBFMlktbld0S0JHRXZZNFRVZGlONk55QTNtU2lmaF94UTI1SmgxYzhmLTNuY0tEZkxaZk90UlZQOGJFZzU2ZlFVd0l4MGZxQ0wzT0JDbldwejZQamhJcFZTVkd3MjJKT3Q4UUhWREVzNXFkWVkzbzk5T3M3aEVXN1NPaXNPMTFaQkE2MXVtUXN4aGlUaFIyYXppLW1rNi16OWw5TGs1SXdKMnVXTGhRYzdIUlVjdFliZHVmY3JCWS1pckQ1dENMejNlU0U0dzJ5WkQ4SmdqbE1FTnZ3ZjFLN1BPQVRvZ2VIZmJXaDFBZzh3dEVCSi1sdmFkS0xGX1pIQllKaTdqR0N5QzdzTkZsaFdnWTdpeFI3UHhvdHpDaFJ6NXRxd194UTRlX0dUMlJ1S29PbXlSQUZ2ODhKTjF4WWZWRDhiMEdxVVBrYm5xMUZxTXEzYlIzMnhlcnJJbEdsN1dJSlB5QXpRTmtxZFpQYnlFYWZhOHlmUk8xZXRvY2tEZnZIbV9kSEdTLWxoemc2S1F6N3FUUkdJSV9qb1ZHSGlfR2lQN0dTcEt1bTU0LXlETnJrOEFmUHNYcVlFU014dHo4ZlFuOEh2NnQ2U0Vn?oc=5",
+    "category": "台灣股市",
+    "topic": "高股息與市值型ETF"
+  },
+  {
+    "id": 40,
+    "title": "上市櫃公司10月營收再創新高 法人建議優先關注這幾檔",
+    "summary": "",
+    "source": "經濟日報",
+    "publish_time": "2026-11-10",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9qalRnWS0xVmJYbGFFV3RJWUVjQmZPYTZYMkVoUWZKZUdIRDRCOThQSzh1Ui1MWXc5aThWZ25TR3NicWpINUozVmROaGJyb25ndmtTN2I2MDVid9IBX0FVX3lxTE1pZVJzbVBFZXFNRUhraVlxMTZEVWY2OGR1TlBwWUV3aUZ5LVozNHlzd0ozVnJ2U3pLQ1NIUE5OYWd2dWZJdXpGY2xseTd6LVppYzV2cjExbUFpMDVsSWY0?oc=5",
+    "category": "台灣股市",
+    "topic": "上市櫃公司營收與財報"
+  },
+  {
+    "id": 41,
+    "title": "升息疑慮升溫！美股四大指數全面下跌 費半跌破萬點",
+    "summary": "",
+    "source": "Yahoo股市",
+    "publish_time": "2026-11-10",
+    "url": "https://news.google.com/rss/articles/CBMi5gJBVV95cUxNbXBBWUQ5eWY5QWk0X21rM0pCNVhBazJqN0tZUEJOZUhIR09WSEVDSk1IRFNwcFVYSGNqQnlWQ1dyUC1Ga1lEY0JBN3poSEp2TExreHVKLUF4eEpQZ01PaGhHbTlpR3VOTi1ZTTZqQ28tc2RTUUNHWEpVazFDaHBRS3dRRDNpTzRnSW8wTHQtaXlMUVN0a0Y2Rk5mQTM2RndMVHJXWHRpYkl5dE5RT1YzdWdPUzZ5MlYtbjRjU2VCQURmNG9GM0JmQVpqajNrNnRnck1uVUU3Y1VFcUdqWjVxZ2dlY1JnUk9PS2JTMzVqUU1nSDJORG5Nd01pemplMXVLeWNZaDVNT2RseGYzcmV6blNrWWFwb3V4WjJWXzJmMUFqZXNxcHRtLUxla0cxTm9DTjFKTXNNUlZPZXNxMEpycHd0X2daLUlsTUJhVmZUbHp4SlNvLWhZbFVPc3NzVEdyOF84U2JR?oc=5",
+    "category": "美國股市",
+    "topic": "美股四大指數"
+  },
+  {
+    "id": 42,
+    "title": "特斯拉恐遭踢出科技七巨頭？SpaceX有望取代、兩家公司合併估值上看4兆美元",
+    "summary": "",
+    "source": "鉅亨網",
+    "publish_time": "2026-11-09",
+    "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9HdHFTY3habjFFc2RIdml1NThFMERlbU9SV1pVOFotV3kzVGNlVmR5OEtfRmpVWldTS1lwc2E3Qi1RSFlxZGFxZDZvVQ?oc=5",
+    "category": "美國股市",
+    "topic": "美國科技七巨頭"
+  },
+  {
+    "id": 43,
+    "title": "【22:57 即時新聞】NVIDIA / NVDA 跌5.38％：AI與晶片股續遭拋售、選後資金轉向非AI題材",
+    "summary": "",
+    "source": "CMoney",
+    "publish_time": "2026-11-05",
+    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE16MHZFOWpUbWxkSi1QN0VRSnhJMHNRdjBLN094dC1oTU10TmJNZXRaeGREcWVCakVtMTlZTVlEVE9uNW5MaWdWS1RVS2hwbmFvVGs2Z1JhcF9oQWpyNHVMOTJXZ1g2TTg?oc=5",
+    "category": "美國股市",
+    "topic": "NVIDIA與AI晶片股"
+  },
+  {
+    "id": 44,
+    "title": "美股盤後｜藍色浪潮恐慌，費城半導體指數創歷史第二大單日跌幅1106｜豐雲學堂2026 年 11 月",
+    "summary": "",
+    "source": "永豐金證券",
+    "publish_time": "2026-11-06",
+    "url": "https://news.google.com/rss/articles/CBMi0gNBVV95cUxNNk1XZ0hoSjQ2dVd1R3lZMHRORDFJT3BPZ3dWMURuM1lmQnZVQTdRWDUwUHM0X0IyMXQzQ2s1MTYtWjJ5b1YxNlcwQVBoMFhaSEljS1FHeTVKYkpWWWc1LTAyMXNnMXlEd3V2SFowNHVCQzY2UXZRbTZRQWpsdTBGT1FPOXRzRDBuVS1PSmQtT2RISTQ2Njc2c1c2N1Vnem1kQ0k3V1d3MkZLeFhOT3FHNEdTNktTeXJ1X0UyZ3Z4a2E3a1pSQ2lsNFJYaE5UbDkyQ0NMVWxseERiNGVhSmo5MVZPSnNfQjc2Y00zelI2X3hGYVJfOFNVY2E5MkJObnc1NzNrTklDckpkY1FPN3prOERQUGtoRmVWdHhRam9WVF9mTjVuRG1hQUJha1BJOXctX3FoRXdJMzk5N2hKclNYeEVoYUNNeGlfcVNkbXUwck4tNEJ2bndwUVZWQ1RndDZ6R051aUFYMzdQMXVBbnRZWXlOcjhsVktVY2tQdG91RFo5UTkyYzhYYjdZRWRGQS0xcjlvMEhtR3NXWHdmZFJXck1KQm8yYjNldlJhdW8wMUQtTUtBUWV3c2M1NVFNUW5FVGtYLW53Z0ZoRVA4eUYtZkl3?oc=5",
+    "category": "美國股市",
+    "topic": "費城半導體指數"
+  },
+  {
+    "id": 45,
+    "title": "CoreWeave營收年增168%！虧損擴大、資本支出急升| 國際",
+    "summary": "",
+    "source": "非凡新聞台",
+    "publish_time": "2026-11-10",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE02SmNVSXFxblY1VTJ1MTFRT2ZNTy1DNDV0ampwZkpHaWNfRjdMVnV4dkx1TE0xa2VvZlR6VUhIaWxjMnRIMXhUZzhkOGw5dGFXakpjdFkwbU91QklJVmtB?oc=5",
+    "category": "美國股市",
+    "topic": "雲端運算公司"
+  },
+  {
+    "id": 46,
+    "title": "Anthropic 推出白板、試算表、資料分析：比較 Claude、微軟、Google",
+    "summary": "",
+    "source": "鏈新聞 ABMedia",
+    "publish_time": "2026-11-11",
+    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9oOFlhNndUNEViMDI4MTZRcHotY2FpSnRpSjhualhmTWdWVzItUlRva2thY2VsdlRlYzZldmRkUnRsWUdCbDVLdkdZczRCZVYyOXFSNWMwNUV6OUlD?oc=5",
+    "category": "美國股市",
+    "topic": "AI軟體與資料分析公司"
+  },
+  {
+    "id": 47,
+    "title": "智能載具深化資通訊應用",
+    "summary": "",
+    "source": "CTIMES",
+    "publish_time": "2026-11-11",
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5Pd3J2VXg0X1BUSWpra21fcHFWdDhuMWEzYy00LU1vQi1lOGFkZWFzUU1sbFhvSTA2WkF6QzVrb3ZfU1Z5bzlpd1l5SWx2cFFkVFhVeFZBMDJjWnBnNEpxd25NUkxJZDJSUE02Qw?oc=5",
+    "category": "美國股市",
+    "topic": "電動車與自駕車產業"
+  },
+  {
+    "id": 48,
+    "title": "美股盤後｜10月非農報喜，科技類股反彈，費半勁揚4.21% 1109｜豐雲學堂 2026 年 11 月",
+    "summary": "",
+    "source": "永豐金證券",
+    "publish_time": "2026-11-11",
+    "url": "https://news.google.com/rss/articles/CBMi_AJBVV95cUxNTThGT3NNV2xUQ2Zoc1M1bTZnQlFUbjdvc1V5RTYtTEtaQl94Z1Q3eUg4TkhVcmlTUDRUTE96TWUxNi1jNlprUGlfYUQ2SEhnYzBiZm1KMWZrN1VncWo2X0pCZk1rV2tvcUFIOVN0RTdqR0ZZZFFPMEUxLU51RGY5dFZQWmk2OU4xV2dEME1xd0FubXZrR094YU5VYmdhazQ3c3lpbno4LWJqQmtwZm5pZ2dVY0g1bUhCU0s0OThKeFZCSm9TQTFpVE1jb3FRYTJ0bjB1OFNUSzZldm9Vb19kMlJpOW1GaVo1YTRUOERxNURWMEZhMFhKODhfRm9ySjdXM3hhZlhjSl80VEVXN2Y0NnRndHdFc3FkLWNVWUdHUmkzWkxwM3U3VkxYOF81dVdqUnNKbU1Cc2J5Wk5sZVFvQjRYMlF6c1ljV1l3a0RzblNJR05FWDZpRUJmSnZqWDY4azlOeHBKM1ZYU3FqMXdzUUxaZ0pRaHN4aS1scA?oc=5",
+    "category": "美國股市",
+    "topic": "美國企業財報"
+  },
+  {
+    "id": 49,
+    "title": "神話級人物狂大落難！華爾街下調輝達股票評級",
+    "summary": "",
+    "source": "自由財經",
+    "publish_time": "2026-11-11",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE11UWsyMDNRRkxULVBQbjR6RV9vM0sxS0U1V1AzWjVzMjlDNUJsTGU1anVndVBWM01iZURlWU1hNi1OUWZnRmQ5elZYUGExSlZ1S1lMYUgxUzVuNllCZlYw0gFkQVVfeXFMTW83SWRmaVV4RE9XZ1JXOWNoLThMSHhKYnJkSU03NTFzTHpDRWQtSlp2Vnh4eklLNUpLVVpLUHNtRmpQbVRFU1BxbFNkUW13Q19aNTJ5N2ozcnk4blBjaXViQnhsVg?oc=5",
+    "category": "美國股市",
+    "topic": "華爾街分析師評級"
+  },
+  {
+    "id": 50,
+    "title": "市場動態：福克斯啓動債券發行，以償還用於收購Roku的過橋貸款",
+    "summary": "",
+    "source": "鉅亨號",
+    "publish_time": "2026-11-10",
+    "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9nbUdPU0xOdGlYRkhNX0ZNNmQyWnVOYWJVM2NITm1NZUlHdmJfNjY3VVppUGVGSVBRVzc5Z0RVNEJpbEJYUTVrYQ?oc=5",
+    "category": "美國股市",
+    "topic": "美股IPO與併購動態"
+  }
+]
