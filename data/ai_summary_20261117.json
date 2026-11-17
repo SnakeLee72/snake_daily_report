@@ -1,0 +1,104 @@
+{
+  "analysis_source": "copilot",
+  "punchline": "AI基礎建設與企業導入持續加速，但市場資金因NVIDIA變數與升息預期轉向防禦，科技股及台股同步承壓。",
+  "market_sentiment": {
+    "tech_momentum": {
+      "status": "高檔震盪",
+      "desc": "AI模型、推論架構、機器人、開源生態與企業AI應用持續推進，但半導體與AI相關股票遭遇明顯修正。",
+      "trend": "neutral"
+    },
+    "capital_flow": {
+      "status": "風險撤離",
+      "desc": "台股三大法人賣超1140.5億元、外資賣超701.9億元，美股科技股亦遭拋售。",
+      "trend": "down"
+    },
+    "supply_chain": {
+      "status": "擴產延續",
+      "desc": "ABF載板擴產、DRAM需求創高、CPO商用部署與AI伺服器需求仍支撐產業投資。",
+      "trend": "up"
+    },
+    "risk_level": {
+      "status": "明顯升溫",
+      "desc": "美元指數創19個月新高、美債殖利率重返5%、中東地緣風險與加密市場下跌提高市場壓力。",
+      "trend": "up"
+    }
+  },
+  "the_big_three": [
+    {
+      "rank": 1,
+      "category": "台灣股市",
+      "topic": "台股加權指數",
+      "headline": "台股加權指數創史上第二大單日跌點，失守42,000點關卡",
+      "why_it_matters": "台股創史上第二大單日跌點，反映AI供應鏈與科技權值股遭遇系統性賣壓，直接影響台灣市場風險偏好。",
+      "key_metric": "-2635.04點、-6.03%、41040.08點",
+      "url": "https://www.taiwannews.com.tw/news/6477193"
+    },
+    {
+      "rank": 2,
+      "category": "美國股市",
+      "topic": "美國企業財報",
+      "headline": "NVIDIA財報即將登場，市場聚焦AI需求與千億美元營收表現",
+      "why_it_matters": "NVIDIA財報成為全球AI與半導體產業風向球，將影響AI基礎建設投資與相關供應鏈評價。",
+      "key_metric": "營收約1089.6億美元、EPS約2.48美元",
+      "url": "https://pro.thestreet.com/earnings/week/2026-11-16"
+    },
+    {
+      "rank": 3,
+      "category": "投資市場",
+      "topic": "美元指數",
+      "headline": "美元指數升抵19個月新高，市場押注聯準會將進一步升息",
+      "why_it_matters": "美元創19個月新高顯示市場預期利率維持高檔，對全球股市、黃金與風險資產形成壓力。",
+      "key_metric": "DXY 103.66",
+      "url": "https://www.reuters.com/world/africa/us-dollar-hits-19-month-peak-fed-hike-bets-aussie-dips-2026-11-17/"
+    }
+  ],
+  "sector_bottom_lines": {
+    "AI": "企業AI、Agent、推論架構與開源模型持續快速落地，產業基本面維持強勢。",
+    "New technology": "機器人、量子運算、XR、CPO與自動駕駛加速商業化部署，基礎設施投資持續擴大。",
+    "投資市場": "美元走強、美債殖利率走高與原油供需轉向寬鬆主導市場情緒。",
+    "台灣股市": "AI供應鏈遭獲利了結與風險調節衝擊，但記憶體、載板與AI伺服器長線需求未改變。",
+    "美國股市": "市場聚焦NVIDIA財報與AI投資前景，科技股賣壓成為短期主旋律。"
+  },
+  "impact_chain": [
+    {
+      "trigger": "NVIDIA即將公布財報",
+      "impacted_area": "AI晶片、伺服器、半導體供應鏈",
+      "key_beneficiaries": "NVIDIA"
+    },
+    {
+      "trigger": "AI伺服器與資料中心需求持續成長",
+      "impacted_area": "DRAM、ABF載板、雲端運算",
+      "key_beneficiaries": "Google Cloud、鴻海"
+    },
+    {
+      "trigger": "美元指數創19個月新高與升息預期升溫",
+      "impacted_area": "黃金、加密貨幣、全球股市",
+      "key_beneficiaries": ""
+    },
+    {
+      "trigger": "企業積極導入AI Agent與生成式AI",
+      "impacted_area": "企業軟體、資料分析、AI平台",
+      "key_beneficiaries": "Microsoft、Palantir、Google"
+    }
+  ],
+  "tomorrow_watchlist": [
+    "NVIDIA公布最新財報",
+    "市場觀察AI晶片需求與資料中心資本支出展望",
+    "NVIDIA管理層變動後首次財報說明",
+    "科技股與費城半導體指數是否止跌反彈"
+  ],
+  "market_noise": [
+    {
+      "title": "全球主要股市指數近況出爐，日經225領跑今年漲幅表現",
+      "category": "投資市場",
+      "source": "Advisor Perspectives",
+      "url": "https://www.advisorperspectives.com/dshort/updates/2026/11/16/world-markets-watchlist-november-16-2026"
+    },
+    {
+      "title": "台股ETF受益人數連5週創新高，高股息與市值型ETF持續吸金",
+      "category": "台灣股市",
+      "source": "壹蘋新聞網",
+      "url": "https://news.nextapple.com/finance/20261117/7AFD783E789F9AEBAD96C399FB34169B"
+    }
+  ]
+}
