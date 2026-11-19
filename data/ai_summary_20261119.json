@@ -1,0 +1,104 @@
+{
+  "analysis_source": "copilot",
+  "punchline": "AI基礎建設與企業導入持續加速，但升息、通膨與地緣政治風險同步升溫，市場呈現成長與估值拉鋸。",
+  "market_sentiment": {
+    "tech_momentum": {
+      "status": "加速擴張",
+      "desc": "微軟發布AI Agent平台、OpenAI推出GPT-6.2模型，NVIDIA與AI資料中心需求持續增長。",
+      "trend": "up"
+    },
+    "capital_flow": {
+      "status": "偏向保守",
+      "desc": "外資單日賣超台股765億元，美股與加密市場受升息預期影響承壓。",
+      "trend": "down"
+    },
+    "supply_chain": {
+      "status": "需求強勁",
+      "desc": "台積電指出AI需求持續高於供給，AI伺服器、PCB載板與記憶體產業維持成長。",
+      "trend": "up"
+    },
+    "risk_level": {
+      "status": "明顯升高",
+      "desc": "聯準會升息訊號、全球通膨升溫及美中科技戰持續擾動市場。",
+      "trend": "up"
+    }
+  },
+  "the_big_three": [
+    {
+      "rank": 1,
+      "category": "AI",
+      "topic": "AI Agent",
+      "headline": "微軟 Ignite 2026 發布企業級 AI Agent 平台藍圖，強化自主代理建置與治理",
+      "why_it_matters": "微軟整合Copilot、Azure與AI Agent平台，代表企業AI正式進入大規模部署與治理階段。",
+      "key_metric": "2026-11-18",
+      "url": "https://adtmag.com/articles/2026/11/18/microsoft-ignite-2026-maps-out-the-stack-for-building-and-running-enterprise-ai-agents.aspx"
+    },
+    {
+      "rank": 2,
+      "category": "投資市場",
+      "topic": "全球央行利率政策",
+      "headline": "聯準會釋出更強烈升息訊號，全球央行高利率政策可能延續",
+      "why_it_matters": "全球資產價格核心驅動因素轉向聯準會後續升息路徑，高利率環境直接影響股市、債市與加密市場。",
+      "key_metric": "95%",
+      "url": "https://www.usnews.com/news/economy/articles/2026-11-18/fed-poised-to-raise-rates-further-to-stem-inflation"
+    },
+    {
+      "rank": 3,
+      "category": "台灣股市",
+      "topic": "上市櫃公司營收與財報",
+      "headline": "上市公司前三季營收達45.4兆元、稅前淨利6.23兆元，年增逾8成創佳績",
+      "why_it_matters": "上市公司獲利大幅成長顯示AI相關需求已反映至企業財報，支撐台灣科技供應鏈基本面。",
+      "key_metric": "營收45.48兆元、稅前淨利6.23兆元、年增82.69%",
+      "url": "https://www.chinatimes.com/realtimenews/20261118001175-260410"
+    }
+  ],
+  "sector_bottom_lines": {
+    "AI": "企業AI平台、生成式AI模型與AI基礎設施同步升級，商業化速度持續加快。",
+    "New technology": "自駕車、矽光子CPO、量子運算與人形機器人持續推進商業化落地。",
+    "投資市場": "通膨與升息預期主導市場情緒，美元與公債殖利率維持高檔。",
+    "台灣股市": "AI供應鏈基本面強勁，但外資大幅賣超使短線波動升高。",
+    "美國股市": "AI企業財報維持強勢，但市場開始聚焦估值與投資報酬率風險。"
+  },
+  "impact_chain": [
+    {
+      "trigger": "聯準會釋出更強烈升息訊號",
+      "impacted_area": "美元、債券、黃金與加密貨幣市場",
+      "key_beneficiaries": ""
+    },
+    {
+      "trigger": "台積電AI需求持續超出供給",
+      "impacted_area": "先進製程、AI晶片與半導體供應鏈",
+      "key_beneficiaries": "TSMC"
+    },
+    {
+      "trigger": "BIS強化AI晶片管制",
+      "impacted_area": "AI伺服器與全球科技供應鏈",
+      "key_beneficiaries": "NVIDIA"
+    },
+    {
+      "trigger": "NVIDIA與Lambda部署1萬顆GPU級CPO叢集",
+      "impacted_area": "矽光子、光通訊與AI資料中心",
+      "key_beneficiaries": "NVIDIA、Lambda"
+    }
+  ],
+  "tomorrow_watchlist": [
+    "市場持續關注聯準會12月是否升息",
+    "AI Agent與企業AI平台在Microsoft Ignite後續發布進展",
+    "NVIDIA財報後AI晶片股估值變化",
+    "美中AI晶片管制與科技戰後續發展"
+  ],
+  "market_noise": [
+    {
+      "title": "微軟推出 Windows Server 2028 預覽版，將 AI 推論能力帶向企業本地資料中心",
+      "category": "AI",
+      "source": "Computerworld",
+      "url": "https://www.computerworld.com/article/4250505/microsoft-brings-ai-inference-closer-to-enterprise-data-with-windows-server-2028-2.html"
+    },
+    {
+      "title": "AI 邊緣資料中心市場快速成長，推論運算與液冷技術成主要驅動力",
+      "category": "AI",
+      "source": "Yahoo Finance（引述 Research and Markets 研究報告）",
+      "url": "https://finance.yahoo.com/technology/ai/articles/ai-edge-data-centers-market-154100799.html"
+    }
+  ]
+}
