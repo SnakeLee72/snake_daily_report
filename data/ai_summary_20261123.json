@@ -1,0 +1,104 @@
+{
+  "analysis_source": "copilot",
+  "punchline": "AI從模型、Agent、推論到資料中心全面擴張，但市場開始重新評估AI投資回報，形成「技術加速、資本轉趨審慎」的新格局。",
+  "market_sentiment": {
+    "tech_momentum": {
+      "status": "加速成形",
+      "desc": "微軟AI Agent平台、OpenAI GPT-6.2、NVIDIA人形機器人平台與Amazon低軌衛星等新技術持續推進。",
+      "trend": "up"
+    },
+    "capital_flow": {
+      "status": "避險升溫",
+      "desc": "全球股市修正、比特幣ETF流出、美債殖利率走升與美元維持強勢，資金風險偏好下降。",
+      "trend": "down"
+    },
+    "supply_chain": {
+      "status": "需求強勁",
+      "desc": "AI伺服器、HBM記憶體、ABF載板與台灣AI供應鏈訂單能見度持續提升。",
+      "trend": "up"
+    },
+    "risk_level": {
+      "status": "明顯升高",
+      "desc": "Fed偏鷹、中東衝突升溫、AI估值修正與全球市場震盪同步發生。",
+      "trend": "up"
+    }
+  },
+  "the_big_three": [
+    {
+      "rank": 1,
+      "category": "AI",
+      "topic": "AI資料中心",
+      "headline": "AI資料中心熱潮帶動基礎建設投資激增，私人資本大舉湧入",
+      "why_it_matters": "AI資料中心已從科技議題擴大為全球基礎建設投資主軸，代表AI資本支出週期持續擴張。",
+      "key_metric": "第三季基礎建設基金募資620億美元",
+      "url": "https://www.cnbc.com/2026/11/23/infrastructure-assets-inflation-investors-ai.html"
+    },
+    {
+      "rank": 2,
+      "category": "投資市場",
+      "topic": "地緣政治與市場風險",
+      "headline": "中東衝突持續升溫，航運與煉油設施遇襲推升全球市場地緣風險溢價",
+      "why_it_matters": "台股在史上級修正後出現強勁反彈，反映政府穩市措施與市場情緒回穩。",
+      "key_metric": "TAIEX上漲2.16%，收36,811.89點",
+      "url": "https://www.reuters.com/business/energy/oil-prices-fall-amid-equity-selloff-though-iran-war-attacks-limit-losses-2026-11-23/"
+    },
+    {
+      "rank": 3,
+      "category": "台灣股市",
+      "topic": "上市櫃公司營收與財報",
+      "headline": "上市公司前三季稅前獲利達6.23兆元，年增82.69%創歷史新高",
+      "why_it_matters": "AI龍頭股遭重新評價，顯示市場焦點已從成長故事轉向投資回報與現金流。",
+      "key_metric": "NVIDIA單週跌幅近23%",
+      "url": "https://www.cna.com.tw/news/afe/202611170257.aspx"
+    }
+  ],
+  "sector_bottom_lines": {
+    "AI": "企業AI Agent、推論基礎設施與實體AI同步加速落地，AI投資重心從模型走向應用與營運部署。",
+    "New technology": "機器人、自駕車、量子運算、低軌衛星與數位孿生持續推進，產業進入商業化驗證階段。",
+    "投資市場": "市場仍受Fed升息預期、高殖利率、強勢美元與地緣風險壓制，風險資產承壓。",
+    "台灣股市": "指數反彈但法人持續提款，AI供應鏈基本面強勁與短期籌碼壓力並存。",
+    "美國股市": "AI概念股大幅修正拖累主要指數，資本市場開始檢視AI投資效率與獲利能力。"
+  },
+  "impact_chain": [
+    {
+      "trigger": "AI資料中心建設熱潮",
+      "impacted_area": "伺服器、記憶體、載板與半導體供應鏈",
+      "key_beneficiaries": "TSMC、Foxconn、SPIL、Kinsus、King Yuan Electronics、Unimicron"
+    },
+    {
+      "trigger": "AI推論工作負載占比升至約三分之二",
+      "impacted_area": "推論晶片、模組化資料中心與邊緣運算",
+      "key_beneficiaries": "Positron AI"
+    },
+    {
+      "trigger": "NVIDIA擴展Isaac平台與人形機器人生態",
+      "impacted_area": "人形機器人、實體AI與機器人開發工具",
+      "key_beneficiaries": "NVIDIA、Agile Robots"
+    },
+    {
+      "trigger": "Fed進一步升息預期升溫",
+      "impacted_area": "全球股市、加密貨幣、黃金與高成長科技股",
+      "key_beneficiaries": ""
+    }
+  ],
+  "tomorrow_watchlist": [
+    "OPEC+將於11月29日決定2027年產量政策",
+    "市場持續關注Fed 12月是否升息",
+    "Amazon Leo低軌衛星部署進度",
+    "Microsoft Ignite 2026後續AI Agent產品落地進展"
+  ],
+  "market_noise": [
+    {
+      "title": "NVIDIA 擴大供應鏈合作，台積電、鴻海等台廠 AI 伺服器供應鏈訂單能見度提升",
+      "category": "台灣股市",
+      "source": "Focus Taiwan",
+      "url": "https://focustaiwan.tw/business/202611220006"
+    },
+    {
+      "title": "AI需求持續推升HBM與DRAM吃緊，記憶體市場供應短缺延續至2027年",
+      "category": "台灣股市",
+      "source": "TrendForce／Sourceability",
+      "url": "https://sourceability.com/post/how-the-memory-market-changed-from-2025-to-2026-and-where-its-going"
+    }
+  ]
+}
