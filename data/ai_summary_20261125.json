@@ -1,0 +1,109 @@
+{
+  "analysis_source": "copilot",
+  "punchline": "AI基礎建設與實體AI持續加速擴張，但市場風險因關稅、升息預期與科技股回檔同步升高。",
+  "market_sentiment": {
+    "tech_momentum": {
+      "status": "加速成長",
+      "desc": "多模態AI、AI Agent、實體AI、量子運算與AI資料中心持續推出新技術與新平台。",
+      "trend": "up"
+    },
+    "capital_flow": {
+      "status": "風險偏弱",
+      "desc": "外資大幅賣超台股，美股科技與半導體股回檔，市場等待通膨與利率訊號。",
+      "trend": "down"
+    },
+    "supply_chain": {
+      "status": "需求強勁",
+      "desc": "AI伺服器、HBM4、ABF載板、矽光子與AI資料中心需求持續升溫。",
+      "trend": "up"
+    },
+    "risk_level": {
+      "status": "明顯升高",
+      "desc": "美國新關稅威脅、升息預期與科技股修正同步推升市場風險。",
+      "trend": "up"
+    }
+  },
+  "the_big_three": [
+    {
+      "rank": 1,
+      "category": "台灣股市",
+      "topic": "台積電與半導體權值股",
+      "headline": "AI需求持續強勁，台積電10月營收年增近60%帶動半導體權值股長期展望受關注",
+      "why_it_matters": "台股出現史上第六大收盤跌點，反映全球科技股與資金風險偏好快速轉弱，直接影響亞太股市與台灣科技供應鏈。",
+      "key_metric": "台股下跌1,926.92點、跌幅4.8%",
+      "url": "https://www.fool.com/investing/2026/11/23/why-tsmc-stock-soared-today/"
+    },
+    {
+      "rank": 2,
+      "category": "美國股市",
+      "topic": "美國企業財報",
+      "headline": "Dell 上修全年財測並刷新 AI 伺服器訂單紀錄，企業財報聚焦 AI 基礎建設需求",
+      "why_it_matters": "Anthropic刷新全球IPO紀錄，代表AI資本市場仍高度聚焦於基礎模型與AI平台龍頭企業。",
+      "key_metric": "IPO募資813億美元",
+      "url": "https://www.tipranks.com/news/these-are-the-stocks-reporting-earnings-today-november-24-2026"
+    },
+    {
+      "rank": 3,
+      "category": "美國股市",
+      "topic": "NVIDIA與AI晶片股",
+      "headline": "NVIDIA營收倍增至1,158億美元，AI晶片需求持續引爆資料中心投資熱潮",
+      "why_it_matters": "NVIDIA持續驗證AI基礎設施需求強勁，是觀察全球AI投資循環最重要的領先指標之一。",
+      "key_metric": "季度營收1,158億美元、年增103%",
+      "url": "https://www.techrepublic.com/article/news-nvidia-revenue-doubles-ai-demand/"
+    }
+  ],
+  "sector_bottom_lines": {
+    "AI": "AI Agent、多模態AI、實體AI與邊緣AI同步推進，企業AI已從工具導入走向基礎設施與流程重構。",
+    "New technology": "人形機器人、自駕車、XR、量子運算與CPO技術持續突破，產業進入商用化加速期。",
+    "投資市場": "市場聚焦PCE通膨數據與聯準會升息路徑，美元強勢、油價回落、風險資產承壓。",
+    "台灣股市": "外資大幅賣超造成台股重挫，但AI伺服器、HBM與高階載板需求仍支撐中長期產業展望。",
+    "美國股市": "AI仍是核心投資主題，但半導體與科技股回檔，市場重新檢視估值與資本支出可持續性。"
+  },
+  "impact_chain": [
+    {
+      "trigger": "Dell Technologies 上修AI伺服器營收展望至780億美元",
+      "impacted_area": "AI伺服器與資料中心供應鏈",
+      "key_beneficiaries": "Dell Technologies"
+    },
+    {
+      "trigger": "NVIDIA資料中心業務年增110%",
+      "impacted_area": "AI晶片、資料中心與雲端運算",
+      "key_beneficiaries": "Nvidia"
+    },
+    {
+      "trigger": "HBM4價格預估最高大漲170%",
+      "impacted_area": "高頻寬記憶體與AI運算",
+      "key_beneficiaries": "TrendForce"
+    },
+    {
+      "trigger": "AOI取得22億美元CPO長約",
+      "impacted_area": "矽光子、光通訊與高速互連",
+      "key_beneficiaries": "Applied Optoelectronics（AOI）"
+    },
+    {
+      "trigger": "Uber、Nuro與Lucid展開完全無人駕駛測試",
+      "impacted_area": "Robotaxi與自動駕駛產業",
+      "key_beneficiaries": "Uber、Nuro、Lucid"
+    }
+  ],
+  "tomorrow_watchlist": [
+    "美國PCE通膨數據公布",
+    "聯準會後續升息路徑變化",
+    "11月29日OPEC+會議與2027年產量政策",
+    "NVIDIA執行長Jensen Huang預計於12月初出席相關聽證會"
+  ],
+  "market_noise": [
+    {
+      "title": "聯準會會議紀要顯示多數官員支持進一步升息，全球市場聚焦年底利率走向",
+      "category": "投資市場",
+      "source": "Associated Press（AP News）",
+      "url": "https://apnews.com/article/federal-reserve-inflation-rates-9e72f3b6e3484173471cc382d6918de0"
+    },
+    {
+      "title": "黃金價格持穩等待美國通膨數據，市場聚焦聯準會升息路徑",
+      "category": "投資市場",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/world/india/gold-ticks-lower-ahead-us-inflation-data-2026-11-25/"
+    }
+  ]
+}
