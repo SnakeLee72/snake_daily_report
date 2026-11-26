@@ -1,0 +1,109 @@
+{
+  "analysis_source": "copilot",
+  "punchline": "AI基礎建設與代理型AI持續擴張，但市場資金在科技成長與利率、關稅風險之間反覆拉鋸。",
+  "market_sentiment": {
+    "tech_momentum": {
+      "status": "持續擴張",
+      "desc": "AI Agent、生成式AI、多模態AI、AI資料中心與AI晶片需求同步推進，科技創新主軸未變。",
+      "trend": "up"
+    },
+    "capital_flow": {
+      "status": "分歧震盪",
+      "desc": "台股大漲重返39000點，但外資連9賣；美股科技股承壓而部分資金轉向避險資產。",
+      "trend": "neutral"
+    },
+    "supply_chain": {
+      "status": "需求增強",
+      "desc": "台積電2奈米、CoWoS先進封裝、AI伺服器封測及DRAM需求持續受AI建設帶動。",
+      "trend": "up"
+    },
+    "risk_level": {
+      "status": "風險升溫",
+      "desc": "美國新關稅政策、中東供應風險、全球通膨與升息預期持續干擾市場。",
+      "trend": "up"
+    }
+  },
+  "the_big_three": [
+    {
+      "rank": 1,
+      "category": "AI",
+      "topic": "AI Agent",
+      "headline": "微軟 Ignite 2026 聚焦 AI Agent 治理，將 Copilot 定位為「工作作業系統」",
+      "why_it_matters": "微軟將Copilot推向企業級Agent平台，代表AI應用開始從聊天工具進入自主執行與治理階段，影響企業軟體與AI生態發展方向。",
+      "key_metric": "",
+      "url": "https://www.infoq.com/news/2026/11/microsoft-ignite-2026-recap/"
+    },
+    {
+      "rank": 2,
+      "category": "台灣股市",
+      "topic": "外資買賣超",
+      "headline": "外資連9賣續砍491億元，減碼台積電與金融股",
+      "why_it_matters": "AI伺服器需求持續擴大，CoWoS外溢效應帶動封測供應鏈擴張，直接影響台灣AI硬體產業獲利與資本支出。",
+      "key_metric": "5.5倍",
+      "url": "https://www.cna.com.tw/news/afe/202611260262.aspx"
+    },
+    {
+      "rank": 3,
+      "category": "投資市場",
+      "topic": "全球主要股市指數",
+      "headline": "全球股市反彈，美股與亞洲主要指數因關稅疑慮緩解同步走高",
+      "why_it_matters": "全球股市對關稅衝擊反應趨緩並出現反彈，反映市場風險偏好短期回升，影響全球資產定價。",
+      "key_metric": "",
+      "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-11-26/"
+    }
+  ],
+  "sector_bottom_lines": {
+    "AI": "AI Agent治理、生成式AI、多模態AI與實體AI同步推進，企業級AI落地速度持續加快。",
+    "New technology": "量子運算、6G、全固態電池、低軌衛星與人形機器人技術持續突破並朝商業化邁進。",
+    "投資市場": "市場在反彈與避險情緒之間拉鋸，通膨、利率與地緣政治仍是主要變數。",
+    "台灣股市": "AI供應鏈仍是主軸，台股強彈但外資持續賣超，內外資看法仍有分歧。",
+    "美國股市": "AI需求未見轉弱，但科技股面臨獲利了結與估值修正壓力。"
+  },
+  "impact_chain": [
+    {
+      "trigger": "微軟Ignite 2026推動AI Agent治理與Copilot平台化",
+      "impacted_area": "企業AI軟體與Agent生態",
+      "key_beneficiaries": "Microsoft"
+    },
+    {
+      "trigger": "AI資料中心與GPU需求增加",
+      "impacted_area": "先進封裝與AI伺服器供應鏈",
+      "key_beneficiaries": "TSMC、日月光、矽品、艾克爾"
+    },
+    {
+      "trigger": "Dell AI伺服器訂單創新高",
+      "impacted_area": "AI晶片與伺服器產業",
+      "key_beneficiaries": "Dell Technologies、NVIDIA"
+    },
+    {
+      "trigger": "Google Cloud高速擴張",
+      "impacted_area": "AI雲端服務市場",
+      "key_beneficiaries": "Google Cloud、Microsoft Azure、AWS"
+    },
+    {
+      "trigger": "韓國央行升息至3.25%",
+      "impacted_area": "全球利率與資金成本",
+      "key_beneficiaries": ""
+    }
+  ],
+  "tomorrow_watchlist": [
+    "OPEC+將於11月29日討論2027年產量政策",
+    "Uber、Nuro與Lucid推進2027年Robotaxi商業化計畫",
+    "Amazon持續擴張低軌衛星網路部署",
+    "Google Gemini 4 Neon企業AI應用落地進展"
+  ],
+  "market_noise": [
+    {
+      "title": "FlagOS 全球競賽落幕，聚焦跨晶片 AI 推論最佳化技術突破",
+      "category": "AI",
+      "source": "TMCnet",
+      "url": "https://www.tmcnet.com/usubmit/2026/11/26/10487557.htm"
+    },
+    {
+      "title": "全球AI資料中心競賽升溫，基礎設施建設面臨電力與資源挑戰",
+      "category": "AI",
+      "source": "Council on Foreign Relations（CFR）",
+      "url": "https://www.cfr.org/articles/the-global-ai-data-center-debate-explained"
+    }
+  ]
+}
