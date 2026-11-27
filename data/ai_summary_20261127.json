@@ -1,0 +1,100 @@
+{
+  "analysis_source": "copilot",
+  "punchline": "AI基礎設施與實體AI持續擴張，但市場資金仍在高利率、地緣政治與AI估值疑慮間尋求平衡。",
+  "market_sentiment": {
+    "tech_momentum": {
+      "status": "持續增溫",
+      "desc": "AI Agent標準化、生成式AI新模型、開源模型、多模態AI與實體AI同步推進，技術落地範圍持續擴大。",
+      "trend": "up"
+    },
+    "capital_flow": {
+      "status": "分歧整理",
+      "desc": "全球股市回穩，但外資連續賣超台股、美元維持強勢，資金風險偏好仍受壓抑。",
+      "trend": "neutral"
+    },
+    "supply_chain": {
+      "status": "需求強勁",
+      "desc": "台積電上修成長預估、NVIDIA擴大台灣供應鏈合作、AI伺服器與高階載板需求持續成長。",
+      "trend": "up"
+    },
+    "risk_level": {
+      "status": "偏高震盪",
+      "desc": "中東供應風險、升息預期、AI投資回報疑慮及外資提款持續影響市場。",
+      "trend": "up"
+    }
+  },
+  "the_big_three": [
+    {
+      "rank": 1,
+      "category": "AI",
+      "topic": "AI資安與治理",
+      "headline": "香港金管局發布 ART 架構與 Agentic AI 治理指引，強化 AI 資安與監管機制",
+      "why_it_matters": "實體AI開始從模型走向監管框架，香港金管局正式提出Agentic AI治理要求，代表企業與金融機構導入AI進入制度化階段。",
+      "key_metric": "超過60% Sandbox試驗涉及Agentic AI",
+      "url": "https://www.bloomberg.com/professional/insights/regulation/november-2026-global-regulatory-brief-agentic-ai-stablecoins-and-digital-money/"
+    },
+    {
+      "rank": 2,
+      "category": "AI",
+      "topic": "實體AI與機器人",
+      "headline": "XPENG 發表 Turing 實體 AI 架構與人形機器人 IRON，加速 AI 從數位走向實體世界",
+      "why_it_matters": "XPENG同步發布實體AI架構與人形機器人，顯示AI競爭開始從數位世界延伸至機器人、自駕車與實體設備。",
+      "key_metric": "2027年量產",
+      "url": "https://timesofindia.indiatimes.com/technology/aiq/from-thinking-to-doing-how-physical-ai-is-changing-the-future-of-robots-and-machines/articleshow/136198911.cms"
+    }
+  ],
+  "sector_bottom_lines": {
+    "AI": "AI產業焦點由模型競賽延伸至Agent標準、治理機制、實體AI與企業落地應用。",
+    "New technology": "人形機器人、量子運算、矽光子、全固態電池與XR裝置同步推進商業化。",
+    "投資市場": "全球市場回穩，但美元強勢、央行升息預期與能源風險仍壓抑風險偏好。",
+    "台灣股市": "AI供應鏈與半導體基本面強勁，但外資持續提款形成短線壓力。",
+    "美國股市": "AI相關資產波動加劇，科技巨頭與晶片股面臨估值與成長可持續性檢驗。"
+  },
+  "impact_chain": [
+    {
+      "trigger": "OpenAI、Anthropic、Google、Microsoft支持AI Agent開放協定",
+      "impacted_area": "企業AI代理人與數位商務生態",
+      "key_beneficiaries": "OpenAI、Anthropic、Google、Microsoft"
+    },
+    {
+      "trigger": "NVIDIA矽光子CPO交換機量產",
+      "impacted_area": "AI資料中心與高速光通訊",
+      "key_beneficiaries": "NVIDIA"
+    },
+    {
+      "trigger": "NVIDIA擴大台灣供應鏈長約合作",
+      "impacted_area": "AI伺服器、先進封裝與載板",
+      "key_beneficiaries": "TSMC、Foxconn、SPIL"
+    },
+    {
+      "trigger": "台積電上修2026年營收成長預估",
+      "impacted_area": "先進製程與AI晶片供應鏈",
+      "key_beneficiaries": "TSMC"
+    },
+    {
+      "trigger": "Amazon新增36顆低軌衛星部署",
+      "impacted_area": "低軌衛星通訊與太空基礎建設",
+      "key_beneficiaries": "Amazon"
+    }
+  ],
+  "tomorrow_watchlist": [
+    "歐洲央行12月是否進一步升息",
+    "日本央行是否因東京核心通膨升高而升息",
+    "OPEC+產量政策會議",
+    "Google與Samsung Android XR智慧眼鏡12月上市"
+  ],
+  "market_noise": [
+    {
+      "title": "台股開盤上漲，加權指數站上39,168點，市場情緒回穩",
+      "category": "台灣股市",
+      "source": "Focus Taiwan（中央社）",
+      "url": "https://focustaiwan.tw/business/202611270001"
+    },
+    {
+      "title": "0050受益人突破400萬人，市值型與高股息ETF持續主導台灣ETF市場",
+      "category": "台灣股市",
+      "source": "FTNN新聞網",
+      "url": "https://www.ftnn.com.tw/news/599844"
+    }
+  ]
+}
